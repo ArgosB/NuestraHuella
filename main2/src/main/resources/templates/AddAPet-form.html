@@ -82,7 +82,8 @@
         <div class="titulos p-2 text-success">
             <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
         </div>
-        <form class="row g-3 d-flex justify-content-center px-4">
+        <form class="row g-3 d-flex justify-content-center px-4" method="post" action="/send.php"
+            enctype="multipart/form-data">
             <div class="col-md-6">
                 <input type="text" name="USER"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
@@ -90,33 +91,26 @@
             </div>
             <div class="col-md-6">
                 <input type="password" pass="password"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Contraseña">
+                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                    placeholder="Contraseña de usuario">
             </div>
             <div class="col-6">
                 <input type="text" name="name"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Ingresa aquí el NOMBRE de tu mascota">                 
-            </div>             <br> <br>
+                    placeholder="Ingresa aquí el NOMBRE de la mascota">
+            </div>
+            <br> <br>
             <div class="col-6">
                 <input type="Age" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Ingrese aquí la EDAD de su mascota (en meses)">
+                    placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
             </div>
-           
             <div class="col-12">
                 <input type="specie" name="tipo mascota"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Indique la especie de su mascota (por ej: perro, gato, etc)">
-            </div>
-            <div class="col-md-6">
-                <input type="text" name="street"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Calle">
-            </div>
-            <div class="col-md-6">
-                <input type="number" name="streetNumber"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Numero de Calle">
+                    placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
             </div>
             <div class="col-md-3">
-                <input type="text" name="neighborhood"
+                <input type="text" name="neighbourhood"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
             </div>
             <div class="col-md-3">
@@ -134,19 +128,23 @@
             <div class="col-md-6">
                 <input type="number" name="phoneNumber"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Numero de teléfono">
+                    placeholder="Numero de telefono">
             </div>
             <div class="col-md-6">
                 <input type="number" name="alternativeNumber"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Numero alternativo">
+                    placeholder="Numero de telefono alternativo">
+            </div>
+            <div class="input-group mb-3">
+                <input class="form-control border border-success shadow p-2 mb-1 bg-body rounded" type="file"
+                    name="photoPet" placeholder="Adjunte la foto de la mascota">
             </div>
             <div class="col-12">
-                <input type="file" name="profilePhoto"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Foto de perfil">
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
+            <br>
         </form>
+        <br>
 
         <aside>
 
@@ -154,7 +152,84 @@
 
     </main>
 
-    
+    <footer class="estiloNav col-12">
+        <div class="container pt-4">
+            <div class="row d-flex justify-content-center">
+
+
+                <div class="col-lg-4">
+                    <a class="navbar-brand" href="index.html"></a>
+                    <h2 class="h4 pb-lg-3 text-dark text-center">Conocenos en redes</h2>
+
+                    <ul class="list-inline footer-icons">
+                        <li class="list-inline-item m-1">
+                            <a class="text-light" target="_blank" href="http://www.instagram/NuestraHuella.com/">
+                                <i class='bx bxl-facebook-square bx-md'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-1">
+                            <a class="text-light" target="_blank" href="http://www.Linkedin/NuestraHuella.com/">
+                                <i class='bx bxl-linkedin-square bx-md'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-1">
+                            <a class="text-light" target="_blank" href="https://www.webwhatsapp.com/">
+                                <i class='bx bxl-whatsapp-square bx-md'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-1">
+                            <a class="text-light" target="_blank" href="https://www.flickr.com/">
+                                <i class='bx bxl-flickr-square bx-md'></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item m-1">
+                            <a class="text-light" target="_blank" href="https://www.medium.com/">
+                                <i class='bx bxl-medium-square bx-md'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
+                    <h3 class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
+                        <ul class="list-unstyled text-dark light-300">
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a
+                                    class="text-decoration-none text-dark" href="index.html">Home</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a
+                                    class="text-decoration-none text-dark py-1" href="PetForm.html">Add your pets</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a
+                                    class="text-decoration-none text-dark py-1" href="PetList.html">Find your pet</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a
+                                    class="text-decoration-none text-dark py-1"
+                                    href="Requirements.html">Requirements</a>
+                            </li>
+                        </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
+                    <h2 class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
+                    <ul class="list-unstyled text-dark light-300">
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                                href="tel:010-020-0340">341- 111- 1111</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                                href="mailto:info@nuestrahuella.com">info@nuestrahuella.com.ar</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
 
     <script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 

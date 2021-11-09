@@ -3,12 +3,14 @@
 }
 
 .footerlast {
+	justify-content: space-between;
 	background-size: -10px;
-	background-color: #7b5c97;
+	background-color: #b89cd3;
 	border-top: 1px solid #3d3b3b;
 	height: 1px;
 	clear: both;
 	padding: 0 10px;
+	flex-direction: column-reverse;
 }
 
 main {
@@ -563,7 +565,6 @@ main {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
 
 }
 
