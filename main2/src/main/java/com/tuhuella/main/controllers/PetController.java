@@ -30,7 +30,7 @@ public class PetController {
 	@GetMapping("/register")
 	public String form() {
 
-		return "singup-pet";
+		return "AddAPet-form";
 	}
 
 	@PostMapping("/register")
@@ -41,17 +41,17 @@ public class PetController {
 			petService.createPet(name, age, species, breed, Weight, sex, size, upToDateVaccine, castrated, deWormed, disease, zone);
 
 			modelo.put("exito", "registro exitoso");
-			return "singup-form";
+			return "AddAPet-form";
 		} catch (Exception e) {
 			modelo.put("error", e.getMessage());
-			return "singup-form";
+			return "AddAPet-form";
 		}
 	}
 
-	@GetMapping("/")
+	/*@GetMapping("/")
 	public String showPets(ModelMap modelo) {
 		petService.showAllPet();
-		return "pet-list";
-	}
+		return "AddAPet-form";
+	}*/
 
 }
