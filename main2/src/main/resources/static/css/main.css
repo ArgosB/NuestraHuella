@@ -13,7 +13,7 @@
 	flex-direction: column-reverse;
 }
 
-body{
+body {
 	background-color: #abd4a2d5;
 }
 
@@ -30,21 +30,19 @@ main {
 	color: #410b747c;
 }
 
-.section1{
-    width: 75%;
-	
+.section1 {
+	width: 75%;
 }
 
-.botonLogin{
-	background-color: green; 
+.botonLogin {
+	background-color: green;
 }
 
-.titulos{
-    font-family: 'Sigmar One', cursive;
+.titulos {
+	font-family: 'Sigmar One', cursive;
 }
 
-
-*{
+* {
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
@@ -52,8 +50,7 @@ main {
 	box-sizing: border-box;
 }
 
-
-.wrap{
+.wrap {
 	width: 990px;
 	margin: 0px auto;
 	padding: 30px auto;
@@ -65,17 +62,15 @@ main {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: space-between;
-
 }
 
-.tarjeta-wrap{
+.tarjeta-wrap {
 	margin: 30px;
 	-webkit-perspective: 800;
 	perspective: 800;
-
 }
 
-.tarjeta{
+.tarjeta {
 	width: 280px;
 	height: 300px;
 	background: #9c74c2;
@@ -84,10 +79,8 @@ main {
 	transform-style: preserve-3d;
 	-webkit-transition: .7s ease;
 	transition: .7s ease;
-	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-	
-
+	-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+	box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 }
 
 .adelante, .atras {
@@ -104,7 +97,7 @@ main {
 	width: 100%;
 }
 
-.atras{
+.atras {
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 	padding: 15px;
@@ -123,18 +116,16 @@ main {
 	text-align: center;
 	color: #fff;
 	font-family: "open sans";
-  background: #9c74c2;
+	background: #9c74c2;
 }
 
-.tarjeta-wrap:hover .tarjeta{
+.tarjeta-wrap:hover .tarjeta {
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 	
 }
 
-
-
-.card1{
+.card1 {
 	background-image: url(../img/Logo-Huella.png);
 	background-size: cover;
 }
@@ -150,15 +141,14 @@ main {
 }
 
 @media screen and (max-width: 424px) {
-    *{
+	* {
 		margin: 0;
 		padding: 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	
-	.wrap{
+	.wrap {
 		width: 300px;
 		margin: 0px auto;
 		padding: 5px;
@@ -172,13 +162,10 @@ main {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
-	
-	.tarjeta-wrap{
+	.tarjeta-wrap {
 		margin: 7px;
-		
 	}
-	
-	.tarjeta{
+	.tarjeta {
 		width: 250px;
 		height: 300px;
 		background: #9c74c2;
@@ -187,14 +174,10 @@ main {
 		transform-style: preserve-3d;
 		-webkit-transition: .7s ease;
 		transition: .7s ease;
-		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		
-		
-	
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
-	
-	.adelante, .atras{
+	.adelante, .atras {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -203,15 +186,12 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
-	
-	.adelante{
+	.adelante {
 		width: 100%;
 	}
-	
-	.atras{
+	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
-	
 		padding: 15px;
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -225,45 +205,38 @@ main {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
-	
 		text-align: center;
 		color: #fff;
 		font-family: "open sans";
-	  background: #9c74c2;
+		background: #9c74c2;
 	}
-	
-	.tarjeta-wrap:hover .tarjeta{
+	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
-	
-	.card1{
+	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card2{
+	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card3{
+	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
 }
 
-
 @media screen and (max-width: 599px) and (min-width:425px) {
-    *{
+	* {
 		margin: 0;
 		padding: 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	
-	.wrap{
+	.wrap {
 		width: 450px;
 		margin: 0px auto;
 		padding: 5px;
@@ -277,13 +250,10 @@ main {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
-	
-	.tarjeta-wrap{
+	.tarjeta-wrap {
 		margin: 7px;
-		
 	}
-	
-	.tarjeta{
+	.tarjeta {
 		width: 375px;
 		height: 425px;
 		background: #9c74c2;
@@ -292,14 +262,10 @@ main {
 		transform-style: preserve-3d;
 		-webkit-transition: .7s ease;
 		transition: .7s ease;
-		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		
-		
-	
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
-	
-	.adelante, .atras{
+	.adelante, .atras {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -308,15 +274,12 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
-	
-	.adelante{
+	.adelante {
 		width: 100%;
 	}
-	
-	.atras{
+	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
-	
 		padding: 15px;
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -330,44 +293,38 @@ main {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
-	
 		text-align: center;
 		color: #fff;
 		font-family: "open sans";
-	  background: #9c74c2;
+		background: #9c74c2;
 	}
-	
-	.tarjeta-wrap:hover .tarjeta{
+	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
-	
-	.card1{
+	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card2{
+	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card3{
+	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
 }
 
-@media screen and (max-width:767px) and (min-width:600px){
-	*{
+@media screen and (max-width:767px) and (min-width:600px) {
+	* {
 		margin: 0;
 		padding: 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	
-	.wrap{
+	.wrap {
 		width: 598px;
 		margin: 0px auto;
 		padding: 5px auto;
@@ -381,13 +338,10 @@ main {
 		justify-content: space-around;
 		flex-wrap: wrap;
 	}
-	
-	.tarjeta-wrap{
+	.tarjeta-wrap {
 		margin: 7px;
-		
 	}
-	
-	.tarjeta{
+	.tarjeta {
 		width: 450px;
 		height: 500px;
 		background: #9c74c2;
@@ -396,14 +350,10 @@ main {
 		transform-style: preserve-3d;
 		-webkit-transition: .7s ease;
 		transition: .7s ease;
-		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		
-		
-	
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
-	
-	.adelante, .atras{
+	.adelante, .atras {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -412,15 +362,12 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
-	
-	.adelante{
+	.adelante {
 		width: 100%;
 	}
-	
-	.atras{
+	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
-	
 		padding: 15px;
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -434,55 +381,47 @@ main {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
-	
 		text-align: center;
 		color: #fff;
 		font-family: "open sans";
-	  background: #9c74c2;
+		background: #9c74c2;
 	}
-	
-	.tarjeta-wrap:hover .tarjeta{
+	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
-	
-	.card1{
+	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card2{
+	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card3{
+	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
 }
 
-
-@media screen and (max-width:1023px) and (min-width:768px){
-    /*.contenedor{
+@media screen and (max-width:1023px) and (min-width:768px) {
+	/*.contenedor{
 		width: 90%;
         margin:auto;/*contenedor centrado
     }*/
-    
-    /* Si la pantalla supera los 500px, entonces se deja de flotar las cajas 
+	/* Si la pantalla supera los 500px, entonces se deja de flotar las cajas 
 	.caja1, .caja2{
 		float: none;
 		width:100%;
 	}*/
-	*{
+	* {
 		margin: 0;
 		padding: 0;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	
-	.wrap{
+	.wrap {
 		width: 750px;
 		margin: 0px auto;
 		padding: 10px;
@@ -496,13 +435,10 @@ main {
 		justify-content: space-around;
 		flex-wrap: wrap;
 	}
-	
-	.tarjeta-wrap{
+	.tarjeta-wrap {
 		margin: 7px;
-		
 	}
-	
-	.tarjeta{
+	.tarjeta {
 		width: 300px;
 		height: 350px;
 		background: #9c74c2;
@@ -511,14 +447,11 @@ main {
 		transform-style: preserve-3d;
 		-webkit-transition: .7s ease;
 		transition: .7s ease;
-		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 		display: flex;
-		
-	
 	}
-	
-	.adelante, .atras{
+	.adelante, .atras {
 		width: 100%;
 		height: 100%;
 		position: absolute;
@@ -527,15 +460,12 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
-	
-	.adelante{
+	.adelante {
 		width: 100%;
 	}
-	
-	.atras{
+	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
-	
 		padding: 15px;
 		display: -webkit-box;
 		display: -webkit-flex;
@@ -549,42 +479,37 @@ main {
 		-webkit-align-items: center;
 		-ms-flex-align: center;
 		align-items: center;
-	
 		text-align: center;
 		color: #fff;
 		font-family: "open sans";
-	  background: #9c74c2;
+		background: #9c74c2;
 	}
-	
-	.tarjeta-wrap:hover .tarjeta{
+	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
-	
-	.card1{
+	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card2{
+	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-	
-	.card3{
+	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
-
 }
-
-
 
 #sección {
 	display: flex;
 	flex-direction: row;
 	font-weight: bold;
+	text-align: center;
 }
+
+#seccion:hover #collapseWidthExample: {}
 
 #primer, #segundo, #tercero, #cuarto {
 	width: 100%;
@@ -607,7 +532,6 @@ main {
 
 #tercero {
 	color: #e0dd0b;
-	
 }
 
 #cuarto {
@@ -618,28 +542,52 @@ main {
 	text-decoration: none;
 } */
 
-.botonDelete{
+.botonDelete {
 	margin-top: 10px;
 	display: flex;
 	justify-content: flex-end;
 }
-.Eliminar:hover{
+
+.Eliminar:hover {
 	color: #f19b9b;
 }
-.Eliminar{
+
+.Eliminar {
 	display: flex;
-	border: 5px solid #f5edf2; /*anchura, estilo y color borde*/
-	padding: 8px; /*espacio alrededor texto*/
-	background-color: #8b3030; /*color botón*/
-	color: #f5edf2; /*color texto*/
-	text-decoration: none; /*decoración texto*/
-	text-transform: uppercase; /*capitalización texto*/
+	border: 5px solid #f5edf2;
+	/*anchura, estilo y color borde*/
+	padding: 8px;
+	/*espacio alrededor texto*/
+	background-color: #8b3030;
+	/*color botón*/
+	color: #f5edf2;
+	/*color texto*/
+	text-decoration: none;
+	/*decoración texto*/
+	text-transform: uppercase;
+	/*capitalización texto*/
 	justify-content: center;
-	font-family: 'Ubuntu', sans-serif; /*tipografía texto*/
-	border-radius: 20px; /*bordes redondos*/
+	font-family: 'Ubuntu', sans-serif;
+	/*tipografía texto*/
+	border-radius: 20px;
+	/*bordes redondos*/
 	width: 200px;
 }
 
+
+.pie {
+	text-align: center;
+	font-weight: bold;
+	background: #b182e0;
+}
+
+#centrar {
+	text-align: center;
+}
+
+#ícono {
+	we
+}
 .previous {
 	display: flex;
 	float: left;
