@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
+<html lang="es-AR" xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
   <meta charset="UTF-8">
@@ -18,10 +19,10 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
+      <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
       <div class="container-fluid text-light estiloNav px-3">
         <a class="navbar-brand tex-light" href="#">
-          <img src="../static/img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
+          <img src="img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
             height="35" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -51,16 +52,16 @@
           </ul>
           <a class="btn text-light btn-outline-success mx-3 px-3 " href="login.html">Login</a>
           <a class="btn text-light btn-outline-success mx-3 px-3" href="singup-form.html">SignUp</a>
-          <!-- <form class="d-flex">
+          <form class="d-flex">
             <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
             <button class="text-light btn btn-outline-success my-2" type="submit">Search</button>
-          </form> -->
+          </form>
         </div>
       </div>
     </nav>
-    <div>
+    <div style="min-height: 120px;">
       <div class="collapse collapse-horizontal" id="collapseWidthExample">
-        <div style="width: 100vw;">
+        <div style="width: 975px;">
           <nav>
             <section id="sección">
               <!-- <a id="primer" href="https://github.com/"> Ingresa ciudad, <br> país </br> o código postal </a> -->
@@ -113,28 +114,28 @@
       </div>
       <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-success rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-primary rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
-            <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+            <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.</p>
@@ -142,24 +143,38 @@
       </div>
 
       </div>-->
-      <!-- </section>
-      <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
-        <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+    </section>
+    <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
+      <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
+        <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+      <div class="card border border-5 border-primary rounded-5 m-2" style="width: 50vh;">
+        <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+      <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
+        <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
+        <div class="card-body">
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        </div>
+      </div>
+      <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-          </div>
-        </div>
-        <div class="card border border-5 border-primary rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-          </div>
-        </div>
-        <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+          </div>-->
+
+      <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
@@ -179,10 +194,12 @@
                 content.</p>
             </div>
         </div>-->
-      <aside>
+        <!--</div>-->
+    </div>
+    <aside>
 
-      </aside>
-    </section>
+    </aside>
+
   </main>
 
   <footer class="estiloNav col-12">
@@ -256,7 +273,6 @@
               </li>
             </ul>
         </div>
-
         <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
           <h2 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
           <ul id="centrar" class="list-unstyled text-dark light-300">
@@ -278,6 +294,7 @@
             </li>
           </ul>
         </div>
+
       </div>
     </div>
     </div>

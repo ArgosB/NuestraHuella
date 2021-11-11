@@ -1,42 +1,77 @@
 package com.tuhuella.main.entities;
 
 import java.util.Date;
+import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
+@Table(name = "users")
 public class User {
 	@Id
+    @Column(name = "id_user", nullable = false, unique = true)
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	String id;
-	Photo photo;
-	String name;
-	String surname;
-	String userName;
-	String password;
-	Integer age; 
-	String street;
-	Integer streetNumber;
-	Zone zone;
-	Integer phoneNumber;
-	Integer alternativeNumber;
-	String email;
+	private String id;
+	@OneToOne
+	private Photo photo;
+	@Column(length = 50)
+	private String name;
+	@Column(length = 50)
+	private String surname;
+	@Column(length = 50, unique = true )
+	private String username;
+	@Column(length = 50)
+	private String password;
+	@Column
+	private boolean enabled;
+    @Column(length = 50)
+	private Date BirthDate;
+	@Column(length = 50)
+	private String street;
+	@Column(length = 50)
+	private Integer streetNumber;
+	@ManyToOne
+	private Zone zone;
+	@Column(length = 50)
+	private Integer phoneNumber;
+	@Column(length = 50)
+	private Integer alternativeNumber;
+	@Column(length = 50)
+	private String email;
 	@Temporal(TemporalType.DATE)
-	Date createUser;
+	@Column(length = 50)
+	private Date createUser;
 	@Temporal(TemporalType.DATE)
-	Date modifiedUser;
-	Boolean active;
+	@Column(length = 50)
+	private Date modifiedUser;
+	@Column(length = 50)
+	private Boolean active;
+	
+	public User() {
+		super();
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -46,35 +81,11 @@ public class User {
 	public void setPhoto(Photo photo) {
 		this.photo = photo;
 	}
-	public String getName() {
-		return name;
+	public Date getBirthDate() {
+		return BirthDate;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getSurname() {
-		return surname;
-	}
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Integer getAge() {
-		return age;
-	}
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setBirthDate(Date birthDate) {
+		BirthDate = birthDate;
 	}
 	public String getStreet() {
 		return street;
@@ -130,8 +141,83 @@ public class User {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-	public User() {
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "authorities_users", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "authority_id"))
+	private Set<Authority> authority;
+	
+	
+	public Set<Authority> getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(Set<Authority> authority) {
+		this.authority = authority;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + "]";
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public User(String username, String password, Set<Authority> authority) {
 		super();
+		this.username = username;
+		this.password = password;
+		this.authority = authority;
 	}
 	
+
 }
+
+	
+

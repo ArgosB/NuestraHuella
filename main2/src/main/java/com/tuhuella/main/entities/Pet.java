@@ -1,33 +1,48 @@
 package com.tuhuella.main.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
 import com.tuhuella.main.enums.Sex;
-
-import net.bytebuddy.implementation.bytecode.ByteCodeAppender.Size;
+import com.tuhuella.main.enums.Size;
 
 @Entity
+@Table(name = "pet")
 public class Pet {
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@Column(length = 50)
 	private String id;
+	@OneToOne
 	private Photo photo;
+	@Column(length = 50)
 	private String name;
-	private Integer ageInMontageInMonths;
+	@Column(length = 50)
+	private Integer ageInMonths;
+	@Column(length = 50)
 	private String species;
+	@Column(length = 50)
 	private String breed;
+	@Column(length = 50)
 	private Integer weight;
+	@Column(length = 50)
 	private Sex sex;
+	@Column(length = 50)
 	private Size size;
 	private Boolean upToDateVaccine;
 	private Boolean castrated;
 	private Boolean dewormed;
+	@Column(length = 50)
 	private String disease;
+	@ManyToOne
 	private Zone zone;
 	
 	
@@ -53,12 +68,17 @@ public class Pet {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Integer getAgeInMontageInMonths() {
-		return ageInMontageInMonths;
+
+	public Integer getAgeInMonths() {
+		return ageInMonths;
 	}
-	public void setAgeInMontageInMonths(Integer ageInMontageInMonths) {
-		this.ageInMontageInMonths = ageInMontageInMonths;
+
+
+	public void setAgeInMonths(Integer ageInMonths) {
+		this.ageInMonths = ageInMonths;
 	}
+
+
 	public String getSpecies() {
 		return species;
 	}

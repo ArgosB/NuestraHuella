@@ -1,9 +1,5 @@
 package com.tuhuella.main.webException;
 
-public class WebException extends Exception {
+public class WebException {
 
-	public WebException(String msg) {
-		super(msg);
-	}
-	
 }

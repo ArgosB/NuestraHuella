@@ -1,8 +1,10 @@
 package com.tuhuella.main.entities;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Basic;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,15 +19,22 @@ public class Photo {
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	String id;
-	String name;
-	String mime;
+	@Column(name = "id", length = 50)
+	private String id;
+	@Column(name = "name", length = 50)
+	private String name;
+	/*@Column(name = "mime"length = 50)
+	private String mime;*/
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
+	@Column(name = "picture", length = 50)
 	private byte[] picture;
-	Date createPhoto;
-	Date modifiedPhoto;
-	Boolean active;
+	@Column(name = "created", length = 50)
+	private Date createPhoto;
+	@Column(name = "modified", length = 50)
+	private Date modifiedPhoto;
+	@Column(name = "isActive",length = 50)
+	private Boolean active;
 	
 	public Photo() {
 		
@@ -45,14 +54,6 @@ public class Photo {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getMime() {
-		return mime;
-	}
-
-	public void setMime(String mime) {
-		this.mime = mime;
 	}
 
 	public byte[] getPicture() {
@@ -85,6 +86,12 @@ public class Photo {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	@Override
+	public String toString() {
+		return "Photo [id=" + id + ", name=" + name + ", picture=" + Arrays.toString(picture) + ", createPhoto="
+				+ createPhoto + ", modifiedPhoto=" + modifiedPhoto + ", active=" + active + "]";
 	}
 	
 	
