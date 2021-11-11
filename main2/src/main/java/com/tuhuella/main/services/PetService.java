@@ -9,6 +9,8 @@ import javax.transaction.Transactional;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.tuhuella.main.entities.*;
@@ -54,6 +56,31 @@ public void createPet ( String name, Integer age, String species, String breed, 
 @Transactional
 public void showAllPet() {
 	petRepository.searchAll();
+}
+
+
+@Transactional
+public Page<Pet> searchPet(Pageable paginable, String query) {
+	return petRepository.searchAssetsByParam(paginable, query);
+}
+
+@Transactional
+public void delete(String id) throws Exception {
+	Pet entidad = petRepository.getById(id);
+	petRepository.delete(entidad);
+}
+
+public void validatePet(Pet m) throws Exception {
+	if (m.getSpecies() == null || m.getSpecies().isEmpty() || m.getSpecies().equals(" "))
+
+	{
+		throw new Exception("La mascota tiene que tener una especie");
+	}
+
+	if (m.getPhoto() == null) {
+		throw new Exception("La mascota tiene que tener una Foto");
+	}
+
 }
 
 }

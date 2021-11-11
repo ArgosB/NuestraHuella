@@ -42,9 +42,6 @@ public class User {
     @Column(length = 50)
 	private Date BirthDate;
 	@Column(length = 50)
-	private String street;
-	@Column(length = 50)
-	private Integer streetNumber;
 	@ManyToOne
 	private Zone zone;
 	@Column(length = 50)
@@ -87,18 +84,7 @@ public class User {
 	public void setBirthDate(Date birthDate) {
 		BirthDate = birthDate;
 	}
-	public String getStreet() {
-		return street;
-	}
-	public void setStreet(String street) {
-		this.street = street;
-	}
-	public Integer getStreetNumber() {
-		return streetNumber;
-	}
-	public void setStreetNumber(Integer streetNumber) {
-		this.streetNumber = streetNumber;
-	}
+
 	public Zone getZone() {
 		return zone;
 	}
