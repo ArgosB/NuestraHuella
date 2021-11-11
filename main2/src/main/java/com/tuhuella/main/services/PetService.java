@@ -35,7 +35,7 @@ public void createPet ( String name, Integer age, String species, String breed, 
 	if (name.equals(null)||name.isEmpty()) {
 		throw new Exception ("El nombre no puede estar vacio");
 	}else {
-		Pet pet = new Pet();
+		PetUser pet = new PetUser();
 		pet.setName(name);
 		pet.setAgeInMonths(age);
 		pet.setSpecies(species);
@@ -60,17 +60,17 @@ public void showAllPet() {
 
 
 @Transactional
-public Page<Pet> searchPet(Pageable paginable, String query) {
+public Page<PetUser> searchPet(Pageable paginable, String query) {
 	return petRepository.searchAssetsByParam(paginable, query);
 }
 
 @Transactional
 public void delete(String id) throws Exception {
-	Pet entidad = petRepository.getById(id);
+	PetUser entidad = petRepository.getById(id);
 	petRepository.delete(entidad);
 }
 
-public void validatePet(Pet m) throws Exception {
+public void validatePet(PetUser m) throws Exception {
 	if (m.getSpecies() == null || m.getSpecies().isEmpty() || m.getSpecies().equals(" "))
 
 	{

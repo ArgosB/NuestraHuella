@@ -27,7 +27,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
      //Buscar el usuario con el repositorio y si no existe lanzar una exepcion
-     com.tuhuella.main.entities.User appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
+     com.tuhuella.main.entities.HumanUser appUser = userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("No existe usuario"));
 		
     //Mapear nuestra lista de Authority con la de spring security 
     List grantList = new ArrayList();

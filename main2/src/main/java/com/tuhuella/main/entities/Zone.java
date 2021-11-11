@@ -21,7 +21,7 @@ public class Zone {
 	@Column(length = 50)
 	private String neighborhood;
 	@OneToOne
-	private User user;
+	private HumanUser user;
 	
 	public String getId() {
 		return id;
@@ -30,10 +30,10 @@ public class Zone {
 		this.id = id;
 	}			
 
-	public User getUser() {
+	public HumanUser getUser() {
 		return user;
 	}
-	public void setUser(User user) {
+	public void setUser(HumanUser user) {
 		this.user = user;
 	}
 

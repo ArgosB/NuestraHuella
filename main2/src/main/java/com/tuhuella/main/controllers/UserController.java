@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tuhuella.main.entities.Photo;
-import com.tuhuella.main.entities.User;
+import com.tuhuella.main.entities.HumanUser;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.services.UserService;
 
@@ -50,14 +50,14 @@ public class UserController {
 
 	@GetMapping("/showUserList")
 	public String show(ModelMap modelo) {
-		List<User> users = userService.findUsers();
+		List<HumanUser> users = userService.findUsers();
 		modelo.addAttribute("Users", users);
 		return "show-users";
 	}
 
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable String id, ModelMap modelo) {
-		User user = userService.edit(id);
+		HumanUser user = userService.edit(id);
 		modelo.addAttribute("User", user);
 		return "edit-user";
 	}
