@@ -638,3 +638,38 @@ main {
 	border-radius: 20px; /*bordes redondos*/
 	width: 200px;
 }
+
+.previous {
+	display: flex;
+	float: left;
+	margin: 25px;
+	border: 5px solid #f5edf2; 
+	padding: 8px;
+	background-color: #9c74c2;
+	color: cornsilk;
+	text-decoration: none;
+	text-transform: uppercase;
+	justify-content: center;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 20px;
+	width: 200px;
+  }
+
+  .next{
+	display: flex;
+	float: right;
+	margin: 25px;
+	border: 5px solid #f5edf2; 
+	padding: 8px;
+	background-color: #9c74c2;
+	color: cornsilk;
+	text-decoration: none;
+	text-transform: uppercase;
+	justify-content: center;
+	font-family: 'Ubuntu', sans-serif;
+	border-radius: 20px;
+	width: 200px;
+}  
+  .round {
+	border-radius: 50%;
+  }
