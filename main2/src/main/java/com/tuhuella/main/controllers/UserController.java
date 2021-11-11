@@ -33,12 +33,11 @@ public class UserController {
 	@PostMapping("/register")
 	public String saveUser(ModelMap modelo, @RequestParam Photo photo, @RequestParam String name,
 			@RequestParam String surname, @RequestParam Date birthDate, @RequestParam String email,
-			@RequestParam String password, @RequestParam String userName, @RequestParam String street,
-			@RequestParam Integer streetNumber, @RequestParam Date date, @RequestParam Integer phoneNumber,
+			@RequestParam String password, @RequestParam String userName, @RequestParam Date date, @RequestParam Integer phoneNumber,
 			@RequestParam Integer alternativeNumber, @RequestParam Zone zone) {
 
 		try {
-			userService.signUpUser(photo, name, surname, userName, password, date, street, streetNumber, zone,
+			userService.signUpUser(photo, name, surname, userName, password, date, zone,
 					phoneNumber, alternativeNumber, email);
 
 			modelo.put("exito", "registro exitoso");

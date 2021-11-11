@@ -35,7 +35,7 @@ public class UserService  {
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public User signUpUser(Photo photo, String name, String surname, String userName, String password, Date birthDate,
-			String street, Integer StreetNumber, Zone zone, Integer phoneNumber, Integer alternativeNumber,
+	Zone zone, Integer phoneNumber, Integer alternativeNumber,
 			String email) throws Exception {
 
 		validate(name, surname, userName, email, password);

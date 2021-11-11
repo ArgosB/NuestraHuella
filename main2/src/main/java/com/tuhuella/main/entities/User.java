@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -41,8 +40,7 @@ public class User {
 	private boolean enabled;
     @Column(length = 50)
 	private Date BirthDate;
-	@Column(length = 50)
-	@ManyToOne
+	@OneToOne
 	private Zone zone;
 	@Column(length = 50)
 	private Integer phoneNumber;
