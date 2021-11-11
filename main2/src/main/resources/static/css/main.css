@@ -505,7 +505,10 @@ main {
 	display: flex;
 	flex-direction: row;
 	font-weight: bold;
+	text-align: center;
 }
+
+#seccion:hover #collapseWidthExample: {}
 
 #primer, #segundo, #tercero, #cuarto {
 	width: 100%;
@@ -578,4 +581,8 @@ main {
 
 #centrar {
 	text-align: center;
+}
+
+#ícono {
+	we
 }
