@@ -8,8 +8,9 @@
   <link rel="icon" type="image/png" href="../static/img/ícono.png">
   <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
-
-
+  <head th:replace="/fragments/head :: head"></head>
+  <nav th:replace="/fragments/navbar :: navbar"></nav>
+  <footer th:replace="/fragments/head :: footer"></footer>
 
   <title>Tu Huella</title>
 </head>
@@ -102,7 +103,11 @@
             </div>
           </div>
         </div>
+        <div class="botonTipo">
+          <button type="button" class="btn btn-outline-success text-light px-1">VER MAS >></button>
+          </div>
       </div>
+
       <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
           <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
