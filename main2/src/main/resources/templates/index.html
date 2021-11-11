@@ -8,6 +8,10 @@
   <link rel="stylesheet" href="../static/css/main.css">
   <link rel="icon" type="image/png" href="../static/img/ícono.png">
   <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+  <head th:replace="/fragments/head :: head"></head>
+  <nav th:replace="/fragments/navbar :: navbar"></nav>
+  <footer th:replace="/fragments/head :: footer"></footer>
   <link href="../static/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
   <link rel='stylesheet' id='css-tricks-style-css'
     href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1636501874133' type='text/css'
@@ -111,7 +115,11 @@
             </div>
           </div>
         </div>
+        <div class="botonTipo">
+          <button type="button" class="btn btn-outline-success text-light px-1">VER MAS >></button>
+          </div>
       </div>
+
       <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
           <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
