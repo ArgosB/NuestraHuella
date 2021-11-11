@@ -5,12 +5,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="icon" type="image/png" href="img/ícono.png">
-  <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="css/boxicon.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/boxicon.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/main.css">
+  <link rel="icon" type="image/png" href="../static/img/ícono.png">
+  <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
+  <head th:replace="/fragments/head :: head"></head>
+  <nav th:replace="/fragments/navbar :: navbar"></nav>
+  <footer th:replace="/fragments/head :: footer"></footer>
+  <link href="../static/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+  <link rel='stylesheet' id='css-tricks-style-css'
+    href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1636501874133' type='text/css'
+    media="not all" onload="this.media='all'" />
 
 
   <title>Tu Huella</title>
@@ -32,10 +37,12 @@
           <ul class="navbar-nav me-auto mb-3 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4" aria-current="page" href="#">
-                Home</a>
+                <i class="fas fa-home"></i>&nbsp Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4" href="AddAPet-form.html">Add your
+              <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4" href="AddAPet-form.html"><i
+                  class="fas fa-plus"></i>&nbsp Add
+                your
                 pets</a>
             </li>
            
@@ -44,6 +51,7 @@
                     pet</a>
                 </li>
             
+
           </ul>
           <a class="btn text-light btn-outline-success mx-3 px-3 " href="login.html">Login</a>
           <a class="btn text-light btn-outline-success mx-3 px-3" href="singup-form.html">SignUp</a>
@@ -59,10 +67,14 @@
         <div style="width: 100vw;">
           <nav>
             <section id="sección">
-              <a id="primer" href="https://github.com/"> Ingresa ciudad, <br> país </br> o código postal </a>
-              <a id="segundo" href="https://getbootstrap.com/"> Encuentra <br> un </br> perro </a>
-              <a id="tercero" href="https://www.w3schools.com/"> Encuentra <br> un </br> gato </a>
-              <a id="cuarto" href="https://flexboxfroggy.com/#es"> Encuentra <br> otras </br> mascotas </a>
+              <!-- <a id="primer" href="https://github.com/"> Ingresa ciudad, <br> país </br> o código postal </a> -->
+              <a id="segundo" href="https://getbootstrap.com/"> <i class="fas fa-dog"></i>
+                &nbsp Encuentra <br> un </br> perro </a>
+              <a id="tercero" href="https://www.w3schools.com/"> <i class="fas fa-cat"></i> &nbsp Encuentra <br> un
+                </br> gato
+              </a>
+              <a id="cuarto" href="https://flexboxfroggy.com/#es"> <i class="fas fa-crow"></i> &nbsp Encuentra <br>
+                otras </br> mascotas </a>
             </section>
         </div>
       </div>
@@ -102,7 +114,11 @@
             </div>
           </div>
         </div>
+        <div class="botonTipo">
+          <button type="button" class="btn btn-outline-success text-light px-1">VER MAS >></button>
+          </div>
       </div>
+
       <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
           <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
@@ -169,77 +185,119 @@
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-          </div>-->
-    <!--</div>-->
+
+          </div>
+        </div> -->
+      <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+            <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>-->
+
+      <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+            <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+        </div>-->
+        <!--</div>-->
+    </div>
     <aside>
 
     </aside>
 
   </main>
 
-  <footer class="estiloNav">
+  <footer class="estiloNav col-12">
     <div class="container pt-4">
-      <div class="row d-flex">
-        <div class="col-lg col-1">
-          <h3 class="h4 pb-lg-3 text-dark regular-400">Conocenos en redes</h2>
-            <ul class="list-inline footer-icons light-400">
-              <li class="list-inline-item m-1">
-                <a class="text-light" target="_blank" href="http://www.instagram/NuestraHuella.com/">
-                  <img src="img/Instagram.png" width="40" height="36" alt="Logo Instagram"> </a>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-4 col-md-3 my-sm-0 mt-4">
+          <h2 class="h4 pb-lg-3 text-dark text-center">Conocenos en redes</h2>
+          <ul id="centrar" class="list-inline footer-icons">
+            <li class="list-inline-item m-1">
+              <a class="text-light" target="_blank" href="https://www.facebook.com/Nuestrahuella">
+                <img src="../static/img/Facebook.png" width="40" height="40" alt="Logo Facebook" <i </a>
+            </li>
+            <li class="list-inline-item m-1">
+              <a class="text-light" target="_blank" href="http://www.instagram/NuestraHuella.com/">
+                <img src="../static/img/Instagram.png" width="40" height="36" alt="Logo Instagram">
+              </a>
+            </li>
+            <li class="list-inline-item m-1">
+              <a class="text-light" target="_blank" href="https://www.twitter.com/Nuestrahuella">
+                <img src="../static/img/Twitter.png" width="48" height="50" alt="Logo Twitter">
+              </a>
+            </li>
+            <li class="list-inline-item m-1">
+              <a class="text-light" target="_blank" href="http://www.Linkedin/NuestraHuella.com/">
+                <img src="../static/img/Linkedin.png" width="40" height="40" alt="Logo Linkedin">
+              </a>
+            </li>
+            <li class="list-inline-item m-1">
+              <a class="text-light" target="_blank" href="https://api.whatsapp.com/send/?phone=5493411111111">
+                <img src="../static/img/WhatsApp.png" width="48" height="50" alt="Logo WhatsApp">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
+          <h3 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
+            <ul id="centrar" class="list-unstyled text-dark light-300">
+              <li class="pb-2">
+                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-dark"
+                  href="Index.html">
+                  <!--                   <a>
+                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                  </a> -->
+                  <i class="fas fa-home"></i> Home
+                </a>
               </li>
-              <li class="list-inline-item m-1">
-                <a class="text-light" target="_blank" href="http://www.Linkedin/NuestraHuella.com/">
-                  <img src="/img/Linkedin.png" width="40" height="40" alt="Logo Linkedin"> </a>
+              <li class="pb-2">
+                <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
+                <!--                 <a>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                </a> -->
+                <a class="text-decoration-none text-dark py-1" href="AddAPet-form.html"><i class="fas fa-plus">
+                  </i> Add your pets</a>
               </li>
-              <li class="list-inline-item m-1">
-                <a class="text-light" target="_blank" href="https://www.webwhatsapp.com/">
-                  <img src="/img/WhatsApp.png" width="48" height="50" alt="Logo WhatsApp"> </a>
+              <li class="pb-2">
+                <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
+                <!--                 <a>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                </a> -->
+                <a class="text-decoration-none text-dark py-1" href="PetList.html"><i class="fas fa-search">
+                  </i>&nbspFind your pet</a>
               </li>
-              <li class="list-inline-item m-1">
-                <a class="text-light" target="_blank" href="https://www.flickr.com/">
-                  <img src="/img/Flickr.png" width="48" height="50" alt="Logo Flickr"> </a>
-              </li>
-              <li class="list-inline-item m-1">
-                <a class="text-light" target="_blank" href="https://www.medium.com/">
-                  <img src="/img/Medium.png" width="48" height="50" alt="Logo Medium"> </a>
+              <li class="pb-2">
+                <!--                 <a>
+                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+                </a> -->
+                <a class="text-decoration-none text-dark py-1" href="Requirements.html">
+                  <i class="fas fa-file-contract"></i> Requirements</a>
               </li>
             </ul>
-
         </div>
 
         <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-          <h3 class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
-            <ul class="list-unstyled text-dark light-300">
-              <li class="pb-2">
-                <i class="fas fa-home"></i>
-                <i class='bx-fw bx-xs'></i><a class="text-decoration-none text-dark py-1" href="
-                  index.html">Home</a>
-              </li>
-              <li class="pb-2">
-                <i class="fas fa-plus"></i>
-                <i class='bx-fw bx-xs'></i><a class="text-decoration-none text-dark py-1"
-                  href="AddAPet-form.html">Add your pets</a>
-              </li>
-              <li class="pb-2">
-                <i class="fas fa-search"></i>
-                <i class='bx-fw bx-xs'></i><a class="text-decoration-none text-dark py-1"
-
-                  href="PetList.html">Find your pet</a>
-              </li>
-              <li class="pb-2">
-                <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a class="text-decoration-none text-dark py-1"
-                  href="Requirements.html">Requirements</a>
-              </li>
-            </ul>
-        </div>
-        <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-          <h2 class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
-          <ul class="list-unstyled text-dark light-300">
+          <h2 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
+          <ul id="centrar" class="list-unstyled text-dark light-300">
             <li class="pb-2">
-              <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
+              <!--               <a>
+                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+              </a> -->
+              <i class="fas fa-phone"></i>
+              <i id="ícono" class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
                 href="tel:010-020-0340">341- 111- 1111</a>
             </li>
             <li class="pb-2">
+              <!--               <a>
+                &nbsp &nbsp &nbsp &nbsp
+              </a> -->
+              <i class="fas fa-envelope-open"></i>
               <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-dark py-1"
                 href="mailto:info@nuestrahuella.com">info@nuestrahuella.com.ar</a>
             </li>
@@ -247,11 +305,10 @@
         </div>
 
       </div>
+    </div>
+    </div>
   </footer>
-
-
-  <script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-
+  <script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
