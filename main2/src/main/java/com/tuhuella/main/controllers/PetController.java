@@ -48,10 +48,10 @@ public class PetController {
 		}
 	}
 
-	/*@GetMapping("/")
+	@GetMapping("/")
 	public String showPets(ModelMap modelo) {
 		petService.showAllPet();
-		return "AddAPet-form";
-	}*/
+		return "pet-list";
+	}
 
 }

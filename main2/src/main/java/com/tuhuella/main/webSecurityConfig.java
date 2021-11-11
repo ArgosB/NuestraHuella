@@ -19,7 +19,7 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
 	//Necesario para evitar que la seguridad se aplique a los resources
     //Como los css, imagenes y javascripts
     String[] resources = new String[]{
-            "/include/**","/css/**","/bootstrap/**","/icons/**","/img/**","/js/**","/layer/**","/**"
+            "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**"
     };
 	
 @Override
@@ -31,8 +31,6 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
 	        .antMatchers("/admin*").access("hasRole('ADMIN')")
 	        .antMatchers("/user*").permitAll()
 	        .antMatchers("/pet*").permitAll()
-	        .antMatchers("/login").permitAll()
-
 
                 .anyRequest().authenticated()
                 .and()
@@ -40,7 +38,7 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
                 .loginPage("/login")
                 .permitAll()
                 .defaultSuccessUrl("/menu")
-                .failureUrl("/user/register")
+                .failureUrl("/pet/register")
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .and()

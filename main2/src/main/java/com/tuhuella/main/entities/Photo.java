@@ -23,8 +23,8 @@ public class Photo {
 	private String id;
 	@Column(name = "name", length = 50)
 	private String name;
-	@Column(name = "mime",length = 50)
-	private String mime;
+	/*@Column(name = "mime"length = 50)
+	private String mime;*/
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(name = "picture", length = 50)
