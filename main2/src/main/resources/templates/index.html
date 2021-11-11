@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
+<html lang="es-AR" xmlns:th="http://www.thymeleaf.org"
+ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/main.css">
-  <link rel="icon" type="image/png" href="../static/img/ícono.png">
-  <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link href="../static/css/boxicon.min.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="stylesheet" href="../static/css/boxicon.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/png" href="img/ícono.png">
+  <link href="/bootstrap/css/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+  <link href="css/boxicon.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/boxicon.min.css" crossorigin="anonymous">
 
 
 
@@ -17,10 +18,10 @@
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
+      <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
       <div class="container-fluid text-light estiloNav px-3">
         <a class="navbar-brand tex-light" href="#">
-          <img src="../static/img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
+          <img src="img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
             height="35" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -107,28 +108,28 @@
       </div>
       <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-success rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-primary rounded-5 m-2" style="width: 50vh;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>
         </div>
         <div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
-            <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+            <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.</p>
@@ -139,35 +140,35 @@
     </section>
     <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
       <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
-        <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+        <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
         </div>
       </div>
       <div class="card border border-5 border-primary rounded-5 m-2" style="width: 50vh;">
-        <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+        <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
         </div>
       </div>
       <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
-        <img src="../static/img/Logo-Huella.png" class="card-img-top " alt="...">
+        <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
         <div class="card-body">
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
             content.</p>
         </div>
       </div>
       <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>-->
 
       <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
-          <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
+          <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
@@ -257,7 +258,7 @@
   </footer>
 
 
-  <script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 
