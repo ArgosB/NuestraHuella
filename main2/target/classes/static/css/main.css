@@ -1,30 +1,42 @@
-.estiloNav{
-    background-color: #b89cd3;
+.estiloNav {
+	background-color: #b89cd3;
 }
 
 .footerlast {
-    background-size: -10px;
-    background-color: #7b5c97;
-    border-top: 1px solid #3d3b3b;
-    height: 1px; 
-    clear: both;
-    padding: 0 10px;
- }
-main{
-    background-color: #abd4a2d5;
-    background-image: url(../img/topography.svg);
+	background-size: -10px;
+	background-color: #7b5c97;
+	border-top: 1px solid #3d3b3b;
+	height: 1px;
+	clear: both;
+	padding: 0 10px;
 }
 
-.letraNav{
-    color: whitesmoke;
+main {
+	background-color: #abd4a2d5;
+	background-image: url(../img/topography.svg);
 }
-.letraAnimal{
-    color:#410b747c;
+
+.letraNav {
+	color: whitesmoke;
+}
+
+.letraAnimal {
+	color: #410b747c;
 }
 
 .section1{
-    width: 75vh;
+    width: 75%;
+	
 }
+
+.botonLogin{
+	background-color: green; 
+}
+
+.titulos{
+    font-family: 'Sigmar One', cursive;
+}
+
 
 *{
 	margin: 0;
@@ -34,13 +46,10 @@ main{
 	box-sizing: border-box;
 }
 
-body{
-  background: #1D1F20;
-}
 
 .wrap{
-	width: 100vh;
-	margin: 50px auto;
+	width: 990px;
+	margin: 30px auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -48,18 +57,20 @@ body{
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
-	justify-content: center;
+	justify-content: space-between;
+
 }
 
 .tarjeta-wrap{
-	margin: 10px;
+	margin: 0px 30px;
 	-webkit-perspective: 800;
 	perspective: 800;
+
 }
 
 .tarjeta{
-	width: 50vh;
-	height: 55vh;
+	width: 280px;
+	height: 300px;
 	background: #9c74c2;
 	position: relative;
 	-webkit-transform-style: preserve-3d;
@@ -68,10 +79,11 @@ body{
 	transition: .7s ease;
 	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
 	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+	
 
 }
 
-.adelante, .atras{
+.adelante, .atras {
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -81,16 +93,13 @@ body{
 	backface-visibility: hidden;
 }
 
-.adelante{
+.adelante {
 	width: 100%;
 }
 
 .atras{
-    width: 60vh;
-	height: 65vh;
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
-
 	padding: 15px;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -104,23 +113,17 @@ body{
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-
 	text-align: center;
 	color: #fff;
 	font-family: "open sans";
-    background: #9c74c2;
-  
+  background: #9c74c2;
 }
 
-.titulos{
-    font-family: 'Sigmar One', cursive;
-    font-weight: 400;
-    font-size: 80px;
-}
 .tarjeta-wrap:hover .tarjeta{
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
+
 
 
 .card1{
@@ -128,18 +131,441 @@ body{
 	background-size: cover;
 }
 
-.card2{
+.card2 {
 	background-image: url(../img/Logo-Huella.png);
 	background-size: cover;
 }
 
-.card3{
+.card3 {
 	background-image: url(../img/Logo-Huella.png);
 	background-size: cover;
 }
 
-.botonLogin{
-	background-color: green; 
+@media screen and (max-width: 424px) {
+    *{
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
 	
+	.wrap{
+		width: 300px;
+		margin: 5px auto;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
 	
+	.tarjeta-wrap{
+		margin: 7px;
+		
+	}
+	
+	.tarjeta{
+		width: 250px;
+		height: 300px;
+		background: #9c74c2;
+		position: relative;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		-webkit-transition: .7s ease;
+		transition: .7s ease;
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		
+		
+	
+	}
+	
+	.adelante, .atras{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	
+	.adelante{
+		width: 100%;
+	}
+	
+	.atras{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	
+		padding: 15px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	
+		text-align: center;
+		color: #fff;
+		font-family: "open sans";
+	  background: #9c74c2;
+	}
+	
+	.tarjeta-wrap:hover .tarjeta{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.card1{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card2{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card3{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
 }
+
+
+@media screen and (max-width: 599px) and (min-width:425px) {
+    *{
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.wrap{
+		width: 450px;
+		margin: 5px auto;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	
+	.tarjeta-wrap{
+		margin: 7px;
+		
+	}
+	
+	.tarjeta{
+		width: 375px;
+		height: 425px;
+		background: #9c74c2;
+		position: relative;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		-webkit-transition: .7s ease;
+		transition: .7s ease;
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		
+		
+	
+	}
+	
+	.adelante, .atras{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	
+	.adelante{
+		width: 100%;
+	}
+	
+	.atras{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	
+		padding: 15px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	
+		text-align: center;
+		color: #fff;
+		font-family: "open sans";
+	  background: #9c74c2;
+	}
+	
+	.tarjeta-wrap:hover .tarjeta{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.card1{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card2{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card3{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+}
+
+@media screen and (max-width:767px) and (min-width:600px){
+	*{
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.wrap{
+		width: 598px;
+		margin: 5px auto;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	.tarjeta-wrap{
+		margin: 7px;
+		
+	}
+	
+	.tarjeta{
+		width: 450px;
+		height: 500px;
+		background: #9c74c2;
+		position: relative;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		-webkit-transition: .7s ease;
+		transition: .7s ease;
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		
+		
+	
+	}
+	
+	.adelante, .atras{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	
+	.adelante{
+		width: 100%;
+	}
+	
+	.atras{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	
+		padding: 15px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	
+		text-align: center;
+		color: #fff;
+		font-family: "open sans";
+	  background: #9c74c2;
+	}
+	
+	.tarjeta-wrap:hover .tarjeta{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.card1{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card2{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card3{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+}
+
+
+@media screen and (max-width:1023px) and (min-width:768px){
+    /*.contenedor{
+		width: 90%;
+        margin:auto;/*contenedor centrado
+    }*/
+    
+    /* Si la pantalla supera los 500px, entonces se deja de flotar las cajas 
+	.caja1, .caja2{
+		float: none;
+		width:100%;
+	}*/
+	*{
+		margin: 0;
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	.wrap{
+		width: 750px;
+		margin: 5px auto;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	
+	.tarjeta-wrap{
+		margin: 7px;
+		
+	}
+	
+	.tarjeta{
+		width: 350px;
+		height: 400px;
+		background: #9c74c2;
+		position: relative;
+		-webkit-transform-style: preserve-3d;
+		transform-style: preserve-3d;
+		-webkit-transition: .7s ease;
+		transition: .7s ease;
+		-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+		display: flex;
+		
+	
+	}
+	
+	.adelante, .atras{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
+	}
+	
+	.adelante{
+		width: 100%;
+	}
+	
+	.atras{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	
+		padding: 15px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+	
+		text-align: center;
+		color: #fff;
+		font-family: "open sans";
+	  background: #9c74c2;
+	}
+	
+	.tarjeta-wrap:hover .tarjeta{
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	
+	.card1{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card2{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+	.card3{
+		background-image: url(../img/Logo-Huella.png);
+		background-size: cover;
+	}
+	
+
+}
+
+
+
