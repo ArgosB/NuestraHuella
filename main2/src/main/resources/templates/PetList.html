@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/main.css">
-    <title>Tu Huella</title>
-</head>
+<head th:replace="/fragments/head :: head"></head>
 
 <body>
+
+	<header th:replace="/fragments/header :: header"></header>
+	
     <div class="titulos text-success d-flex justify-content-center">
         <h2 class="display-3 ">CONOCE A TU PROXIMA MASCOTA</h2>
     </div>
@@ -247,6 +245,11 @@
         <a href="#" class="previous">&laquo; Previous</a>
         <a href="#" class="next">Next &raquo;</a>
     </section>
+    
+    <footer th:replace="/fragments/footer :: footer"></footer>
+    
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>

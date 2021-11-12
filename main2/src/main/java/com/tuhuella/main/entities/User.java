@@ -41,7 +41,6 @@ public class User {
 	private boolean enabled;
     @Column(length = 50)
 	private Date BirthDate;
-	@Column(length = 50)
 	@ManyToOne
 	private Zone zone;
 	@Column(length = 50)
