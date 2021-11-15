@@ -9,6 +9,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
@@ -56,4 +58,9 @@ public class PetController {
 	}
 
 
+	@GetMapping("/showSpecies")
+	public String searchSpecies(Pageable paginable, String query) {
+		petService.searchSpecies(paginable, query);
+		return "petspecies-list";
+	}
 }
