@@ -15,7 +15,7 @@ import com.tuhuella.main.enums.Size;
 
 @Entity
 @Table(name = "pet")
-public class Pet {
+public class PetUser extends ModelUser {
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
@@ -46,7 +46,7 @@ public class Pet {
 	private Zone zone;
 	
 	
-	public Pet() {
+	public PetUser() {
 	}
 	
 	

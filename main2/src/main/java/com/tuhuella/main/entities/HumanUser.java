@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -21,7 +20,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class HumanUser extends ModelUser{
 	@Id
     @Column(name = "id_user", nullable = false, unique = true)
 	@GeneratedValue(generator = "uuid")
@@ -41,7 +40,7 @@ public class User {
 	private boolean enabled;
     @Column(length = 50)
 	private Date BirthDate;
-	@ManyToOne
+	@OneToOne
 	private Zone zone;
 	@Column(length = 50)
 	private Integer phoneNumber;
@@ -58,7 +57,7 @@ public class User {
 	@Column(length = 50)
 	private Boolean active;
 	
-	public User() {
+	public HumanUser() {
 		super();
 	}
 	public void setEnabled(boolean enabled) {
@@ -178,7 +177,7 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		HumanUser other = (HumanUser) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -194,7 +193,7 @@ public class User {
 	public boolean isEnabled() {
 		return enabled;
 	}
-	public User(String username, String password, Set<Authority> authority) {
+	public HumanUser(String username, String password, Set<Authority> authority) {
 		super();
 		this.username = username;
 		this.password = password;

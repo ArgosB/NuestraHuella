@@ -517,7 +517,7 @@ main {
 	text-align: center;
 }
 
-#seccion:hover #collapseWidthExample: {}
+#seccion:hover #collapseWidthExample {}
 
 #primer, #segundo, #tercero, #cuarto {
 	width: 100%;
@@ -594,7 +594,7 @@ main {
 }
 
 #ícono {
-	we
+	
 }
 .previous {
 	display: flex;

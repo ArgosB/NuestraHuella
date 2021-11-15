@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tuhuella.main.entities.Photo;
-import com.tuhuella.main.entities.User;
+import com.tuhuella.main.entities.HumanUser;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.services.UserService;
 
@@ -33,12 +33,11 @@ public class UserController {
 	@PostMapping("/register")
 	public String saveUser(ModelMap modelo, @RequestParam Photo photo, @RequestParam String name,
 			@RequestParam String surname, @RequestParam Date birthDate, @RequestParam String email,
-			@RequestParam String password, @RequestParam String userName, @RequestParam String street,
-			@RequestParam Integer streetNumber, @RequestParam Date date, @RequestParam Integer phoneNumber,
+			@RequestParam String password, @RequestParam String userName, @RequestParam Date date, @RequestParam Integer phoneNumber,
 			@RequestParam Integer alternativeNumber, @RequestParam Zone zone) {
 
 		try {
-			userService.signUpUser(photo, name, surname, userName, password, date, street, streetNumber, zone,
+			userService.signUpUser(photo, name, surname, userName, password, date, zone,
 					phoneNumber, alternativeNumber, email);
 
 			modelo.put("exito", "registro exitoso");
@@ -51,14 +50,14 @@ public class UserController {
 
 	@GetMapping("/showUserList")
 	public String show(ModelMap modelo) {
-		List<User> users = userService.findUsers();
+		List<HumanUser> users = userService.findUsers();
 		modelo.addAttribute("Users", users);
 		return "show-users";
 	}
 
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable String id, ModelMap modelo) {
-		User user = userService.edit(id);
+		HumanUser user = userService.edit(id);
 		modelo.addAttribute("User", user);
 		return "edit-user";
 	}

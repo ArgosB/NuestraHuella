@@ -9,26 +9,26 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import com.tuhuella.main.entities.Pet;
+import com.tuhuella.main.entities.PetUser;
 
 
 @Repository
-public interface PetRepository extends JpaRepository<Pet, String> {
+public interface PetRepository extends JpaRepository<PetUser, String> {
 	
-	@Query("SELECT a FROM Pet a WHERE a.name LIKe :name")
-	public List<Pet> searchPetName(@Param("name") String name);
+	@Query("SELECT a FROM  PetUser a WHERE a.name LIKe :name")
+	public List<PetUser> searchPetName(@Param("name") String name);
 
-	public List<Pet> findAll();
+	public List<PetUser> findAll();
 	
-	@Query("SELECT a FROM Pet a WHERE a.id LIKE :id")
-		public Pet consultId(@Param("id") String id);
+	@Query("SELECT a FROM  PetUser a WHERE a.id LIKE :id")
+		public PetUser consultId(@Param("id") String id);
 	
 
-	@Query("SELECT a from Pet a ORDER BY a.name")
-	public ArrayList<Pet> searchAll();
+	@Query("SELECT a from  PetUser a ORDER BY a.name")
+	public ArrayList<PetUser> searchAll();
 
 
-	@Query("SELECT a from Pet a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC")
-	public Page<Pet> searchAssetsByParam(Pageable pageable, @Param("q") String q);
+	@Query("SELECT a from  PetUser a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC")
+	public Page<PetUser> searchAssetsByParam(Pageable pageable, @Param("q") String q);
 	
 }

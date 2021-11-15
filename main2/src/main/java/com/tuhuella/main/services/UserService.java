@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tuhuella.main.entities.Photo;
-import com.tuhuella.main.entities.User;
+import com.tuhuella.main.entities.HumanUser;
 
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.repositories.*;
@@ -34,12 +34,12 @@ public class UserService  {
 	 */
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
-	public User signUpUser(Photo photo, String name, String surname, String userName, String password, Date birthDate,
-			String street, Integer StreetNumber, Zone zone, Integer phoneNumber, Integer alternativeNumber,
+	public HumanUser signUpUser(Photo photo, String name, String surname, String userName, String password, Date birthDate,
+	Zone zone, Integer phoneNumber, Integer alternativeNumber,
 			String email) throws Exception {
 
 		validate(name, surname, userName, email, password);
-		User entity = new User();
+		HumanUser entity = new HumanUser();
 
 		entity.setName(name);
 		entity.setSurname(surname);
@@ -57,7 +57,7 @@ public class UserService  {
 		return userRepository.save(entity);
 	}
 
-	public Optional<User> showUserByEmail(String email) throws Exception {
+	public Optional<HumanUser> showUserByEmail(String email) throws Exception {
 		try {
 			return userRepository.findMyUserByEmail(email);
 
@@ -73,10 +73,10 @@ public class UserService  {
 			Integer alternativeNumber, String email) throws Exception {
 		validate(name, surname, userName, email, password);
 
-		Optional<User> answer = userRepository.findMyUserByID(id);
+		Optional<HumanUser> answer = userRepository.findMyUserByID(id);
 
 		if (answer.isPresent()) {
-			User user = answer.get();
+			HumanUser user = answer.get();
 			if (user.getId().equals(id)) {
 				user.setName(name);
 				user.setSurname(surname);
@@ -123,25 +123,25 @@ public class UserService  {
 	}
 
 	@Transactional(readOnly = true)
-	public List<User> findUsers() {
+	public List<HumanUser> findUsers() {
 
-		List<User> findUsers = userRepository.findAll();
+		List<HumanUser> findUsers = userRepository.findAll();
 		return findUsers;
 
 	}
 
 	@Transactional
-	public User edit(String Id) {
-		Optional<User> edit = userRepository.findById(Id);
-		User user = edit.get();
+	public HumanUser edit(String Id) {
+		Optional<HumanUser> edit = userRepository.findById(Id);
+		HumanUser user = edit.get();
 		userRepository.save(user);
 		return user;
 	}
 
 	@Transactional
-	public User lockUser(String Id) {
-		Optional<User> lockUser = userRepository.findById(Id);
-		User user = lockUser.get();
+	public HumanUser lockUser(String Id) {
+		Optional<HumanUser> lockUser = userRepository.findById(Id);
+		HumanUser user = lockUser.get();
 		user.setActive(false);
 		userRepository.save(user);
 		return user;
@@ -154,9 +154,9 @@ public class UserService  {
 			throw new Exception("El nombre no puede estar vacio");
 		}
 
-		Optional<User> answer = userRepository.findById(id);
+		Optional<HumanUser> answer = userRepository.findById(id);
 		if (answer.isPresent()) {
-			User user = answer.get();
+			HumanUser user = answer.get();
 			user.setName(name);
 		} else {
 			throw new Exception("No se pudo encontrar el id solicitado");

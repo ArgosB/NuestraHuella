@@ -23,8 +23,8 @@ public class Photo {
 	private String id;
 	@Column(name = "name", length = 50)
 	private String name;
-	/*@Column(name = "mime"length = 50)
-	private String mime;*/
+	@Column(name = "mime",length = 50)
+	private String mime;
 	@Lob
 	@Basic(fetch = FetchType.LAZY)
 	@Column(name = "picture", length = 50)
@@ -35,7 +35,7 @@ public class Photo {
 	private Date modifiedPhoto;
 	@Column(name = "isActive",length = 50)
 	private Boolean active;
-	
+	//private UserPet userPet;
 	public Photo() {
 		
 	}
@@ -86,6 +86,14 @@ public class Photo {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	public String getMime() {
+		return mime;
+	}
+
+	public void setMime(String mime) {
+		this.mime = mime;
 	}
 
 	@Override

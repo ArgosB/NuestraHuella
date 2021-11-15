@@ -1,24 +1,17 @@
 package com.tuhuella.main.controllers;
 
-import java.util.Date;
-import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import com.tuhuella.main.entities.Photo;
-import com.tuhuella.main.entities.User;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
 import com.tuhuella.main.services.PetService;
-import com.tuhuella.main.services.UserService;
 
 @Controller
 @RequestMapping("/pet")

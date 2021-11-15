@@ -6,7 +6,7 @@ public enum Province {
 	Catamarca,
 	Chaco,
 	Chubut,
-	Córdoba,
+	Cordoba,
 	Corrientes,
 	Entre_Rios,
 	Formosa,
@@ -24,5 +24,5 @@ public enum Province {
 	Santa_Fe,
 	Santiago_del_Estero,
 	Tierra_del_Fuego,
-	Tucuman
+	Tucumán
 }

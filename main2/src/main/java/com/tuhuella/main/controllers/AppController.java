@@ -27,9 +27,9 @@ public class AppController {
 		return "user";
 	}
 	
-	@GetMapping("/admin")
+	@GetMapping("/404")
 	public String admin() {
-		return "admin";
+		return "404";
 	}
 }
 
