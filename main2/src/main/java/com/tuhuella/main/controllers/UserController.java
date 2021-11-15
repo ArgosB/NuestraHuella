@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.tuhuella.main.entities.Photo;
 import com.tuhuella.main.entities.HumanUser;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Province;
+import com.tuhuella.main.services.PhotoService;
 import com.tuhuella.main.services.UserService;
 import com.tuhuella.main.webException.WebException;
 
@@ -25,6 +27,8 @@ import com.tuhuella.main.webException.WebException;
 public class UserController {
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private PhotoService photoService;
 
 	@GetMapping("/sign-up")
 	public String form() {
@@ -33,10 +37,10 @@ public class UserController {
 	}
 
 	@PostMapping("/sign-up")
-	public String saveUser(ModelMap modelo, @RequestParam Photo photo, @RequestParam String name,
+	public String saveUser(ModelMap modelo, @RequestParam MultipartFile file, @RequestParam String name,
 			@RequestParam String surname, @RequestParam Date birthDate, @RequestParam String email,
 			@RequestParam String password,@RequestParam String confirmedPassword ,@RequestParam String userName, @RequestParam Integer phoneNumber,
-			@RequestParam(required=false) Integer alternativeNumber, @RequestParam String country, @RequestParam(required=false) Province province, @RequestParam String city, @RequestParam(required=false) String neighborhood) {
+			@RequestParam(required=false) Integer alternativeNumber, @RequestParam String country, @RequestParam(required=false) Province province, @RequestParam String city, @RequestParam(required=false) String neighborhood) throws WebException {
 
 		try {
 			if (password.equals(confirmedPassword)) {
@@ -47,6 +51,10 @@ public class UserController {
 			zone.setCountry(country);
 			zone.setNeighborhood(neighborhood);
 			zone.setProvince(province);
+			
+			Photo photo = photoService.savePhoto(file);
+			
+			
 			
 			
 			userService.signUpUser(photo, name, surname, userName, password, birthDate, zone,

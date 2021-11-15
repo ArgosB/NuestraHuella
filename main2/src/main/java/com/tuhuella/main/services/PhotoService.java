@@ -20,6 +20,7 @@ public class PhotoService {
 			
 			photo.setName(file.getName());
 			photo.setPicture(file.getBytes());
+			photo.setMime(file.getContentType());
 			
 			return photoRepo.save(photo);
 		} } catch(Exception e) {

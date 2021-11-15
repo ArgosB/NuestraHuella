@@ -13,7 +13,7 @@
       <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
         <h2 class="display-3 titulos text-center">REGISTRATE GRATIS</h2>
       </div>
-      <form class="row g-3 d-flex justify-content-center px-4">
+      <form class="row g-3 d-flex justify-content-center px-4" th:action="@{/user/sign-up}" enctype="multipart/form-data" method="POST">
         <div class="col-md-6 col-sm-6">
           <input type="text" name="name" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Nombre">
@@ -27,15 +27,15 @@
             placeholder="Email">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="text" name="USER" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+          <input type="text" name="userName" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Nombre de Usuario">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="password" pass="password"
+          <input type="password" pass="password" name="password"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Contraseña">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="email" pass="password" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+          <input type="password" pass="password" name="confirmedPassword" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Repetir Contraseña">
         </div>
         <div class="col-12">
@@ -43,7 +43,7 @@
             placeholder="Edad">
         </div>
         <div class="col-md-3 col-sm-6">
-          <input type="text" name="neighbourhood"
+          <input type="text" name="neighborhood"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
         </div>
         <div class="col-md-3 col-sm-6">
@@ -51,8 +51,14 @@
             placeholder="Ciudad">
         </div>
         <div class="col-md-3 col-sm-6">
-          <input type="text" name="province" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Provincia">
+        <select class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Provincia"
+        	name="province">
+       	<option th:selected>Provincia</option>  	
+   		<option th:each="province : ${T(com.tuhuella.main.enums.Province).values()}"
+            th:value="${province}"
+            th:text="${province}">
+    	</option>	
+		</select>
         </div>
         <div class="col-md-3 col-sm-6">
           <input type="text" name="country" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
@@ -67,7 +73,7 @@
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Numero de telefono alternativo">
         </div>
         <div class="col-12">
-          <input type="file" name="profilePhoto"
+          <input type="file" name="photo"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Foto de perfil">
         </div>
         <button type="submit" name="SignUp" class="btn text-light btn-outline-success btn-secondary col-md-4 col-sm-6">Registrate</button>
