@@ -53,6 +53,8 @@ public class UserService  {
 		entity.setAlternativeNumber(alternativeNumber);
 		entity.setEmail(email);
 		entity.setActive(true);
+		entity.setCreateUser(new Date());
+		
 
 		return userRepository.save(entity);
 	}
@@ -90,6 +92,7 @@ public class UserService  {
 				user.setAlternativeNumber(alternativeNumber);
 				user.setEmail(email);
 				user.setActive(true);
+				user.setModifiedUser(new Date());
 				userRepository.save(user);
 			} else {
 				throw new Exception("no tiene permiso suficiente para realizar la operacion");

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.tuhuella.main.entities.Photo;
 import com.tuhuella.main.entities.HumanUser;
 import com.tuhuella.main.entities.Zone;
+import com.tuhuella.main.enums.Province;
 import com.tuhuella.main.services.UserService;
+import com.tuhuella.main.webException.WebException;
 
 @Controller
 @RequestMapping("/user")
@@ -24,20 +26,30 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping("/register")
+	@GetMapping("/sign-up")
 	public String form() {
 
 		return "singup-form";
 	}
 
-	@PostMapping("/register")
+	@PostMapping("/sign-up")
 	public String saveUser(ModelMap modelo, @RequestParam Photo photo, @RequestParam String name,
 			@RequestParam String surname, @RequestParam Date birthDate, @RequestParam String email,
-			@RequestParam String password, @RequestParam String userName, @RequestParam Date date, @RequestParam Integer phoneNumber,
-			@RequestParam Integer alternativeNumber, @RequestParam Zone zone) {
+			@RequestParam String password,@RequestParam String confirmedPassword ,@RequestParam String userName, @RequestParam Integer phoneNumber,
+			@RequestParam(required=false) Integer alternativeNumber, @RequestParam String country, @RequestParam(required=false) Province province, @RequestParam String city, @RequestParam(required=false) String neighborhood) {
 
 		try {
-			userService.signUpUser(photo, name, surname, userName, password, date, zone,
+			if (password.equals(confirmedPassword)) {
+				throw  new WebException("Las contraseñas no coinciden");
+			}
+			Zone zone = new Zone();
+			zone.setCity(city);
+			zone.setCountry(country);
+			zone.setNeighborhood(neighborhood);
+			zone.setProvince(province);
+			
+			
+			userService.signUpUser(photo, name, surname, userName, password, birthDate, zone,
 					phoneNumber, alternativeNumber, email);
 
 			modelo.put("exito", "registro exitoso");
