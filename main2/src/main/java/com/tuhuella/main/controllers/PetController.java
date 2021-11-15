@@ -3,6 +3,7 @@ package com.tuhuella.main.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,10 +42,18 @@ public class PetController {
 		}
 	}
 
-	@GetMapping("/")
+	
+	@GetMapping("/showPets")
 	public String showPets(ModelMap modelo) {
 		petService.showAllPet();
 		return "pet-list";
 	}
+	
+	@GetMapping("/showSpecies")
+	public String searchSpecies(Pageable paginable, String query) {
+		petService.searchSpecies(paginable, query);
+		return "petspecies-list";
+	}
+
 
 }

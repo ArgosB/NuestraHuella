@@ -1,13 +1,9 @@
 package com.tuhuella.main.services;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+
 import javax.transaction.Transactional;
 
-import org.hibernate.annotations.GenericGenerator;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +14,7 @@ import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
 import com.tuhuella.main.repositories.PetRepository;
-import com.tuhuella.main.webException.WebException;
+
 
 
 
@@ -81,6 +77,10 @@ public void validatePet(PetUser m) throws Exception {
 		throw new Exception("La mascota tiene que tener una Foto");
 	}
 
+}
+@Transactional
+public Page<PetUser> searchSpecies(Pageable paginable, String query) {
+	return petRepository.searchAssetsByParam(paginable, query);
 }
 
 }
