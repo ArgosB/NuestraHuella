@@ -48,8 +48,6 @@ public class UserService  {
 		entity.setActive(true);
 		entity.setPhoto(photo);
 		entity.setBirthDate(birthDate);
-		entity.setStreet(street);
-		entity.setStreetNumber(StreetNumber);
 		entity.setZone(zone);
 		entity.setPhoneNumber(phoneNumber);
 		entity.setAlternativeNumber(alternativeNumber);
@@ -71,7 +69,7 @@ public class UserService  {
 	}
 
 	public void edit(String id, Photo photo, String name, String surname, String userName, String password,
-			Date birthDate, String street, Integer StreetNumber, Zone zone, Integer phoneNumber,
+			Date birthDate, Zone zone, Integer phoneNumber,
 			Integer alternativeNumber, String email) throws Exception {
 		validate(name, surname, userName, email, password);
 
@@ -87,8 +85,6 @@ public class UserService  {
 				user.setActive(true);
 				user.setPhoto(photo);
 				user.setBirthDate(birthDate);
-				user.setStreet(street);
-				user.setStreetNumber(StreetNumber);
 				user.setZone(zone);
 				user.setPhoneNumber(phoneNumber);
 				user.setAlternativeNumber(alternativeNumber);
@@ -118,7 +114,7 @@ public class UserService  {
 		if (email == null || email.isEmpty() || email.contains("  ")) {
 			throw new Exception("must have a valid email");
 		}
-
+		
 		if (password == null || password.isEmpty() || password.contains("  ") || password.length() < 8
 				|| password.length() > 12) {
 			throw new Exception("must have a  valid password");
