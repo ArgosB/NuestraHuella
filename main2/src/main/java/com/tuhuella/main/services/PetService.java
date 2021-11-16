@@ -13,7 +13,7 @@ import com.tuhuella.main.entities.*;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
-import com.tuhuella.main.repositories.PetRepository;
+import com.tuhuella.main.repositories.PetUserRepository;
 
 
 
@@ -23,7 +23,7 @@ import com.tuhuella.main.repositories.PetRepository;
 public class PetService {
 
 @Autowired
-private PetRepository petRepository;
+private PetUserRepository petRepository;
 
 @Transactional
 public void createPet ( String name, Integer age, String species, String breed, Integer Weight, Sex sex, Size size, Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone) throws Exception{

@@ -18,6 +18,8 @@ import com.tuhuella.main.entities.Photo;
 import com.tuhuella.main.entities.HumanUser;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Province;
+import com.tuhuella.main.repositories.PhotoRepository;
+import com.tuhuella.main.repositories.ZoneRepository;
 import com.tuhuella.main.services.PhotoService;
 import com.tuhuella.main.services.UserService;
 import com.tuhuella.main.webException.WebException;
@@ -29,7 +31,9 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	@Autowired
-	private PhotoService photoService;
+	private PhotoRepository photoRepo;
+	@Autowired
+	private ZoneRepository zoneRepo;
 
 	@GetMapping("/sign-up")
 	public String form() {
@@ -39,29 +43,38 @@ public class UserController {
 
 	@PostMapping("/sign-up")
 	public String saveUser(ModelMap modelo, @RequestParam("file") MultipartFile file, @RequestParam String name,
-			@RequestParam String surname, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate, @RequestParam String email,
-			@RequestParam String password,@RequestParam String confirmedPassword ,@RequestParam String userName, @RequestParam Integer phoneNumber,
-			@RequestParam(required=false) Integer alternativeNumber, @RequestParam String country, @RequestParam(required=false) Province province, @RequestParam String city, @RequestParam(required=false) String neighborhood) throws WebException {
+			@RequestParam String surname, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate,
+			@RequestParam String email, @RequestParam String password, @RequestParam String confirmedPassword,
+			@RequestParam String userName, @RequestParam Integer phoneNumber,
+			@RequestParam(required = false) Integer alternativeNumber, @RequestParam String country,
+			@RequestParam(required = false) Province province, @RequestParam String city,
+			@RequestParam(required = false) String neighborhood) throws Exception {
 
 		try {
-			if (password.equals(confirmedPassword)) {
-				throw  new WebException("Las contraseñas no coinciden");
-			}
+			/*
+			 * if (password.equals(confirmedPassword)) { throw new
+			 * WebException("Las contraseñas no coinciden"); }
+			 */
 			Zone zone = new Zone();
 			zone.setCity(city);
 			zone.setCountry(country);
 			zone.setNeighborhood(neighborhood);
 			zone.setProvince(province);
+			zoneRepo.save(zone);
 			
-			Photo photo = photoService.savePhoto(file);
-			
-			
-			
-			
-			userService.signUpUser(photo, name, surname, userName, password, birthDate, zone,
-					phoneNumber, alternativeNumber, email);
 
-			modelo.put("exito", "registro exitoso");
+			Photo photo = new Photo();
+			photo.setName(file.getName());
+			photo.setMime(file.getContentType());
+			photo.setPicture(file.getBytes());
+			photo.setActive(true);
+			photo.setCreatePhoto(new Date());
+			photoRepo.save(photo);
+
+			userService.signUpUser(photo, name, surname, userName, password, birthDate, zone, phoneNumber,
+					alternativeNumber, email);
+
+			modelo.put("exito", name.toString());
 			return "singup-form";
 		} catch (Exception e) {
 			modelo.put("error", e.getMessage());

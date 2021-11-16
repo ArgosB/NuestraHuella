@@ -23,11 +23,11 @@ import com.tuhuella.main.repositories.*;
 @Service
 public class UserService  {
 	@Autowired
-	private UserRepository userRepository;
+	private HumanUserRepository userRepository;
 
-	/*
-	 * @Autowired private PhotoRepository PhotoRepository;
-	 */
+	@Autowired 
+	private PhotoRepository PhotoRepository;
+	 
 
 	/*
 	 * @Autowired private PetRepository PetRepository;
@@ -84,6 +84,7 @@ public class UserService  {
 				user.setUsername(userName);
 				user.setPassword(password);
 				user.setActive(true);
+				PhotoRepository.save(photo);
 				user.setPhoto(photo);
 				user.setBirthDate(birthDate);
 				user.setZone(zone);
@@ -117,8 +118,7 @@ public class UserService  {
 			throw new Exception("must have a valid email");
 		}
 		
-		if (password == null || password.isEmpty() || password.contains("  ") || password.length() < 8
-				|| password.length() > 12) {
+		if (password == null || password.isEmpty()) {
 			throw new Exception("must have a  valid password");
 		}
 

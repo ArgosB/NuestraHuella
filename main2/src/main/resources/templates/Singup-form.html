@@ -13,6 +13,8 @@
       <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
         <h2 class="display-3 titulos text-center">REGISTRATE GRATIS</h2>
       </div>
+      <div th:if="${error}" class="alert alert-danger" th:text="${error}" role="alert">No se pudo guardar el usuario</div >
+      <div th:if="${exito}" class="alert alert-success"   role="alert">Registro exitoso <span th:text="${exito}"></span></div >
       <form class="row g-3 d-flex justify-content-center px-4" th:action="@{/user/sign-up}" enctype="multipart/form-data" method="POST">
         <div class="col-md-6 col-sm-6">
           <input type="text" name="name" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
@@ -31,11 +33,11 @@
             placeholder="Nombre de Usuario">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="password" pass="password" name="password"
+          <input type="password" name="password"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Contraseña">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="password" pass="password" name="confirmedPassword" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+          <input type="password" name="confirmedPassword" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Repetir Contraseña">
         </div>
         <div class="col-12">

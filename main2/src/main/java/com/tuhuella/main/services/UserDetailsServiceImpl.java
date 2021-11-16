@@ -13,7 +13,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.tuhuella.main.entities.Authority;
-import com.tuhuella.main.repositories.UserRepository;
+import com.tuhuella.main.repositories.HumanUserRepository;
 
 
 
@@ -21,7 +21,7 @@ import com.tuhuella.main.repositories.UserRepository;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
-    UserRepository userRepository;
+    HumanUserRepository userRepository;
 	
     @Override
      public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.tuhuella.main.entities.HumanUser;
 
 @Repository
-public interface UserRepository extends JpaRepository<HumanUser, String> {
+public interface HumanUserRepository extends JpaRepository<HumanUser, String> {
 	
 	@Query("SELECT a from HumanUser a WHERE a.email = ?1 ")
 	Optional <HumanUser> findMyUserByEmail(String email); 

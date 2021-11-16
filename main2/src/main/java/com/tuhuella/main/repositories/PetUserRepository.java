@@ -13,7 +13,7 @@ import com.tuhuella.main.entities.PetUser;
 
 
 @Repository
-public interface PetRepository extends JpaRepository<PetUser, String> {
+public interface PetUserRepository extends JpaRepository<PetUser, String> {
 	
 	@Query("SELECT a FROM  PetUser a WHERE a.name LIKe :name")
 	public List<PetUser> searchPetName(@Param("name") String name);

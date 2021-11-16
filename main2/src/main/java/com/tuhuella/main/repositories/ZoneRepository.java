@@ -1,5 +1,9 @@
 package com.tuhuella.main.repositories;
 
-public interface ZoneRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.tuhuella.main.entities.Zone;
+
+public interface ZoneRepository extends JpaRepository<Zone, String> {
 
 }
