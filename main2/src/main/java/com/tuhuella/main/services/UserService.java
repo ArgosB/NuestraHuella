@@ -83,8 +83,7 @@ public class UserService  {
 				user.setSurname(surname);
 				user.setUsername(userName);
 				user.setPassword(password);
-				user.setActive(true);
-				PhotoRepository.save(photo);
+				user.setActive(true);		
 				user.setPhoto(photo);
 				user.setBirthDate(birthDate);
 				user.setZone(zone);
@@ -93,7 +92,7 @@ public class UserService  {
 				user.setEmail(email);
 				user.setActive(true);
 				user.setModifiedUser(new Date());
-				userRepository.save(user);
+				
 			} else {
 				throw new Exception("no tiene permiso suficiente para realizar la operacion");
 			}
