@@ -20,9 +20,7 @@ import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Province;
 import com.tuhuella.main.repositories.PhotoRepository;
 import com.tuhuella.main.repositories.ZoneRepository;
-import com.tuhuella.main.services.PhotoService;
 import com.tuhuella.main.services.UserService;
-import com.tuhuella.main.webException.WebException;
 
 @Controller
 @RequestMapping("/user")
@@ -43,12 +41,12 @@ public class UserController {
 
 	@PostMapping("/sign-up")
 	public String saveUser(ModelMap modelo, @RequestParam("file") MultipartFile file, @RequestParam String name,
-			@RequestParam String surname, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate,
-			@RequestParam String email, @RequestParam String password, @RequestParam String confirmedPassword,
-			@RequestParam String userName, @RequestParam Integer phoneNumber,
-			@RequestParam(required = false) Integer alternativeNumber, @RequestParam String country,
-			@RequestParam(required = false) Province province, @RequestParam String city,
-			@RequestParam(required = false) String neighborhood) throws Exception {
+						   @RequestParam String surname, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate,
+						   @RequestParam String email, @RequestParam String password, @RequestParam String confirmedPassword,
+						   @RequestParam String userName, @RequestParam Long phoneNumber,
+						   @RequestParam(required = false) Long alternativeNumber, @RequestParam String country,
+						   @RequestParam(required = false) Province province, @RequestParam String city,
+						   @RequestParam(required = false) String neighborhood) throws Exception {
 
 		try {
 			/*

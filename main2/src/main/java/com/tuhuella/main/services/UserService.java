@@ -35,8 +35,8 @@ public class UserService  {
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
 	public HumanUser signUpUser(Photo photo, String name, String surname, String userName, String password, Date birthDate,
-	Zone zone, Integer phoneNumber, Integer alternativeNumber,
-			String email) throws Exception {
+								Zone zone, Long phoneNumber, Long alternativeNumber,
+								String email) throws Exception {
 
 		validate(name, surname, userName, email, password);
 		HumanUser entity = new HumanUser();
@@ -70,8 +70,8 @@ public class UserService  {
 	}
 
 	public void edit(String id, Photo photo, String name, String surname, String userName, String password,
-			Date birthDate, Zone zone, Integer phoneNumber,
-			Integer alternativeNumber, String email) throws Exception {
+					 Date birthDate, Zone zone, Long phoneNumber,
+					 Long alternativeNumber, String email) throws Exception {
 		validate(name, surname, userName, email, password);
 
 		Optional<HumanUser> answer = userRepository.findMyUserByID(id);

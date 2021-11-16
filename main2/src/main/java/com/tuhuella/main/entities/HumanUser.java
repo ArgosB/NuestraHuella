@@ -43,9 +43,9 @@ public class HumanUser extends ModelUser{
 	@OneToOne
 	private Zone zone;
 	@Column(length = 50)
-	private Integer phoneNumber;
+	private Long phoneNumber;
 	@Column(length = 50)
-	private Integer alternativeNumber;
+	private Long alternativeNumber;
 	@Column(length = 50)
 	private String email;
 	@Temporal(TemporalType.DATE)
@@ -89,16 +89,16 @@ public class HumanUser extends ModelUser{
 	public void setZone(Zone zone) {
 		this.zone = zone;
 	}
-	public Integer getPhoneNumber() {
+	public Long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(Integer phoneNumber) {
+	public void setPhoneNumber(Long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public Integer getAlternativeNumber() {
+	public Long getAlternativeNumber() {
 		return alternativeNumber;
 	}
-	public void setAlternativeNumber(Integer alternativeNumber) {
+	public void setAlternativeNumber(Long alternativeNumber) {
 		this.alternativeNumber = alternativeNumber;
 	}
 	public String getEmail() {
