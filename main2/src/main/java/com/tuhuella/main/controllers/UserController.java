@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,8 +38,8 @@ public class UserController {
 	}
 
 	@PostMapping("/sign-up")
-	public String saveUser(ModelMap modelo, @RequestParam MultipartFile file, @RequestParam String name,
-			@RequestParam String surname, @RequestParam Date birthDate, @RequestParam String email,
+	public String saveUser(ModelMap modelo, @RequestParam("file") MultipartFile file, @RequestParam String name,
+			@RequestParam String surname, @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate, @RequestParam String email,
 			@RequestParam String password,@RequestParam String confirmedPassword ,@RequestParam String userName, @RequestParam Integer phoneNumber,
 			@RequestParam(required=false) Integer alternativeNumber, @RequestParam String country, @RequestParam(required=false) Province province, @RequestParam String city, @RequestParam(required=false) String neighborhood) throws WebException {
 

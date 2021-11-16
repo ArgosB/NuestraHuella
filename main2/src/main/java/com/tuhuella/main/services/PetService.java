@@ -1,11 +1,5 @@
 package com.tuhuella.main.services;
 
-
-<<<<<<< Updated upstream
-=======
-
-
->>>>>>> Stashed changes
 import javax.transaction.Transactional;
 
 

@@ -39,7 +39,7 @@
             placeholder="Repetir Contraseña">
         </div>
         <div class="col-12">
-          <input type="number" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+          <input type="date" name="birthDate" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Edad">
         </div>
         <div class="col-md-3 col-sm-6">
@@ -51,7 +51,7 @@
             placeholder="Ciudad">
         </div>
         <div class="col-md-3 col-sm-6">
-        <select class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Provincia"
+        <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Provincia"
         	name="province">
        	<option th:selected>Provincia</option>  	
    		<option th:each="province : ${T(com.tuhuella.main.enums.Province).values()}"
@@ -73,7 +73,7 @@
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Numero de telefono alternativo">
         </div>
         <div class="col-12">
-          <input type="file" name="photo"
+          <input type="file" name="file"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Foto de perfil">
         </div>
         <button type="submit" name="SignUp" class="btn text-light btn-outline-success btn-secondary col-md-4 col-sm-6">Registrate</button>
@@ -87,7 +87,7 @@
 
   <footer th:replace="/fragments/footer :: footer"></footer>
 
-  <script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 

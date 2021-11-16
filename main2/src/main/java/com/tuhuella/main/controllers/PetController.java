@@ -58,9 +58,5 @@ public class PetController {
 	}
 
 
-	@GetMapping("/showSpecies")
-	public String searchSpecies(Pageable paginable, String query) {
-		petService.searchSpecies(paginable, query);
-		return "petspecies-list";
-	}
+	
 }

@@ -45,7 +45,6 @@ public class UserService  {
 		entity.setSurname(surname);
 		entity.setUsername(userName);
 		entity.setPassword(password);
-		entity.setActive(true);
 		entity.setPhoto(photo);
 		entity.setBirthDate(birthDate);
 		entity.setZone(zone);

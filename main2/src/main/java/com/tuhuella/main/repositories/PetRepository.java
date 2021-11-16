@@ -30,14 +30,11 @@ public interface PetRepository extends JpaRepository<PetUser, String> {
 
 	@Query("SELECT a from  PetUser a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC")
 	public Page<PetUser> searchAssetsByParam(Pageable pageable, @Param("q") String q);
-<<<<<<< Updated upstream
+
 	@Query("SELECT a from  PetUser a WHERE a.species LIKE:q ORDER BY a.species DESC")
 	public Page<PetUser> searchSpecies(Pageable pageable, @Param("q") String q);
-=======
+
 	
-	@Query("SELECT a from  PetUser a WHERE a.species LIKE :q  ORDER BY a.species DESC")
-	public Page<PetUser> searchSpecies(Pageable pageable, @Param("q") String q);
-	
->>>>>>> Stashed changes
+
 
 }
