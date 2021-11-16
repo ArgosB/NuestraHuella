@@ -49,10 +49,10 @@ public class UserController {
 						   @RequestParam(required = false) String neighborhood) throws Exception {
 
 		try {
-			/*
-			 * if (password.equals(confirmedPassword)) { throw new
-			 * WebException("Las contraseñas no coinciden"); }
-			 */
+			
+			 if (password.equals(confirmedPassword)) { throw new
+			 Exception("Las contraseñas no coinciden"); }
+			 
 			Zone zone = new Zone();
 			zone.setCity(city);
 			zone.setCountry(country);

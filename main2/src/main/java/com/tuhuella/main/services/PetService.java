@@ -26,7 +26,7 @@ public class PetService {
 private PetUserRepository petRepository;
 
 @Transactional
-public void createPet ( String name, Integer age, String species, String breed, Integer Weight, Sex sex, Size size, Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone) throws Exception{
+public void createPet ( String name, Integer age, String species, String breed, Integer Weight, Sex sex, Size size, Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone, Photo photo) throws Exception{
 	
 	if (name.equals(null)||name.isEmpty()) {
 		throw new Exception ("El nombre no puede estar vacio");
@@ -43,7 +43,8 @@ public void createPet ( String name, Integer age, String species, String breed, 
 		pet.setDewormed(deWormed);
 		pet.setCastrated(castrated);
 		pet.setDisease(breed);
-		pet.setZone(null);
+		pet.setZone(zone);
+		pet.setPhoto(photo);
 	}
 	
 

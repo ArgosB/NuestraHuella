@@ -8,21 +8,14 @@
 
     <header th:replace="/fragments/header :: header"></header>
     
+
     <main>
         <div class="titulos p-2 text-success">
             <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
         </div>
-        <form class="row g-3 d-flex justify-content-center px-4" method="post" action="/send.php"
+        <form class="row g-3 d-flex justify-space-around px-4" method="post" action="/send.php"
             enctype="multipart/form-data">
-            <div class="col-md-6">
-                <input type="text" name="USER"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Nombre de Usuario">
-            </div>
-            <div class="col-md-6">
-                <input type="password" pass="password"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Contraseña de usuario">
+            
             </div>
             <div class="col-6">
                 <input type="text" name="name"
@@ -34,13 +27,50 @@
                 <input type="Age" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
                     placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <input type="specie" name="tipo mascota"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
                     placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
             </div>
+            <div class="col-6">
+                <input type="text" name="breed" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                    placeholder="Ingrese aquí la raza de su mascota">
+            </div>
+            <div class="col-6">
+                <input type="text" name="size" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                    placeholder="Ingrese aquí el tamaño de su mascota">
+            </div>
+            <div class="col-6">
+                <input type="number" name="weight" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                    placeholder="Ingrese aquí el peso de su mascota en (kilogramos)">
+            </div>
+            <div class="col-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="upToDateVaccine">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Vacunas al día
+                </label>
+            </div>
+            <div class="col-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="castrated">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Castrado
+                </label>
+            </div>
+            <div class="col-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="deWormed">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Desparasitado
+                </label>
+            </div>
+            <div class="col-3">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="deWormed">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Posee alguna enfermedad
+                </label>
+            </div>
+
             <div class="col-md-3">
-                <input type="text" name="neighbourhood"
+                <input type="text" name="neighborhood"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
             </div>
             <div class="col-md-3">
@@ -69,9 +99,9 @@
                 <input class="form-control border border-success shadow p-2 mb-1 bg-body rounded" type="file"
                     name="photoPet" placeholder="Adjunte la foto de la mascota">
             </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+            <div class="botonDelete">
+                <button type="submit" name="submit"
+                class="btn text-light btn-outline-blue btn-secondary col-md-3 col-sm-6">Enviar</button>     
             <br>
         </form>
         <br>
