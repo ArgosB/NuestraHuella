@@ -7,8 +7,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.core.userdetails.UserDetails;
 
-public abstract class ModelUser {
+public abstract class ModelUser  {
 	@Id
     @Column(name = "id_user", nullable = false, unique = true)
 	@GeneratedValue(generator = "uuid")

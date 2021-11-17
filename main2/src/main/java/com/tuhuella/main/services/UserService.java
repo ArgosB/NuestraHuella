@@ -11,9 +11,13 @@ import java.util.Optional;
 import com.tuhuella.main.webException.WebException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +33,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpSession;
 
 @Service
-public class UserService  {
+public class UserService implements UserDetailsService {
 	@Autowired
 	private HumanUserRepository userRepository;
 
@@ -41,18 +45,22 @@ public class UserService  {
 	 * @Autowired private PetRepository PetRepository;
 	 */
 
-	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })
+	@Transactional/*(propagation = Propagation.REQUIRED, rollbackFor = { Exception.class })*/
 	public HumanUser signUpUser(Photo photo, String name, String surname, String userName, String password, Date birthDate,
 								Zone zone, Long phoneNumber, Long alternativeNumber,
 								String email) throws Exception {
 
 		validate(name, surname, userName, email, password);
 		HumanUser entity = new HumanUser();
+		String encryptedPass = new BCryptPasswordEncoder(4).encode(password);
 
 		entity.setName(name);
 		entity.setSurname(surname);
 		entity.setUsername(userName);
-		entity.setPassword(password);
+
+			entity.setPassword(encryptedPass);
+
+
 		entity.setPhoto(photo);
 		entity.setBirthDate(birthDate);
 		entity.setZone(zone);
@@ -61,14 +69,14 @@ public class UserService  {
 		entity.setEmail(email);
 		entity.setActive(true);
 		entity.setCreateUser(new Date());
-		
+
 
 		return userRepository.save(entity);
 	}
 	//Estoy probando un nuevo metodo siguiendo paso a paso el video de la mina
 	@Override
-	public UserDetails loadUserByEmail(String email) throws WebException{
-		HumanUser user = userRepository.findByemail(email);
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
+		HumanUser user = userRepository.findByUsername(username).get();
 		if (user != null){
 			List<GrantedAuthority> grantities = new ArrayList<>();
 			GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_USER_DEFAULT");
@@ -76,23 +84,22 @@ public class UserService  {
 			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 			HttpSession session = attr.getRequest().getSession(true);
 			session.setAttribute("UserSession", user );
-			session.setAttribute("");
-			HumanUser entity = new HumanUser(user.getEmail(),user.getPassword(), grantities);
-		}else{
-			return null;
-		}
+			UserDetails entity = new HumanUser(user.getEmail(),user.getPassword(), grantities);
+			return entity;
+		}else throw new UsernameNotFoundException("username not found");
 	}
 
-	public Optional<HumanUser> showUserByEmail(String email) throws Exception {
+	/*public Optional<HumanUser> showUserByEmail(String email) throws Exception {
 		try {
-			return userRepository.findMyUserByEmail(email);
+			return userRepository.findByemail(email);
 
 		} catch (Exception e) {
-			return userRepository.findMyUserByEmail(email);
+			throw Exception("no funca el servicio del mail");
+			return null;
 
 		}
 
-	}
+	}*/
 
 	public void edit(String id, Photo photo, String name, String surname, String userName, String password,
 					 Date birthDate, Zone zone, Long phoneNumber,
@@ -189,7 +196,5 @@ public class UserService  {
 		}
 
 	}
-
-		
 
 }
