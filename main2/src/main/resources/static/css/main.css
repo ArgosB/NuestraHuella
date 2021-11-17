@@ -18,8 +18,9 @@ body {
 }
 
 main {
-	background-color: #abd4a2d5;
-	background-image: url(../img/topography.svg);
+	background-color: #4f664ad5;
+	background-image: url(../img/Backgrounds/bg_white1.png);
+	/* 	background-image: url(../img/topography.svg); */
 }
 
 .letraNav {
@@ -40,6 +41,15 @@ main {
 
 .titulos {
 	font-family: 'Sigmar One', cursive;
+	color: #af8a11;
+	text-align: center;
+}
+
+.titulo2 {
+	color: #ffff00;
+	text-align: center;
+	font-weight: bold;
+	font-family: 'Animal Insting';
 }
 
 * {
@@ -155,6 +165,7 @@ main {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+
 	.wrap {
 		width: 300px;
 		margin: 0px auto;
@@ -169,9 +180,11 @@ main {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
+
 	.tarjeta-wrap {
 		margin: 7px;
 	}
+
 	.tarjeta {
 		width: 250px;
 		height: 300px;
@@ -184,6 +197,7 @@ main {
 		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
+
 	.adelante, .atras {
 		width: 100%;
 		height: 100%;
@@ -193,9 +207,11 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
+
 	.adelante {
 		width: 100%;
 	}
+
 	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
@@ -217,18 +233,22 @@ main {
 		font-family: "open sans";
 		background: #9c74c2;
 	}
+
 	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
 	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
@@ -243,6 +263,7 @@ main {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+
 	.wrap {
 		width: 450px;
 		margin: 0px auto;
@@ -257,9 +278,11 @@ main {
 		justify-content: center;
 		flex-wrap: wrap;
 	}
+
 	.tarjeta-wrap {
 		margin: 7px;
 	}
+
 	.tarjeta {
 		width: 375px;
 		height: 425px;
@@ -272,6 +295,7 @@ main {
 		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
+
 	.adelante, .atras {
 		width: 100%;
 		height: 100%;
@@ -281,9 +305,11 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
+
 	.adelante {
 		width: 100%;
 	}
+
 	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
@@ -305,18 +331,22 @@ main {
 		font-family: "open sans";
 		background: #9c74c2;
 	}
+
 	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
 	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
@@ -331,6 +361,7 @@ main {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+
 	.wrap {
 		width: 598px;
 		margin: 0px auto;
@@ -345,9 +376,11 @@ main {
 		justify-content: space-around;
 		flex-wrap: wrap;
 	}
+
 	.tarjeta-wrap {
 		margin: 7px;
 	}
+
 	.tarjeta {
 		width: 450px;
 		height: 500px;
@@ -360,6 +393,7 @@ main {
 		-webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 	}
+
 	.adelante, .atras {
 		width: 100%;
 		height: 100%;
@@ -369,9 +403,11 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
+
 	.adelante {
 		width: 100%;
 	}
+
 	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
@@ -393,18 +429,22 @@ main {
 		font-family: "open sans";
 		background: #9c74c2;
 	}
+
 	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
 	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
@@ -412,6 +452,7 @@ main {
 }
 
 @media screen and (max-width:1023px) and (min-width:768px) {
+
 	/*.contenedor{
 		width: 90%;
         margin:auto;/*contenedor centrado
@@ -428,6 +469,7 @@ main {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 	}
+
 	.wrap {
 		width: 750px;
 		margin: 0px auto;
@@ -442,9 +484,11 @@ main {
 		justify-content: space-around;
 		flex-wrap: wrap;
 	}
+
 	.tarjeta-wrap {
 		margin: 7px;
 	}
+
 	.tarjeta {
 		width: 300px;
 		height: 350px;
@@ -458,6 +502,7 @@ main {
 		box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 		display: flex;
 	}
+
 	.adelante, .atras {
 		width: 100%;
 		height: 100%;
@@ -467,9 +512,11 @@ main {
 		-webkit-backface-visibility: hidden;
 		backface-visibility: hidden;
 	}
+
 	.adelante {
 		width: 100%;
 	}
+
 	.atras {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
@@ -491,18 +538,22 @@ main {
 		font-family: "open sans";
 		background: #9c74c2;
 	}
+
 	.tarjeta-wrap:hover .tarjeta {
 		-webkit-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
 	.card1 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card2 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
 	}
+
 	.card3 {
 		background-image: url(../img/Logo-Huella.png);
 		background-size: cover;
@@ -632,4 +683,8 @@ main {
 
 #section {
 	background-color: #2fff00;
+}
+
+#titular {
+	color: #ff0000;
 }
