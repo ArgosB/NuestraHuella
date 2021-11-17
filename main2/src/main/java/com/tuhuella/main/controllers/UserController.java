@@ -50,8 +50,10 @@ public class UserController {
 
 		try {
 			
-			 if (password.equals(confirmedPassword)) { throw new
-			 Exception("Las contraseñas no coinciden"); }
+			/*
+			 * if (password.equals(confirmedPassword)) { throw new
+			 * Exception("Las contraseñas no coinciden"); }
+			 */
 			 
 			Zone zone = new Zone();
 			zone.setCity(city);
