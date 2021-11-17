@@ -1,6 +1,5 @@
 package com.tuhuella.main.entities;
 
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
@@ -19,13 +18,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "users")
-public class HumanUser extends ModelUser implements UserDetails {
+public class HumanUser extends ModelUser{
 	@Id
     @Column(name = "id_user", nullable = false, unique = true)
 	@GeneratedValue(generator = "uuid")
@@ -39,11 +36,10 @@ public class HumanUser extends ModelUser implements UserDetails {
 	private String surname;
 	@Column(length = 50, unique = true )
 	private String username;
-	@Column()
+	@Column(length = 50)
 	private String password;
 	@Column
 	private boolean enabled;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(length = 50)
 	private Date BirthDate;
 	@OneToOne
@@ -52,7 +48,7 @@ public class HumanUser extends ModelUser implements UserDetails {
 	private Long phoneNumber;
 	@Column(length = 50)
 	private Long alternativeNumber;
-	@Column(length = 50, unique = true)
+	@Column(length = 50)
 	private String email;
 	@Temporal(TemporalType.DATE)
 	@Column(length = 50)
@@ -151,31 +147,9 @@ public class HumanUser extends ModelUser implements UserDetails {
 	public String getUsername() {
 		return username;
 	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return false;
-	}
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
-	}
-
 	public String getPassword() {
 		return password;
 	}

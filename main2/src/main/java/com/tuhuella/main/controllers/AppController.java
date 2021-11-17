@@ -12,20 +12,20 @@ public class AppController {
 	public String index() {
 		return "index";
 	}
-	/*@GetMapping("/login")
+	@GetMapping("/login")
 	public String login() {
 		return "login";
-	}*/
+	}
 	
 	@GetMapping("/menu")
 	public String menu() {
 		return "menu";
 	}
 	
-	/*@GetMapping("/user")
+	@GetMapping("/user")
 	public String user() {
 		return "user";
-	}*/
+	}
 	
 	@GetMapping("/404")
 	public String admin() {

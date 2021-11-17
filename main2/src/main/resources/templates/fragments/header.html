@@ -30,9 +30,8 @@
 
 
                 </ul>
-                <h2 class="btn text-light btn-outline-success mx-3 px-3" th:if="${session.UserSession != null}" th:text="${session.UserSession.name}"></h2>
-                <a class="btn text-light btn-outline-success mx-3 px-3 " th:if="${session.UserSession == null}"  href="login.html">Login</a>
-                <a class="btn text-light btn-outline-success mx-3 px-3" th:if="${session.UserSession == null}" href="singup-form.html">SignUp</a>
+                <a class="btn text-light btn-outline-success mx-3 px-3 " href="login.html">Login</a>
+                <a class="btn text-light btn-outline-success mx-3 px-3" href="singup-form.html">SignUp</a>
                 <!-- <form class="d-flex">
           <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
           <button class="text-light btn btn-outline-success my-2" type="submit">Search</button>
@@ -55,7 +54,6 @@
                             Encuentra otras
                             mascotas </a>
                     </section>
-                </nav>
             </div>
         </div>
     </div>

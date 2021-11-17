@@ -10,6 +10,8 @@
 
   <main>
     <section class="py-5">
+      <div th:if="${error}" class="alert alert-danger" role="alert">No se pudo confirmar el usuario. vuelva a intentar <span th:text="${error}"></span></div >
+      <div th:if="${exito}" class="alert alert-success"   role="alert">¡Log in exitoso! <span th:text="${exito}"></span></div >
 
       <div class="container-fluid h-custom py-xl-3">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -19,16 +21,12 @@
           <div class="col-md-8 col-lg-6 mx-lg-3 col-xl-4 mx-xl-3">
             <h2>Sign in</h2>
             <br>
-            <form enctype="multipart/form-data" method="POST" action="@{/logincheck}">
-              <div th:if="${error != null}" class="alert alert-danger" role="alert">No se pudo confirmar el usuario. vuelva a intentar
-              <span th:text="${error}"></span></div >
-              <div th:if="${exito !=null}" class="alert alert-success"   role="alert">¡Log in exitoso! <span th:text="${exito}"></span></div >
-
+            <form th:action="@{/login}" enctype="multipart/form-data" method="POST">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="text" name="username" id="form3Example3" class="form-control form-control-lg"
-                  placeholder="Enter a valid username" />
-                <label class="form-label" for="form3Example3">Username</label>
+                <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a valid email address" />
+                <label class="form-label" for="form3Example3">Email address</label>
               </div>
 
               <!-- Password input -->
