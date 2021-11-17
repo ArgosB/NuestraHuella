@@ -24,9 +24,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
             <div class="container-fluid text-light estiloNav px-3">
-                <a class="navbar-brand tex-light" href="index.html">
+                <a class="navbar-brand tex-light" href="../templates/index.html">
                     <img src="../static/img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
-                        height="35" alt="">
+                        height="35" alt="Logo huella">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,23 +37,25 @@
                     <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
-                                aria-current="page" href="index.html">
-                                <i class="fas fa-home"></i>&nbsp Home</a>
+                                aria-current="page" href="../templates/index.html">
+                                <i class="fas fa-home"></i>&nbsp Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
-                                href="AddAPet-form.html">
-                                <i class="fas fa-plus"></i>&nbsp Add your pets</a>
+                                href="../templates/AddAPet-form.html">
+                                <i class="fas fa-plus"></i>&nbsp Añade tus mascotas</a>
                         </li>
                         <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
                             data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false"
-                            aria-controls="collapseWidthExample" href="/pets.html">
-                            <i class="fas fa-plus"></i>&nbsp Find a pet</a>
+                            aria-controls="collapseWidthExample">
+                            <i class="fas fa-plus"></i>&nbsp Encuentra una mascota</a>
                         </li>
 
                     </ul>
-                    <a class="btn text-light btn-outline-success mx-3 px-3 " href="login.html">Login</a>
-                    <a class="btn text-light btn-outline-success mx-3 px-3" href="singup-form.html">SignUp</a>
+                    <a class="btn text-light btn-outline-success mx-3 px-3 " href="../templates/login.html">Iniciar
+                        sesión</a>
+                    <a class="btn text-light btn-outline-success mx-3 px-3"
+                        href="../templates/singup-form.html">Inscribirse</a>
                     <!-- <form class="d-flex">
             <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
             <button class="text-light btn btn-outline-success my-2" type="submit">Search</button>
@@ -69,198 +71,180 @@
                             <!-- <a id="primer" href="https://github.com/"> Ingresa ciudad, <br> país </br> o código postal </a> -->
                             <a id="segundo" href="https://getbootstrap.com/"> <i class="fas fa-dog fa-2x"></i>
                                 &nbsp Encuentra un perro </a>
-                            <a id="tercero" href="https://www.w3schools.com/"> <i class="fas fa-cat fa-2x"></i> &nbsp
-                                Encuentra un gato
+                            <a id="tercero" href="https://www.w3schools.com/"> <i class="fas fa-cat fa-2x"></i>
+                                &nbsp Encuentra un gato
                             </a>
-                            <a id="cuarto" href="https://flexboxfroggy.com/#es"> <i class="fas fa-crow fa-2x"></i> &nbsp
-                                Encuentra otras
-                                mascotas </a>
+                            <a id="cuarto" href="https://flexboxfroggy.com/#es"> <i class="fas fa-crow fa-2x"></i>
+                                &nbsp Encuentra otras mascotas </a>
                         </section>
                 </div>
             </div>
         </div>
     </header>
-
-    <main>
-        <div class="titulos p-2 text-success">
-            <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
-        </div>
-        <form class="row g-3 d-flex justify-content-center px-4" method="post" action="/send.php"
-            enctype="multipart/form-data">
-            <div class="col-md-6">
-                <input type="text" name="USER"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Nombre de Usuario">
+        </header>
+        <main>
+            <div class="titulos p-2 text-success">
+                <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
             </div>
-            <div class="col-md-6">
-                <input type="password" pass="password"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Contraseña de usuario">
-            </div>
-            <div class="col-6">
-                <input type="text" name="name"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Ingresa aquí el NOMBRE de la mascota">
-            </div>
-            <br> <br>
-            <div class="col-6">
-                <input type="Age" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
-            </div>
-            <div class="col-12">
-                <input type="specie" name="tipo mascota"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="neighbourhood"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="city"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Ciudad">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="province"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Provincia">
-            </div>
-            <div class="col-md-3">
-                <input type="text" name="country"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Pais">
-            </div>
-            <div class="col-md-6">
-                <input type="number" name="phoneNumber"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Numero de telefono">
-            </div>
-            <div class="col-md-6">
-                <input type="number" name="alternativeNumber"
-                    class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                    placeholder="Numero de telefono alternativo">
-            </div>
-            <div class="input-group mb-3">
-                <input class="form-control border border-success shadow p-2 mb-1 bg-body rounded" type="file"
-                    name="photoPet" placeholder="Adjunte la foto de la mascota">
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Enviar</button>
-            </div>
+            <form class="row g-3 d-flex justify-content-center px-4" method="post" action="/send.php"
+                enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <input type="text" name="USER"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Nombre de Usuario">
+                </div>
+                <div class="col-md-6">
+                    <input type="password" pass="password"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Contraseña de usuario">
+                </div>
+                <div class="col-6">
+                    <input type="text" name="name"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Ingresa aquí el NOMBRE de la mascota">
+                </div>
+                <br> <br>
+                <div class="col-6">
+                    <input type="Age" name="age"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
+                </div>
+                <div class="col-12">
+                    <input type="specie" name="tipo mascota"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="neighbourhood"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="city"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Ciudad">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="province"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Provincia">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="country"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Pais">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" name="phoneNumber"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Numero de telefono">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" name="alternativeNumber"
+                        class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                        placeholder="Numero de telefono alternativo">
+                </div>
+                <div class="input-group mb-3">
+                    <input class="form-control border border-success shadow p-2 mb-1 bg-body rounded" type="file"
+                        name="photoPet" placeholder="Adjunte la foto de la mascota">
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+                <br>
+            </form>
             <br>
-        </form>
-        <br>
 
-        <aside>
+            <aside>
 
-        </aside>
+            </aside>
 
-    </main>
+        </main>
 
-    <footer class="estiloNav col-12">
-        <div class="container pt-4">
-    
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-4 col-md-3 my-sm-0 mt-4">
-                    <h2 class="h4 pb-lg-3 text-dark text-center">Conocenos en redes</h2>
-    
-                    <ul id="centrar" class="list-inline footer-icons">
-                        <li class="list-inline-item m-1">
-                            <a class="text-light" target="_blank" href="https://www.facebook.com/Nuestrahuella">
-                                <img src="../static/img/Facebook.png" width="40" height="40" alt="Logo Facebook" <i </a>
-                        </li>
-                        <li class="list-inline-item m-1">
-                            <a class="text-light" target="_blank" href="http://www.instagram/NuestraHuella.com/">
-                                <img src="../static/img/Instagram.png" width="40" height="36" alt="Logo Instagram">
-                            </a>
-                        </li>
-                        <li class="list-inline-item m-1">
-                            <a class="text-light" target="_blank" href="https://www.twitter.com/Nuestrahuella">
-                                <img src="../static/img/Twitter.png" width="48" height="50" alt="Logo Twitter">
-                            </a>
-                        </li>
-                        <li class="list-inline-item m-1">
-                            <a class="text-light" target="_blank" href="http://www.Linkedin/NuestraHuella.com/">
-                                <img src="../static/img/Linkedin.png" width="40" height="40" alt="Logo Linkedin">
-                            </a>
-                        </li>
-                        <li class="list-inline-item m-1">
-                            <a class="text-light" target="_blank" href="https://api.whatsapp.com/send/?phone=5493411111111">
-                                <img src="../static/img/WhatsApp.png" width="48" height="50" alt="Logo WhatsApp">
-                            </a>
-                        </li>
-                    </ul>
-    
-    
-                </div>
-                <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-                    <h3 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
-                        <ul id="centrar" class="list-unstyled text-dark light-300">
-                            <li class="pb-2">
-    
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-dark"
-                                    href="Index.html">
-                                    <!--                   <a>
-                            &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                          </a> -->
-                                    <i class="fas fa-home"></i> Home
-                                </a>
-                            </li>
-                            <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-                                <!--                 <a>
-                          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                        </a> -->
-                                <a class="text-decoration-none text-dark py-1" href="AddAPet-form.html"><i
-                                        class="fas fa-plus">
-                                    </i> Add your pets</a>
-                            </li>
-                            <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-                                <!--                 <a>
-                          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                        </a> -->
-                                <a class="text-decoration-none text-dark py-1" href="Listaprueba.html"><i
-                                        class="fas fa-search">
-                                    </i>&nbspFind your pet</a>
-    
-                            </li>
-                            <li class="pb-2">
-                                <!--                 <a>
-                          &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                        </a> -->
-                                <a class="text-decoratioen-none text-dark py-1" target="_blank"
-                                    href="../static/Documents/Protección y bienestar animal.pdf">
-                                    <i class="fas fa-file-contract"></i> Requirements</a>
-                            </li>
-                        </ul>
-                </div>
-                <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-                    <h2 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
+<footer class="estiloNav col-12">
+    <div class="container pt-4">
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-4 col-md-3 my-sm-0 mt-4">
+                <h2 class="h4 pb-lg-3 text-dark text-center">Conocenos en redes</h2>
+
+                <ul id="centrar" class="list-inline footer-icons">
+                    <li class="list-inline-item m-1">
+                        <a class="text-light" target="_blank" href="https://www.facebook.com/Nuestrahuella">
+                            <img src="../static/img/Facebook.png" width="40" height="40" alt="Logo Facebook" <i </a>
+                    </li>
+                    <li class="list-inline-item m-1">
+                        <a class="text-light" target="_blank" href="http://www.instagram/NuestraHuella.com/">
+                            <img src="../static/img/Instagram.png" width="40" height="36" alt="Logo Instagram">
+                        </a>
+                    </li>
+                    <li class="list-inline-item m-1">
+                        <a class="text-light" target="_blank" href="https://www.twitter.com/Nuestrahuella">
+                            <img src="../static/img/Twitter.png" width="48" height="50" alt="Logo Twitter">
+                        </a>
+                    </li>
+                    <li class="list-inline-item m-1">
+                        <a class="text-light" target="_blank" href="http://www.Linkedin/NuestraHuella.com/">
+                            <img src="../static/img/Linkedin.png" width="40" height="40" alt="Logo Linkedin">
+                        </a>
+                    </li>
+                    <li class="list-inline-item m-1">
+                        <a class="text-light" target="_blank" href="https://api.whatsapp.com/send/?phone=5493411111111">
+                            <img src="../static/img/WhatsApp.png" width="48" height="50" alt="Logo WhatsApp">
+                        </a>
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
+                <h3 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
                     <ul id="centrar" class="list-unstyled text-dark light-300">
                         <li class="pb-2">
-                            <!--               <a>
-                        &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                      </a> -->
-                            <i class="fas fa-phone"></i>
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
-                                href="tel:010-020-0340">341- 111- 1111</a>
+
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-dark"
+                                href="../templates/index.html">
+                                <i class="fas fa-home"></i> Inicio
+                            </a>
                         </li>
                         <li class="pb-2">
-                            <!--               <a>
-                        &nbsp &nbsp &nbsp &nbsp
-                      </a> -->
-                            <i class="fas fa-envelope-open"></i>
-                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-dark py-1"
-                                href="mailto:info@nuestrahuella.com">info@nuestrahuella.com.ar</a>
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
+                            <a class="text-decoration-none text-dark py-1" href="../templates/AddAPet-form.html"><i
+                                    class="fas fa-plus">
+                                </i> Añade tus mascotas</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
+                            <a class="text-decoration-none text-dark py-1" href="../templates/PetsList.html"><i
+                                    class="fas fa-search">
+                                </i>&nbsp Encuentra una mascota</a>
+                        </li>
+                        <li class="pb-2">
+                            <a class="text-decoration-none text-dark py-1" target="_blank"
+                                href="../static/Documents/Protección y bienestar animal.pdf">
+                                <i class="fas fa-file-contract"></i> Requerimientos </a>
                         </li>
                     </ul>
-                </div>
-    
             </div>
-        </div>
-        </div>
-    </footer>
+            <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
+                <h2 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
+                <ul id="centrar" class="list-unstyled text-dark light-300">
+                    <li class="pb-2">
+                        <i class="fas fa-phone"></i>
+                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                            href="tel:010-020-0340">341- 111- 1111</a>
+                    </li>
+                    <li class="pb-2">
+                        <i class="fas fa-envelope-open"></i>
+                        <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                            href="mailto:info@nuestrahuella.com">info@nuestrahuella.com.ar</a>
+                    </li>
+                </ul>
+            </div>
 
-    <script src="/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 
