@@ -13,8 +13,7 @@
         <div class="titulos p-2 text-success">
             <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
         </div>
-        <form class="row g-3 d-flex justify-space-around px-4" method="post" action="/send.php"
-            enctype="multipart/form-data">
+        <form class="row g-3 d-flex justify-space-around px-4" th:action="@{/pet/add-a-pet/{id}}" enctype="multipart/form-data" method="POST">
             
             </div>
             <div class="col-6">
@@ -24,11 +23,11 @@
             </div>
             <br> <br>
             <div class="col-6">
-                <input type="Age" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                <input type="Integer" name="ageInMonths" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
                     placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
             </div>
             <div class="col-6">
-                <input type="specie" name="tipo mascota"
+                <input type="Text" name="specie"
                     class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
                     placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
             </div>

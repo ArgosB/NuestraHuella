@@ -47,15 +47,17 @@ public class UserController {
 						   @RequestParam String userName, @RequestParam Long phoneNumber,
 						   @RequestParam(required = false) Long alternativeNumber, @RequestParam String country,
 						   @RequestParam(required = false) Province province, @RequestParam String city,
-						   @RequestParam(required = false) String neighborhood)  {
+						   @RequestParam(required = false) String neighborhood) {
 
 		try {
-			
 
-			  if (!password.equals(confirmedPassword)) { throw new
-			 Exception("Las contraseñas no coinciden"); }
 
-			 
+			if (!password.equals(confirmedPassword)) {
+				throw new
+						Exception("Las contraseñas no coinciden");
+			}
+
+
 			Zone zone = new Zone();
 			zone.setCity(city);
 			zone.setCountry(country);
@@ -97,28 +99,31 @@ public class UserController {
 		return "EditProfile";
 	}
 
-	
+
 	@GetMapping("/login")
-	public String login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, String exito, ModelMap model) throws Exception{
-	try {
-		if (error != null) {
-			model.put("error", "Usuario o clave incorrectos");
+	public String login(@RequestParam(required = false) String username, @RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) throws Exception {
+		try {
+			if (error != null) {
+				model.put("error", "Usuario o clave incorrectos");
+			}
+			if (username != null) {
+				model.put("username", username);
+			}
+			if (logout != null) {
+				model.put("logout", "Ha salido correctamente.");
+			}
+
+			return "login";
+
+		} catch (Exception e) {
+			model.put("error", e.getMessage());
+			return "login";
 		}
-		if (exito != null){
-			model.put("exito", "ha hecho el login correctamente");
-		}
-		if (logout != null) {
-			model.put("logout", "Ha salido correctamente.");
-		}
-
-		return "login";
-
-	}catch (Exception e) {
-		model.put("error", e.getMessage());
-		return "login";
-
-
-	}
-
 	}
 }
+/*GetMapping("/logout")
+public string logout (Model model){
+		model.addAllAttributes("Success", "ha finalizado la accion");
+	}
+	return "index"
+}*/

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -49,13 +50,13 @@ public class UserService implements UserDetailsService {
 
 		validate(name, surname, userName, email, password);
 		HumanUser entity = new HumanUser();
-		String encryptedPass = new BCryptPasswordEncoder(4).encode(password);
+		 BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
 		entity.setName(name);
 		entity.setSurname(surname);
 		entity.setUsername(userName);
 
-			entity.setPassword(encryptedPass);
+			entity.setPassword(encoder.encode(password));
 
 
 		entity.setPhoto(photo);
@@ -86,8 +87,7 @@ public class UserService implements UserDetailsService {
 			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
 			HttpSession session = attr.getRequest().getSession(true);
 			session.setAttribute("UserSession", user );
-			UserDetails entity = new HumanUser(user.getUsername(),user.getPassword(), grantities);
-			return entity;
+			return new User(user.getUsername(),user.getPassword(),grantities);
 		}else throw new UsernameNotFoundException("username not found");
 	}
 
