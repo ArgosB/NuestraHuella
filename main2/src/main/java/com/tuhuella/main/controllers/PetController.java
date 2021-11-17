@@ -4,8 +4,10 @@ package com.tuhuella.main.controllers;
 
 import java.util.Date;
 
+import com.tuhuella.main.services.PhotoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,39 +40,38 @@ public class PetController {
 	@Autowired
 	private ZoneRepository zoneRepo;
 	@Autowired
-	private PhotoRepository photoRepo;
+	private PhotoService photoService;
 
-	@GetMapping("/add-a-pet/{id}")
+	@GetMapping("/add-a-pet")
 	public String form() {
 
 		return "AddAPet-form";
 	}
-
 	@PostMapping("/add-a-pet/{id}")
-	public String createPet(ModelMap modelo,@PathVariable String id, @RequestParam("file") MultipartFile file,@RequestParam String name, @RequestParam Integer age, @RequestParam String species,@RequestParam(required=false) String breed, 
-			@RequestParam(required=false) Integer Weight, @RequestParam Sex sex, @RequestParam Size size, @RequestParam Boolean upToDateVaccine, @RequestParam Boolean castrated, @RequestParam Boolean deWormed, @RequestParam String disease, 
-			@RequestParam String city,@RequestParam String country,@RequestParam String neighborhood,@RequestParam Province province) throws Exception {
+	public String createPet(ModelMap modelo,@PathVariable String id, @RequestParam(required=false) MultipartFile file,@RequestParam String name,
+							@RequestParam(required=false) Integer age, @RequestParam String species,@RequestParam(required=false) String breed,
+			@RequestParam(required=false) Integer Weight, @RequestParam(required=false) Sex sex, @RequestParam Size size, @RequestParam(required=false) Boolean upToDateVaccine,
+							@RequestParam(required=false) Boolean castrated, @RequestParam(required=false) Boolean deWormed, @RequestParam(required=false) String disease) throws Exception {
+
+
+
 
 		try {
-			
 			HumanUser user = userRepo.getById(id);
-			
+			if (user == null){
+				modelo.put("error en el id", "error");
+			}
+
 			Zone zone = user.getZone();
 			
+			Photo photo = photoService.savePhoto(file);
 
-			Photo photo = new Photo();
-			photo.setName(file.getName());
-			photo.setMime(file.getContentType());
-			photo.setPicture(file.getBytes());
-			photo.setActive(true);
-			photo.setCreatePhoto(new Date());
-			photoRepo.save(photo);
 			petService.createPet(name, age, species, breed, Weight, sex, size, upToDateVaccine, castrated, deWormed, disease, zone, photo);
 			
 			
 
 			modelo.put("exito", name.toString());
-			return "AddAPet-form";
+			return "/AddAPet-form";
 		} catch (Exception e) {
 			modelo.put("error", e.getMessage());
 			return "AddAPet-form";

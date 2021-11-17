@@ -4,18 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -60,12 +49,22 @@ public class HumanUser extends ModelUser{
 	private Date modifiedUser;
 	@Column(length = 50)
 	private Boolean active;
+	@OneToMany
+	private List<PetUser> petUsers;
 	
 	public HumanUser() {
 		super();
 	}
 
-    public HumanUser(String email, String password, List<GrantedAuthority> grantities) {
+	public List<PetUser> getPetUsers() {
+		return petUsers;
+	}
+
+	public void setPetUsers(List<PetUser> petUsers) {
+		this.petUsers = petUsers;
+	}
+
+	public HumanUser(String email, String password, List<GrantedAuthority> grantities) {
         super();
     }
 

@@ -7,6 +7,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.tuhuella.main.entities.Photo;
 import com.tuhuella.main.repositories.PhotoRepository;
 
+import java.util.Date;
+
 @Service
 public class PhotoService {
 	
@@ -17,18 +19,18 @@ public class PhotoService {
 		try {
 		if(file != null) {
 			Photo photo = new Photo();
-			
+
 			photo.setName(file.getName());
 			photo.setPicture(file.getBytes());
 			photo.setMime(file.getContentType());
-			
+			photo.setActive(true);
+			photo.setCreatePhoto(new Date());
 			return photoRepo.save(photo);
 		} } catch(Exception e) {
-			
+			return null;
 		}
-			
 		return null;
-		
+
 	}	
 	
 }

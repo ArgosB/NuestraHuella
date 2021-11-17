@@ -1,7 +1,6 @@
 package com.tuhuella.main;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -9,8 +8,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import com.tuhuella.main.services.UserDetailsServiceImpl;
 
 import com.tuhuella.main.services.UserService;
 
@@ -26,28 +23,31 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers(resources).permitAll()
-	        .antMatchers("/").permitAll().antMatchers("/index").permitAll()
-	        .antMatchers("/admin*").access("hasRole('ADMIN')")
-	        .antMatchers("/user/sign-up").permitAll()
-                .antMatchers("/user/login").permitAll()
-	        .antMatchers("/pet").permitAll()
-                .anyRequest().authenticated()
-                .and()
-            .formLogin()
-                .loginPage("/user/login")
-                .loginProcessingUrl("/logincheck")
+    http
+            .authorizeRequests()
+            .antMatchers(resources).permitAll()
+            .antMatchers("/","/index").permitAll()
+            .antMatchers("/admin*").access("hasRole('ROLE_USER_DEFAULT')")
+            .antMatchers("/user/sign-up").permitAll()
+            .antMatchers("/user/login").permitAll()
+            .antMatchers("/pet*").permitAll()
 
-                .permitAll()
-                .usernameParameter("username")
-                .passwordParameter("password")
-                .defaultSuccessUrl("/")
-               // .failureUrl("/login")
-                .and().logout()
-                .logoutUrl("/logout")
-                .logoutSuccessUrl("/login?logout").permitAll()
-                .permitAll()
-                .and().csrf().disable();
+            .anyRequest().authenticated()
+            .and()
+            .formLogin()
+            .loginPage("/user/login")
+            .loginProcessingUrl("/logincheck")
+
+            .permitAll()
+            .usernameParameter("username")
+            .passwordParameter("password")
+            .defaultSuccessUrl("/index")
+            // .failureUrl("/login")
+            .and().logout()
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/login?logout").permitAll()
+            .permitAll()
+            .and().csrf().disable();
 
     }
     BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -62,9 +62,6 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private UserService userService;
 
-    //Registra el service para usuarios y el encriptador de contrasena
-    @Autowired
-   private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
