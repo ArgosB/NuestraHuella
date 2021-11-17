@@ -7,9 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-public class Authority {
+public class Authority implements GrantedAuthority {
 
 	@Id
     @Column(name = "id_user", nullable = false, unique = true)

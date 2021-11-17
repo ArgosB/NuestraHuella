@@ -10,6 +10,9 @@
 
   <main>
     <section class="py-5">
+      <div th:if="${error}" class="alert alert-danger" role="alert">No se pudo confirmar el usuario. vuelva a intentar <span th:text="${error}"></span></div >
+      <div th:if="${exito}" class="alert alert-success"   role="alert">¡Log in exitoso! <span th:text="${exito}"></span></div >
+
       <div class="container-fluid h-custom py-xl-3">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-md-8 col-lg-5 py-lg-4 col-xl-6 py-xl-3 col-sm-12">
@@ -18,17 +21,17 @@
           <div class="col-md-8 col-lg-6 mx-lg-3 col-xl-4 mx-xl-3">
             <h2>Sign in</h2>
             <br>
-            <form>
+            <form th:action="@{/login}" enctype="multipart/form-data" method="POST">
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input type="email" id="form3Example3" class="form-control form-control-lg"
+                <input type="email" name="email" id="form3Example3" class="form-control form-control-lg"
                   placeholder="Enter a valid email address" />
                 <label class="form-label" for="form3Example3">Email address</label>
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-3">
-                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                <input type="password" name="password" id="form3Example4" class="form-control form-control-lg"
                   placeholder="Enter password" />
                 <label class="form-label" for="form3Example4">Password</label>
               </div>
@@ -45,7 +48,7 @@
               </div>
 
               <div class="text-center text-lg-start mt-4 pt-2">
-                <button type="button" class="btn btn-outline-success text-light px-3">Login</button>
+                <button type="submit" name="login" class="btn btn-outline-success text-light px-3">Login</button>
                 <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="singup-form.html"
                     class="link-danger">Register</a></p>
               </div>

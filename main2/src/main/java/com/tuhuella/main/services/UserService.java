@@ -2,14 +2,18 @@ package com.tuhuella.main.services;
 
 
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
 
-
+import com.tuhuella.main.webException.WebException;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +23,10 @@ import com.tuhuella.main.entities.HumanUser;
 
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.repositories.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpSession;
 
 @Service
 public class UserService  {
@@ -27,7 +35,7 @@ public class UserService  {
 
 	@Autowired 
 	private PhotoRepository PhotoRepository;
-	 
+
 
 	/*
 	 * @Autowired private PetRepository PetRepository;
@@ -56,6 +64,23 @@ public class UserService  {
 		
 
 		return userRepository.save(entity);
+	}
+	//Estoy probando un nuevo metodo siguiendo paso a paso el video de la mina
+	@Override
+	public UserDetails loadUserByEmail(String email) throws WebException{
+		HumanUser user = userRepository.findByemail(email);
+		if (user != null){
+			List<GrantedAuthority> grantities = new ArrayList<>();
+			GrantedAuthority p1 = new SimpleGrantedAuthority("ROLE_USER_DEFAULT");
+			grantities.add(p1);
+			ServletRequestAttributes attr = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
+			HttpSession session = attr.getRequest().getSession(true);
+			session.setAttribute("UserSession", user );
+			session.setAttribute("");
+			HumanUser entity = new HumanUser(user.getEmail(),user.getPassword(), grantities);
+		}else{
+			return null;
+		}
 	}
 
 	public Optional<HumanUser> showUserByEmail(String email) throws Exception {

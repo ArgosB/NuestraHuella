@@ -1,6 +1,7 @@
 package com.tuhuella.main.entities;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -17,6 +18,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.security.core.GrantedAuthority;
 
 @Entity
 @Table(name = "users")
@@ -60,7 +62,12 @@ public class HumanUser extends ModelUser{
 	public HumanUser() {
 		super();
 	}
-	public void setEnabled(boolean enabled) {
+
+    public HumanUser(String email, String password, List<GrantedAuthority> grantities) {
+        super();
+    }
+
+    public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 

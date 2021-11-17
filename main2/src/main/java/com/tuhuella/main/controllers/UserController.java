@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -61,7 +62,7 @@ public class UserController {
 			zone.setNeighborhood(neighborhood);
 			zone.setProvince(province);
 			zoneRepo.save(zone);
-			
+
 
 			Photo photo = new Photo();
 			photo.setName(file.getName());
@@ -95,10 +96,23 @@ public class UserController {
 		modelo.addAttribute("User", user);
 		return "edit-user";
 	}
-
+	@PreAuthorize("hasAnyRol('ROLE_USUARIO_REGISTRADO')")
 	@GetMapping("/login")
-	public String login() {
+	public String login(@RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) throws Exception{
+	try {
+		if (error != null) {
+			model.put("Error", "Usuario o clave incorrectos");
+		}
+		if (logout != null) {
+			model.put("logout", "Ha salido correctamente.");
+		}
+		model.put("exito", logout);
 		return "login";
+	}catch (Exception e) {
+		model.put("error", e.getMessage());
+		return "login";
+
 	}
 
+	}
 }

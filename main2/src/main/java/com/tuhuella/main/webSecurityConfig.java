@@ -36,15 +36,19 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
                 .and()
             .formLogin()
                 .loginPage("/login")
+                //.loginProcessingUrl("/logincheck")
+
                 .permitAll()
-                .defaultSuccessUrl("/menu")
+                .defaultSuccessUrl("/petsList")
                 .failureUrl("/pet/register")
                 .usernameParameter("username")
                 .passwordParameter("password")
-                .and()
-            .logout()
+                .and().logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout").permitAll()
                 .permitAll()
-                .logoutSuccessUrl("/login?logout");
+                .and().csrf().disable();
+
     }
     BCryptPasswordEncoder bCryptPasswordEncoder;
     //Crea el encriptador de contraseñas	
@@ -59,11 +63,11 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
     }
 	
     @Autowired
-    UserService usersService;
+    private UserService usersService;
 	
     //Registra el service para usuarios y el encriptador de contrasena
     @Autowired
-    UserDetailsServiceImpl userDetailsService;
+   private UserDetailsServiceImpl userDetailsService;
 
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception { 
  

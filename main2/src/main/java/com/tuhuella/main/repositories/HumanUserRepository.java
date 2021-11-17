@@ -12,8 +12,10 @@ import com.tuhuella.main.entities.HumanUser;
 @Repository
 public interface HumanUserRepository extends JpaRepository<HumanUser, String> {
 	
-	@Query("SELECT a from HumanUser a WHERE a.email = ?1 ")
-	Optional <HumanUser> findMyUserByEmail(String email); 
+	@Query("SELECT a from HumanUser a WHERE a.email = :mail ")
+	//Optional <HumanUser> findMyUserByEmail(String email);
+	public HumanUser findByemail(@Param("email")String email);
+
 	//List<HumanUser> findByNameContain(String name);
 	//List<HumanUser> findAll();
 	
