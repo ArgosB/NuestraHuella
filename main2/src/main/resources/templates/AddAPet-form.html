@@ -13,7 +13,9 @@
         <div class="titulos p-2 text-success">
             <h2 class="display-3 d-flex justify-content-center">REGISTRA A TU MASCOTA</h2>
         </div>
-        <div sec:authorize="hasRole('ROLE_USER_DEFAULT')">
+        <div th:if="${error}" class="alert alert-danger" role="alert">No se pudo guardar el usuario. <span th:text="${error}"></span></div >
+              <div th:if="${exito}" class="alert alert-success"   role="alert">Registro exitoso <span th:text="${exito}"></span></div >
+        <div>
         <form class="row g-3 d-flex justify-space-around px-4"  th:action="@{/pet/add-a-pet/__${session.UserSession.id}__}"  enctype="multipart/form-data" method="POST">
 
 
@@ -47,31 +49,41 @@
                     </option>
                 </select>
             </div>
+            <div class="col-md-3 col-sm-6">
+                <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="tamano"
+                        name="sex">
+                    <option th:selected>tamano</option>
+                    <option th:each="sex : ${T(com.tuhuella.main.enums.Sex).values()}"
+                            th:value="${sex}"
+                            th:text="${sex}">
+                    </option>
+                </select>
+            </div>
             <div class="col-6">
                 <input type="number" name="weight" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
                        placeholder="Ingrese aquí el peso de su mascota en (kilogramos)">
             </div>
             <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="upToDateVaccine">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" checked="false" id="upToDateVaccineCheck" name="upToDateVaccine">
+                <label class="form-check-label" for="upToDateVaccineCheck">
                     Vacunas al día
                 </label>
             </div>
             <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="castrated">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" checked="false" id="castratedCheck" name="castrated">
+                <label class="form-check-label" for="castratedCheck">
                     Castrado
                 </label>
             </div>
             <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="deWormed">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" checked="false" id="deWormedCheck" name="deWormed">
+                <label class="form-check-label" for="deWormedCheck">
                     Desparasitado
                 </label>
             </div>
             <div class="col-3">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="deWormed">
-                <label class="form-check-label" for="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" checked="false"  id="diseaseCheck" name="disease">
+                <label class="form-check-label" for="diseaseCheck">
                     Posee alguna enfermedad
                 </label>
             </div>

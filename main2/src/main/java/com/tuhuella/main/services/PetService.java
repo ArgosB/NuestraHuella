@@ -45,6 +45,8 @@ public void createPet ( String name, Integer age, String species, String breed, 
 		pet.setDisease(breed);
 		pet.setZone(zone);
 		pet.setPhoto(photo);
+		
+		petRepository.save(pet);
 	}
 	
 
