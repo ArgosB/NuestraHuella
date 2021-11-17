@@ -6,18 +6,22 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Repository;
 import com.tuhuella.main.entities.HumanUser;
 
 @Repository
 public interface HumanUserRepository extends JpaRepository<HumanUser, String> {
 	
-	@Query("SELECT a from HumanUser a WHERE a.email = :mail ")
-	//Optional <HumanUser> findMyUserByEmail(String email);
-	public HumanUser findByemail(@Param("email")String email);
+	@Query("SELECT a from HumanUser a WHERE a.email = :email ")
+	UserDetails findMyUserByEmail(String email);
 
-	//List<HumanUser> findByNameContain(String name);
-	//List<HumanUser> findAll();
+	@Query("SELECT a from HumanUser a WHERE a.username = :username ")
+	HumanUser findMyUserByusername(@Param("username")String username);
+
+	@Query("SELECT a from HumanUser a WHERE a.email = :email ")
+	HumanUser findByemail(@Param("email") String email);
+
 	
 	@Query("SELECT a from HumanUser a where a.id = ?1 ")
 	Optional <HumanUser> findMyUserByID(String id); 
