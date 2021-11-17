@@ -550,9 +550,7 @@ main {
 
 .botonDelete {
 	margin-top: 2%;
-    padding-left: 10
-	
-	%;
+    padding-left: 10%;
 	display: flex;
 	justify-content: space-around;
 }
