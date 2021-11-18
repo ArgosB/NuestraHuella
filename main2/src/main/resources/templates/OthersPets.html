@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
 
-    <head>
+<head>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="../static/css/main.css">
-        <link rel="icon" type="image/png" href="../static/img/ícono.png">
-        <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-        <link href="../static/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
-        <link rel='stylesheet' id='../static/css-tricks-style-css'
-          href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1636501874133'
-          type='text/css' media="not all" onload="this.media='all'">
-        <title>Tu Huella</title>
-        
-      </head>
+    <title>Tu Huella</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="icon" type="image/png" href="../static/img/ícono.png">
+    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="../static/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
+    <link rel='stylesheet' id='../static/css-tricks-style-css'
+        href='https://css-tricks.com/wp-content/themes/CSS-Tricks-19/style.css?ver=cache_bust=1636501874133'
+        type='text/css' media="not all" onload="this.media='all'">
+    <script src="../static/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark estiloNav">
             <div class="container-fluid text-light estiloNav px-3">
-                <a class="navbar-brand tex-light" href="#">
-                    <img src="/../static/img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top"
-                        width="35" height="35" alt="">
+                <a class="navbar-brand tex-light" href="../templates/index.html">
+                    <img src="../static/img/Huella_nueva.png" class="img-fluid d-inline-block align-text-top" width="35"
+                        height="35" alt="Logo huella">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -34,31 +34,29 @@
                     <ul class="navbar-nav me-auto mb-3 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
-                                aria-current="page" href="#">
-                                <i class="fas fa-home"></i>&nbsp Home</a>
+                                aria-current="page" href="../templates/index.html">
+                                <i class="fas fa-home"></i>&nbsp Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
-                                href="AddAPet-form.html"><i class="fas fa-plus"></i>&nbsp Add
-                                your
-                                pets</a>
+                                href="../templates/AddAPet-form.html">
+                                <i class="fas fa-plus"></i>&nbsp Añade tus mascotas</a>
                         </li>
-
                         <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
                             data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false"
-                            aria-controls="collapseWidthExample" href="/pets.html"><i class="fas fa-search"></i>&nbsp
-                            Find a
-                            pet</a>
+                            aria-controls="collapseWidthExample">
+                            <i class="fas fa-plus"></i>&nbsp Encuentra una mascota</a>
                         </li>
 
-
                     </ul>
-                    <a class="btn text-light btn-outline-success mx-3 px-3 " href="login.html">Login</a>
-                    <a class="btn text-light btn-outline-success mx-3 px-3" href="singup-form.html">SignUp</a>
+                    <a class="btn text-light btn-outline-success mx-3 px-3 " href="../templates/login.html">Iniciar
+                        sesión</a>
+                    <a class="btn text-light btn-outline-success mx-3 px-3"
+                        href="../templates/singup-form.html">Inscribirse</a>
                     <!-- <form class="d-flex">
-          <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="text-light btn btn-outline-success my-2" type="submit">Search</button>
-        </form>-->
+            <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="text-light btn btn-outline-success my-2" type="submit">Search</button>
+          </form>-->
                 </div>
             </div>
         </nav>
@@ -66,23 +64,23 @@
             <div class="collapse collapse-horizontal" id="collapseWidthExample">
                 <div style="width: 100vw;">
                     <nav>
-                        <section id="sección">
+                        <section id="seccion">
                             <!-- <a id="primer" href="https://github.com/"> Ingresa ciudad, <br> país </br> o código postal </a> -->
-                            <a id="segundo" href="https://getbootstrap.com/"> <i class="fas fa-dog fa-2x"></i>
+                            <a id="segundo" href="../templates/DogList.html"> <i class="fas fa-dog fa-2x"></i>
                                 &nbsp Encuentra un perro </a>
-                            <a id="tercero" href="https://www.w3schools.com/"> <i class="fas fa-cat fa-2x"></i> &nbsp
-                                Encuentra un gato
+                            <a id="tercero" href="../templates/CatList.html"> <i class="fas fa-cat fa-2x"></i>
+                                &nbsp Encuentra un gato
                             </a>
-                            <a id="cuarto" href="https://flexboxfroggy.com/#es"> <i class="fas fa-crow fa-2x"></i> &nbsp
-                                Encuentra otras mascotas </a>
+                            <a id="cuarto" href="../templates/OthersPets.html"> <i class="fas fa-crow fa-2x"></i>
+                                &nbsp Encuentra otras mascotas </a>
                         </section>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <div class="titulos p-2 text-success">
-            <h2 class="display-3 d-flex justify-content-center">ENCONTRA OTRAS ESPECIES</h2>
+        <div class="titulo2 p-2 text-success">
+            <h2 class="display-3 d-flex justify-content-center">ENCONTRÁ OTRAS ESPECIES</h2>
         </div>
 
         <section>
@@ -278,9 +276,11 @@
 </body>
 <footer class="estiloNav col-12">
     <div class="container pt-4">
+
         <div class="row d-flex justify-content-center">
             <div class="col-lg-4 col-md-3 my-sm-0 mt-4">
-                <h2 class="h4 pb-lg-3 text-dark text-center">Conocenos en redes</h2>
+                <h2 class="h4 pb-lg-3 text-light text-center">Conocenos en redes</h2>
+
                 <ul id="centrar" class="list-inline footer-icons">
                     <li class="list-inline-item m-1">
                         <a class="text-light" target="_blank" href="https://www.facebook.com/Nuestrahuella">
@@ -307,67 +307,54 @@
                         </a>
                     </li>
                 </ul>
+
+
             </div>
             <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-                <h3 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Nuestro Estudio</h2>
-                    <ul id="centrar" class="list-unstyled text-dark light-300">
+                <h3 id="centrar" class="h4 pb-lg-3 text-light regular-400">Nuestro Estudio</h2>
+                    <ul id="centrar" class="list-unstyled text-light light-300">
                         <li class="pb-2">
-                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-dark"
-                                href="Index.html">
-                                <!--                   <a>
-                    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                  </a> -->
-                                <i class="fas fa-home"></i> Home
+
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light"
+                                href="../templates/index.html">
+                                <i class="fas fa-home"></i> Inicio
                             </a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-                            <!--                 <a>
-                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                </a> -->
-                            <a class="text-decoration-none text-dark py-1" href="AddAPet-form.html"><i
+                            <a class="text-decoration-none text-light py-1" href="../templates/AddAPet-form.html"><i
                                     class="fas fa-plus">
-                                </i> Add your pets</a>
+                                </i> Añade tus mascotas</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-                            <!--                 <a>
-                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                </a> -->
-                            <a class="text-decoration-none text-dark py-1" href="PetList.html"><i class="fas fa-search">
-                                </i>&nbspFind your pet</a>
+                            <a class="text-decoration-none text-light" href="../templates/PetsList.html"><i
+                                    class="fas fa-search">
+                                </i>&nbsp Encuentra una mascota</a>
                         </li>
                         <li class="pb-2">
-                            <!--                 <a>
-                  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-                </a> -->
-                            <a class="text-decoration-none text-dark py-1" href="Requirements.html">
-                                <i class="fas fa-file-contract"></i> Requirements</a>
+                            <a class="text-decoration-none text-light py-1" target="_blank"
+                                href="../static/Documents/Protección y bienestar animal.pdf">
+                                <i class="fas fa-file-contract"></i> Requerimientos </a>
                         </li>
                     </ul>
             </div>
-
             <div class="col-lg-3 col-md-3 my-sm-0 mt-4">
-                <h2 id="centrar" class="h4 pb-lg-3 text-dark regular-400">Contactanos</h2>
-                <ul id="centrar" class="list-unstyled text-dark light-300">
+                <h2 id="centrar" class="h4 pb-lg-3 text-light regular-400">Contactanos</h2>
+                <ul id="centrar" class="list-unstyled text-light light-300">
                     <li class="pb-2">
-                        <!--               <a>
-                &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-              </a> -->
                         <i class="fas fa-phone"></i>
-                        <i id="ícono" class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                        <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light"
                             href="tel:010-020-0340">341- 111- 1111</a>
                     </li>
                     <li class="pb-2">
-                        <!--               <a>
-                &nbsp &nbsp &nbsp &nbsp
-              </a> -->
                         <i class="fas fa-envelope-open"></i>
-                        <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-dark py-1"
+                        <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1"
                             href="mailto:info@nuestrahuella.com">info@nuestrahuella.com.ar</a>
                     </li>
                 </ul>
             </div>
+
         </div>
     </div>
     </div>
