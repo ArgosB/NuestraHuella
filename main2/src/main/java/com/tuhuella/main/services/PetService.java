@@ -13,6 +13,7 @@ import com.tuhuella.main.entities.*;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
+import com.tuhuella.main.enums.Species;
 import com.tuhuella.main.repositories.PetUserRepository;
 
 
@@ -26,7 +27,7 @@ public class PetService {
 private PetUserRepository petRepository;
 
 @Transactional
-public void createPet ( String name, Integer age, String species, String breed, Integer Weight, Sex sex, Size size, Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone, Photo photo) throws Exception{
+public void createPet ( String name, Integer age, Species species, String breed, Integer Weight, Sex sex, Size size, Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone, Photo photo) throws Exception{
 	
 	if (name.equals(null)||name.isEmpty()) {
 		throw new Exception ("El nombre no puede estar vacio");
@@ -70,7 +71,7 @@ public void delete(String id) throws Exception {
 }
 
 public void validatePet(PetUser m) throws Exception {
-	if (m.getSpecies() == null || m.getSpecies().isEmpty() || m.getSpecies().equals(" "))
+	if (m.getSpecies() == null)
 
 	{
 		throw new Exception("La mascota tiene que tener una especie");

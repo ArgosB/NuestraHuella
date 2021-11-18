@@ -12,6 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
+import com.tuhuella.main.enums.Species;
 
 @Entity
 @Table(name = "pet")
@@ -28,7 +29,7 @@ public class PetUser extends ModelUser {
 	@Column(length = 50)
 	private Integer ageInMonths;
 	@Column(length = 50)
-	private String species;
+	private Species species;
 	@Column(length = 50)
 	private String breed;
 	@Column(length = 50)
@@ -79,12 +80,7 @@ public class PetUser extends ModelUser {
 	}
 
 
-	public String getSpecies() {
-		return species;
-	}
-	public void setSpecies(String species) {
-		this.species = species;
-	}
+
 	public String getBreed() {
 		return breed;
 	}
@@ -109,6 +105,14 @@ public class PetUser extends ModelUser {
 	public void setSize(Size size) {
 		this.size = size;
 	}
+	public Species getSpecies() {
+		return species;
+	}
+
+	public void setSpecies(Species species) {
+		this.species = species;
+		}
+	
 	public Boolean getUpToDateVaccine() {
 		return upToDateVaccine;
 	}
