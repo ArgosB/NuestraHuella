@@ -21,9 +21,13 @@
             <div class="adelante card1"></div>
 =
             <div class="atras">
-              <p>Mi nombre es <span th:text="${pet1.name}"></span> y tengo <span th:text="*{pet1.ageInMonths}">.</span> 
+                <div th:if="${pet1}">
+              <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
+
+              <span  th:text="${pet1?.name}"></span> y tengo <span th:text="*{pet1.ageInMonths}">.</span>
               Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="*{pet1.weight}"></span> kilos y soy de
                tamaño <span th:text="${pet1.size}"></span>. </p >
+                </div>
             </div>
           </div>
         </div>

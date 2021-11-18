@@ -31,9 +31,15 @@
                        placeholder="Ingrese aquí la EDAD de la mascota (en meses)">
             </div>
             <div class="col-6">
-                <input type="text" name="species"
-                       class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-                       placeholder="Indique la especie de la mascota (por ej: perro, gato, etc)">
+
+                <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Especie"
+                        name="species">
+                    <option th:selected>Especie</option>
+                    <option th:each="species : ${T(com.tuhuella.main.enums.Species).values()}"
+                            th:value="${species}"
+                            th:text="${species}">
+                    </option>
+                </select>
             </div>
             <div class="col-6">
                 <input type="text" name="breed" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
@@ -50,9 +56,9 @@
                 </select>
             </div>
             <div class="col-md-3 col-sm-6">
-                <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="tamano"
+                <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="sexo"
                         name="sex">
-                    <option th:selected>tamano</option>
+                    <option th:selected>Sexo</option>
                     <option th:each="sex : ${T(com.tuhuella.main.enums.Sex).values()}"
                             th:value="${sex}"
                             th:text="${sex}">
