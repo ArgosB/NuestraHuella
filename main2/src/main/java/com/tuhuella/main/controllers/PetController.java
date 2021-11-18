@@ -23,6 +23,7 @@ import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Province;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
+import com.tuhuella.main.enums.Species;
 import com.tuhuella.main.repositories.HumanUserRepository;
 import com.tuhuella.main.repositories.PhotoRepository;
 import com.tuhuella.main.repositories.ZoneRepository;
@@ -49,7 +50,7 @@ public class PetController {
 	}
 	@PostMapping("/add-a-pet/{id}")
 	public String createPet(ModelMap modelo,@PathVariable String id, @RequestParam(required=false) MultipartFile file,@RequestParam String name,
-							@RequestParam(required=false) Integer age, @RequestParam String species,@RequestParam(required=false) String breed,
+							@RequestParam(required=false) Integer age, @RequestParam Species species,@RequestParam(required=false) String breed,
 			@RequestParam(required=false) Integer Weight, @RequestParam(required=false) Sex sex, @RequestParam Size size, @RequestParam(required=false) Boolean upToDateVaccine,
 							@RequestParam(required=false) Boolean castrated, @RequestParam(required=false) Boolean deWormed, @RequestParam(required=false) String disease) throws Exception {
 
