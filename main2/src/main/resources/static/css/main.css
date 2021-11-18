@@ -1,11 +1,11 @@
 .estiloNav {
-	background-color: #b89cd3;
+	background-color: #452a5f;
 }
 
 .footerlast {
 	justify-content: space-between;
 	background-size: -10px;
-	background-color: #b89cd3;
+	background-color: #452a5f;
 	border-top: 1px solid #3d3b3b;
 	height: 1px;
 	clear: both;
@@ -14,13 +14,14 @@
 }
 
 body {
-	background-color: #abd4a2d5;
+	background-color: #452a5f;
 }
 
 main {
-	background-color: #4f664ad5;
-	background-image: url(../img/Backgrounds/bg_white1.png);
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
 	/* 	background-image: url(../img/topography.svg); */
+	/* 	font-family: 'Quicksand', sans-serif; */
 }
 
 .letraNav {
@@ -46,10 +47,26 @@ main {
 }
 
 .titulo2 {
-	color: #ffff00;
+	/* 	background-color: #9c74c2; */
+	background-color: #452a5f;
+	color: white;
 	text-align: center;
 	font-weight: bold;
-	font-family: 'Animal Insting';
+	/* 	font-family: 'Animal Paws'; */
+	/* 		font-family: 'Quicksand', sans-serif; */
+	/* /* 		font-family: 'Chunkfive Ex' */
+	/* 	font-family: 'Insaniburger with Cheese'; */
+	font-family: 'orange juice';
+	/* 	padding-top: 35px;
+	padding-bottom: 10px;
+	float: unset; */
+	opacity: 120%;
+	margin-bottom: 10px;
+	padding-bottom: 15px;
+}
+
+#blanqueamiento {
+	color: white;
 }
 
 * {
