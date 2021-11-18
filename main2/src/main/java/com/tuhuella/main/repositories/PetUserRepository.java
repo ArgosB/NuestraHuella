@@ -18,7 +18,6 @@ public interface PetUserRepository extends JpaRepository<PetUser, String> {
 	@Query("SELECT a FROM  PetUser a WHERE a.name LIKe :name")
 	public List<PetUser> searchPetName(@Param("name") String name);
 
-	public List<PetUser> findAll();
 	
 	@Query("SELECT a FROM  PetUser a WHERE a.id LIKE :id")
 		public PetUser consultId(@Param("id") String id);
@@ -31,7 +30,7 @@ public interface PetUserRepository extends JpaRepository<PetUser, String> {
 	@Query("SELECT a from  PetUser a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC")
 	public Page<PetUser> searchAssetsByParam(Pageable pageable, @Param("q") String q);
 
-	@Query("SELECT a from  PetUser a WHERE a.species LIKE:q ORDER BY a.species DESC")
+	@Query("SELECT a from  PetUser a WHERE a.species LIKE :q ORDER BY a.species DESC")
 	public Page<PetUser> searchSpecies(Pageable pageable, @Param("q") String q);
 
 	

@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.tuhuella.main.entities.Photo;
 import com.tuhuella.main.entities.HumanUser;
-
+import com.tuhuella.main.entities.PetUser;
 import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.repositories.*;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -37,6 +37,9 @@ public class UserService implements UserDetailsService {
 
 	@Autowired 
 	private PhotoRepository PhotoRepository;
+	
+	@Autowired
+	private PetUserRepository petRepository;
 
 
 	/*
@@ -92,7 +95,7 @@ public class UserService implements UserDetailsService {
 	}
 
 
-
+	@Transactional
 	public void edit(String id, Photo photo, String name, String surname, String userName, String password,
 					 Date birthDate, Zone zone, Long phoneNumber,
 					 Long alternativeNumber, String email) throws Exception {
@@ -189,4 +192,7 @@ public class UserService implements UserDetailsService {
 
 	}
 
+	public List<PetUser> findAllPets(){
+		return petRepository.findAll();
+	}
 }
