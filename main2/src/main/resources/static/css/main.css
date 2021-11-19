@@ -20,8 +20,6 @@ body {
 main {
 	background-color: #abd4a2d5;
 	background-image: url(../img/Backgrounds/bg_black3.png);
-	/* 	background-image: url(../img/topography.svg); */
-	/* 	font-family: 'Quicksand', sans-serif; */
 }
 
 .letraNav {
@@ -47,19 +45,12 @@ main {
 }
 
 .titulo2 {
-	/* 	background-color: #9c74c2; */
 	background-color: #452a5f;
 	color: white;
 	text-align: center;
-	/* 	font-family: 'Animal Paws'; */
-	/* 		font-family: 'Quicksand', sans-serif; */
-	/* /* 		font-family: 'Chunkfive Ex' */
-	/* 	font-family: 'Insaniburger with Cheese'; */
 	font-weight: bold;
-	font-family: 'orange juice';
-	/* 	padding-top: 35px;
-	padding-bottom: 10px;
-	float: unset; */
+	font-family: "Insaniburger with Cheese", "Animal Paws", "Orange Juice", "Arial";
+	float: unset;
 	opacity: 120%;
 	margin-bottom: 10px;
 	padding-bottom: 15px;
@@ -467,15 +458,6 @@ main {
 
 @media screen and (max-width:1023px) and (min-width:768px) {
 
-	/*.contenedor{
-		width: 90%;
-        margin:auto;/*contenedor centrado
-    }*/
-	/* Si la pantalla supera los 500px, entonces se deja de flotar las cajas 
-	.caja1, .caja2{
-		float: none;
-		width:100%;
-	}*/
 	* {
 		margin: 0;
 		padding: 0;
@@ -574,56 +556,13 @@ main {
 	}
 }
 
-#seccion {
-	display: flex;
-	flex-direction: row;
-	font-weight: bold;
-	text-align: center;
-}
-
-#seccion:hover #collapseWidthExample: {}
-
-#primer, #segundo, #tercero, #cuarto {
-	width: 100%;
-	/* height: 100%; */
-	text-align: center;
-	background-color: #9c74c2;
-	/* margin-right: 10px; */
-	/* 	border: #8400ff 1px solid; */
-
-	border: white 1px solid;
-
-	/* border-radius: 25px; */
-	vertical-align: middle;
-	padding: 1.5%;
-	color: #ffffff;
-}
-
-/* #primer {
-	color: #ffffff;
-}
-
-#segundo {
-	color: #3e2c8d;
-}
-
-#tercero {
-	color: #e0dd0b;
-}
-
-#cuarto {
-	color: #00ff22;
-} */
-
-/* a:link, a:visited, a:active {
-	text-decoration: none;
-} */
-
 .botonDelete {
 	margin-top: 2%;
 	padding-left: 10%;
 	display: flex;
 	justify-content: flex-end;
+	margin-right: 28.5px;
+	padding-bottom: 20px;
 }
 
 .Eliminar:hover {
@@ -658,17 +597,13 @@ main {
 	background: #b182e0;
 }
 
-#centrar {
-	text-align: center;
-}
-
 .previous {
 	display: flex;
 	float: left;
 	margin: 25px;
 	border: 5px solid #f5edf2;
 	padding: 8px;
-	background-color: #9c74c2;
+	background-color: #452a5f;
 	color: cornsilk;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -684,7 +619,7 @@ main {
 	margin: 25px;
 	border: 5px solid #f5edf2;
 	padding: 8px;
-	background-color: #9c74c2;
+	background-color: #452a5f;
 	color: cornsilk;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -698,10 +633,42 @@ main {
 	border-radius: 50%;
 }
 
+#seccion {
+	display: flex;
+	flex-direction: row;
+	font-weight: bold;
+	text-align: center;
+}
+
+#seccion:hover #collapseWidthExample: {}
+
+#primer, #segundo, #tercero, #cuarto {
+	width: 100%;
+	text-align: center;
+	background-color: #9c74c2;
+	border: white 1px solid;
+	vertical-align: middle;
+	padding: 1.5%;
+	color: #ffffff;
+}
+
 #section {
 	background-color: #2fff00;
 }
 
 #titular {
 	color: #ff0000;
+}
+
+#centrar {
+	text-align: center;
+}
+
+/* #TipoLetra {
+	font-family:'
+} */
+
+#margen {
+	padding-bottom: 15px;
+	text-align: center;
 }
