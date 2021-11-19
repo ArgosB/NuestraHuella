@@ -210,7 +210,5 @@ public class UserService implements UserDetailsService {
 
 	}
 
-	public List<PetUser> findAllPets(){
-		return petRepository.findAll();
-	}
+	
 }

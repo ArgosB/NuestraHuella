@@ -88,21 +88,21 @@ public class PetController {
 		return "PetsList";
 	}
 
-	@GetMapping("/showCats")
-	public String searchCats(Pageable paginable, String query) {
-		petService.searchSpecies(paginable, query);
+	@GetMapping("/showCats/{specie}")
+	public String searchCats(ModelMap modelo, @PathVariable Species specie) {	
+		modelo.addAttribute("speciesList", petService.findBySpecies(specie));
 		return "CatList";
 	}
 	
-	@GetMapping("/showDogs")
-	public String searchDogs(Pageable paginable, String query) {
-		petService.searchSpecies(paginable, query);
+	@GetMapping("/showDogs/{specie}")
+	public String searchDogs(ModelMap modelo, @PathVariable Species specie) {
+		modelo.addAttribute("speciesList", petService.findBySpecies(specie));
 		return "DogList";
 	}
 	
-	@GetMapping("/showOthers")
-	public String searchSpecies(Pageable paginable, String query) {
-		petService.searchSpecies(paginable, query);
+	@GetMapping("/showOthers/{specie}")
+	public String searchSpecies(ModelMap modelo, @PathVariable Species specie) {
+		modelo.addAttribute("speciesList", petService.findBySpecies(specie));
 		return "OthersPets";
 	}
 

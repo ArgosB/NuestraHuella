@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.tuhuella.main.entities.PetUser;
+import com.tuhuella.main.enums.Species;
 
 
 @Repository
@@ -24,16 +25,21 @@ public interface PetUserRepository extends JpaRepository<PetUser, String> {
 	
 
 	@Query("SELECT a from  PetUser a ORDER BY a.name")
-	public ArrayList<PetUser> searchAll();
-
-
-	@Query("SELECT a from  PetUser a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC")
-	public Page<PetUser> searchAssetsByParam(Pageable pageable, @Param("q") String q);
-
-	@Query("SELECT a from  PetUser a WHERE a.species LIKE :q ORDER BY a.species DESC")
-	public Page<PetUser> searchSpecies(Pageable pageable, @Param("q") String q);
+	public List<PetUser> searchAll();
 
 	
+	@Query("SELECT a from  PetUser a WHERE a.species LIKE :species ORDER BY a.name")
+	public ArrayList<PetUser> searchBySpecies(@Param("species") Species species);
+	
+	/*
+	 * @Query("SELECT a from  PetUser a WHERE a.name LIKE :q OR a.species LIKE :q ORDER BY a.name DESC"
+	 * ) public Page<PetUser> searchAssetsByParam(Pageable pageable, @Param("q")
+	 * String q);
+	 * 
+	 * @Query("SELECT a from  PetUser a WHERE a.species LIKE :q ORDER BY a.species DESC"
+	 * ) public Page<PetUser> searchSpecies(Pageable pageable, @Param("q") String
+	 * q);
+	 */
 
 
 }

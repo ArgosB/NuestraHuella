@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tuhuella.main.entities.PetUser;
+import com.tuhuella.main.services.PetService;
 import com.tuhuella.main.services.PhotoService;
 import com.tuhuella.main.services.UserService;
 
@@ -17,15 +18,12 @@ import com.tuhuella.main.services.UserService;
 public class AppController {
 	
 	@Autowired
-	private UserService userService;
-	@Autowired
-	private PhotoService photoService;
+	private PetService petService;
+	
 	
 	@GetMapping("")
 	public String index(ModelMap model) {
-
-
-		List<PetUser> petList = userService.findAllPets();
+		List<PetUser> petList = petService.findAllPets();
 		if (petList.size() >= 3) {
 			PetUser pet1 = petList.get(petList.size() - 1);
 			PetUser pet2 = petList.get(petList.size() - 2);

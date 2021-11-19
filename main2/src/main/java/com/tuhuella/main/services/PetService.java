@@ -1,5 +1,6 @@
 package com.tuhuella.main.services;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.tuhuella.main.entities.*;
-import com.tuhuella.main.entities.Zone;
 import com.tuhuella.main.enums.Sex;
 import com.tuhuella.main.enums.Size;
 import com.tuhuella.main.enums.Species;
@@ -51,13 +51,16 @@ public class PetService {
 	}
 
 	@Transactional
-	public void showAllPet() {
-		petRepository.searchAll();
+	public List<PetUser> showAllPet() {
+		return petRepository.searchAll();
 	}
-
+	
+	public List<PetUser> findAllPets(){
+		return petRepository.findAll();
+	}
 	@Transactional
-	public Page<PetUser> searchPet(Pageable paginable, String query) {
-		return petRepository.searchAssetsByParam(paginable, query);
+	public List<PetUser >findBySpecies(Species spescie){
+		return petRepository.searchBySpecies(spescie);
 	}
 
 	@Transactional
@@ -79,15 +82,20 @@ public class PetService {
 
 	}
 
-	@Transactional
-	public Page<PetUser> searchSpecies(Pageable paginable, String query) {
-		return petRepository.searchAssetsByParam(paginable, query);
-	}
-	
-	
+
 	@Transactional(readOnly=true)
 	public Optional<PetUser> findAPetById(String id){
 		return petRepository.findById(id);
 	}
+	
+	
+	/*
+	 * @Transactional public Page<PetUser> searchSpecies(Pageable paginable, String
+	 * query) { return petRepository.searchAssetsByParam(paginable, query); }
+	
+	@Transactional
+	public Page<PetUser> searchPet(Pageable paginable, String query) {
+		return petRepository.searchAssetsByParam(paginable, query);
+	} */
 	
 }
