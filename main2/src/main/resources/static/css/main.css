@@ -49,13 +49,18 @@ main {
 	color: white;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Insaniburger with Cheese", "Animal Paws", "Orange Juice", "Arial";
+	/* 	font-family: "Insaniburger with Cheese", "Animal Paws", "Orange Juice", "Arial"; */
 	float: unset;
 	opacity: 120%;
 	margin-bottom: 10px;
 	padding-bottom: 15px;
+	font-family: "Insaniburger with cheese", Verdana, Geneva, Tahoma, sans-serif;
 }
 
+@font-face {
+	font-family: "Insaniburger with cheese";
+	src: url(../Fonts/Insanibc.ttf);
+}
 
 * {
 	margin: 0;
@@ -671,4 +676,22 @@ main {
 #margen {
 	padding-bottom: 15px;
 	text-align: center;
+}
+
+#error {
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#h2 {
+	padding-top: 25px;
+	color: white;
+}
+
+#Espaciado {
+	padding-bottom: 25px;
 }
