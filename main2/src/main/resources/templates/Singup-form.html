@@ -9,8 +9,8 @@
   <header th:replace="/fragments/header :: header"></header>
 
   <main>
-    <div class="container-fluid pb-3">
-      <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
+    <div>
+      <div>
         <h2 class="display-3 titulo2 text-center">REGISTRATE GRATIS</h2>
       </div>
       <div th:if="${error}" class="alert alert-danger" role="alert">No se pudo guardar el usuario. <span th:text="${error}"></span></div >
@@ -79,8 +79,10 @@
           <input type="file" name="file"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Foto de perfil">
         </div>
+        <div id="margen">
         <button type="submit" name="SignUp"
-          class="btn text-light btn-outline-success btn-secondary col-md-4 col-sm-6">Registrate</button>
+          class="btn text-light btn-outline-success btn-secondary col-md-4 col-sm-3">Registrate</button>
+      </div>
       </form>
     </div>
     <aside>

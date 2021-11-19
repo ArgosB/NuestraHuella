@@ -9,9 +9,9 @@
   <header th:replace="/fragments/header :: header"></header>
 
   <main>
-    <div class="container-fluid pb-3">
-      <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
-        <h2 class="display-3 titulo2 text-center">MODIFICA TUS DATOS</h2>
+    <div>
+<!--       <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12"> -->
+        <h2 class="titulo2 display-3 text-center">MODIFICA TUS DATOS</h2>
       </div>
       <form th:action="@{/user/edit/__${session.UserSession.id}__}" enctype="multipart/form-data" method="POST" class="row g-3 d-flex justify-content-center px-4">
 
