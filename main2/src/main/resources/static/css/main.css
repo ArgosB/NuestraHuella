@@ -50,7 +50,7 @@ main {
 	color: white;
 	text-align: center;
 	font-weight: bold;
-	font-family: "Insaniburger with Cheese", "Animal Paws", "Orange Juice", "Arial";
+	/*font-family: "Insaniburger with Cheese", "Animal Paws", "Orange Juice", "Arial";*/
 	float: unset;
 	opacity: 80%;
 	margin-bottom: 10px;
@@ -64,6 +64,24 @@ main {
 	padding: 40px;
 	padding-top: 250px;
 	float: left;
+}
+
+#error {
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#h2 {
+	padding-top: 25px;
+	color: white;
+}
+
+#Espaciado {
+	padding-bottom: 25px;
 }
 
 * {
