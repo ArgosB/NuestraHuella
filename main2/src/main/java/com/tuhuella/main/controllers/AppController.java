@@ -24,6 +24,7 @@ public class AppController {
 	@GetMapping("")
 	public String index(ModelMap model) {
 
+
 		List<PetUser> petList = userService.findAllPets();
 		if (petList.size() >= 3) {
 			PetUser pet1 = petList.get(petList.size() - 1);

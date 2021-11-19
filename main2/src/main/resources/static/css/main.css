@@ -67,6 +67,13 @@ main {
 	width:100vw;
 }
 
+.botonTipo {
+	width: 50px;
+	height: 50px;
+	padding: 40px;
+	padding-top: 250px;
+	float: left;
+}
 
 * {
 	margin: 0;
@@ -92,8 +99,7 @@ main {
 
 .tarjeta-wrap {
 	margin: 30px;
-	-webkit-perspective: 800;
-	perspective: 800;
+
 }
 
 .tarjeta {
@@ -109,13 +115,6 @@ main {
 	box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 }
 
-.botonTipo {
-	width: 50px;
-	height: 50px;
-	padding: 40px;
-	padding-top: 250px;
-	float: left;
-}
 
 .adelante, .atras {
 	width: 100%;
@@ -249,9 +248,9 @@ main {
 	}
 
 	.card1 {
-	background-color: #abd4a2d5;
+	
 	background-image: url(../img/Backgrounds/bg_black3.png);
-	background-size: inherit;
+	
 	}
 
 }
@@ -534,7 +533,7 @@ main {
 	.card1 {
 	background-color: #abd4a2d5;
 	background-image: url(../img/Backgrounds/bg_black3.png);
-	background-size: inherit;
+	background-size: cover;
 }
 
 
@@ -672,9 +671,7 @@ main {
 }
 
 
-#section {
-	
-}
+
 
 #titular {
 	color: #ff0000;

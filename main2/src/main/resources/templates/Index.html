@@ -6,49 +6,59 @@
 
 
 <body>
-
+	<header th:replace="/fragments/header :: header"></header>
   <main>
     <section>
-      <div class="titular container d-flex justify-content-center">
+      <div class="container d-flex justify-content-center">
         <p class="display-3 titulo2">Encuentra a tu mascota</p>
       </div>
       <div class="wrap">
         <div class="tarjeta-wrap">
           <div class="tarjeta">
-
-            <div class="adelante card1"></div>
-=
+            <div class="adelante card1 imag">
+				<img th:src="${'/pet/photo?id=' + pet1.id}">
+			</div>	
             <div class="atras">
-                <div th:if="${pet1}">
+                <div>
               <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
-
-              <span  th:text="${pet1?.name}"></span> y tengo <span th:text="*{pet1.ageInMonths}">.</span>
+              <span  th:text="${pet1.name}"></span> y tengo <span th:text="*{pet1.ageInMonths}">.</span>
               Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="*{pet1.weight}"></span> kilos y soy de
                tamaño <span th:text="${pet1.size}"></span>. </p >
                 </div>
             </div>
           </div>
         </div>
-        <div class="tarjeta-wrap">
+       <div class="tarjeta-wrap">
           <div class="tarjeta">
-            <div class="adelante card2"></div>
+            <div class="adelante card1">
+				<img th:src="${'/pet/photo?id=' + pet2.id}">
+			</div>	
             <div class="atras">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum, suscipit,
-                aspernatur!</p>
+                <div>
+              <p>Mi nombre es <!--/*@thymesVar id="pet2" type=""*/-->
+              <span  th:text="${pet2.name}"></span> y tengo <span th:text="*{pet2.ageInMonths}">.</span>
+              Soy <span th:text="${pet2.breed}"></span>, de sexo <span th:text="${pet2.sex}"></span>. Mi peso es de <span th:text="*{pet2.weight}"></span> kilos y soy de
+               tamaño <span th:text="${pet2.size}"></span>. </p >
+                </div>
             </div>
           </div>
         </div>
         <div class="tarjeta-wrap">
           <div class="tarjeta">
-            <div class="adelante card3"></div>
+            <div class="adelante card1">
+				<img th:src="${'/pet/photo?id=' + pet3.id}">	
+			</div>
             <div class="atras">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum, suscipit,
-                aspernatur!</p>
+                <div>
+              <p>Mi nombre es <!--/*@thymesVar id="pet3" type=""*/-->
+              <span  th:text="${pet3.name}"></span> y tengo <span th:text="*{pet3.ageInMonths}">.</span>
+              Soy <span th:text="${pet3.breed}"></span>, de sexo <span th:text="${pet3.sex}"></span>. Mi peso es de <span th:text="*{pet3.weight}"></span> kilos y soy de
+               tamaño <span th:text="${pet3.size}"></span>. </p >
+                </div>
             </div>
-            <section class="NextPrevious">
-              <a href="#" class="next">Siguiente &raquo;</a>
-            </section>
           </div>
+        </div>   
+       </div>
     </section>
   
     <section class="NextPrevious">
