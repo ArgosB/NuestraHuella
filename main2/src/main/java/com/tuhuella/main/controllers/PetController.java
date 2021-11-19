@@ -85,13 +85,25 @@ public class PetController {
 	@GetMapping("/showPets")
 	public String showPets(ModelMap modelo) {
 		petService.showAllPet();
-		return "pet-list";
+		return "PetsList";
 	}
 
-	@GetMapping("/showSpecies")
+	@GetMapping("/showCats")
+	public String searchCats(Pageable paginable, String query) {
+		petService.searchSpecies(paginable, query);
+		return "CatList";
+	}
+	
+	@GetMapping("/showDogs")
+	public String searchDogs(Pageable paginable, String query) {
+		petService.searchSpecies(paginable, query);
+		return "DogList";
+	}
+	
+	@GetMapping("/showOthers")
 	public String searchSpecies(Pageable paginable, String query) {
 		petService.searchSpecies(paginable, query);
-		return "petspecies-list";
+		return "OthersPets";
 	}
 
 	@GetMapping("/photo")
@@ -117,7 +129,5 @@ public class PetController {
 
 	}
 	
-	/*
-	 * @GetMapping("/showAllPets") public showPets
-	 */
+	
 }
