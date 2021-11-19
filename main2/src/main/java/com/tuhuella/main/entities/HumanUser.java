@@ -201,6 +201,7 @@ public class HumanUser extends ModelUser{
 	public boolean isEnabled() {
 		return enabled;
 	}
+
 	public HumanUser(String username, String password, Set<Authority> authority) {
 		super();
 		this.username = username;

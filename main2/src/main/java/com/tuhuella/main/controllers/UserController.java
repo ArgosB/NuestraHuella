@@ -92,6 +92,7 @@ public class UserController {
 		return "UserList";
 	}*/
 
+
 	@GetMapping("/edit/{id}")
 	public String edit(@PathVariable String id, ModelMap modelo) {
 		HumanUser user = userService.edit(id);
@@ -99,6 +100,48 @@ public class UserController {
 		return "EditProfile";
 	}
 
+
+
+
+	@PostMapping("/edit/{id}")
+	public String editUser(@PathVariable String id, ModelMap modelo, @RequestParam(value = "file") MultipartFile file, @RequestParam(required = false) String name,
+						   @RequestParam(required = false) String surname, @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date birthDate,
+						   @RequestParam(required = false) String email, @RequestParam(required = false) String password, @RequestParam(required = false) String confirmedPassword,
+						   @RequestParam(required = false) String userName, @RequestParam(required = false) Long phoneNumber,
+						   @RequestParam(required = false) Long alternativeNumber, @RequestParam(required = false) String country,
+						   @RequestParam(required = false) Province province, @RequestParam(required = false) String city,
+						   @RequestParam(required = false) String neighborhood ) throws Exception {
+		Photo photo = new Photo();
+		photo.setName(file.getName());
+		photo.setMime(file.getContentType());
+		photo.setPicture(file.getBytes());
+		photo.setActive(true);
+		photo.setCreatePhoto(new Date());
+		photoRepo.save(photo);
+
+		Zone zone = new Zone();
+		zone.setCity(city);
+		zone.setCountry(country);
+		zone.setNeighborhood(neighborhood);
+		zone.setProvince(province);
+		zone = zoneRepo.save(zone);
+
+		HumanUser user = userService.edit(id, photo, name, surname, userName, password, birthDate, zone, phoneNumber,
+				alternativeNumber, email);
+
+		modelo.addAttribute("User", user);
+		return "EditProfile";
+	}
+
+	@GetMapping("/delete/{id}")
+	public String inactive(@PathVariable String id) {
+		try {
+			userService.lockUser(id);
+		} catch (WebException e) {
+			e.printStackTrace();
+		}
+		return "index";
+	}
 
 	@GetMapping("/login")
 	public String login(@RequestParam(required = false) String username, @RequestParam(required = false) String error, @RequestParam(required = false) String logout, ModelMap model) throws Exception {

@@ -33,7 +33,7 @@ public interface HumanUserRepository extends JpaRepository<HumanUser, String> {
 	@Query("SELECT a from HumanUser a WHERE a.surname LIKE surname ORDER BY a.surname")
 	public List<HumanUser> searchBySurname(@Param("surname") String surname);
 	
-	@Query("SELECT a from HumanUser a WHERE a.username LIKE username")
+	@Query("SELECT a from HumanUser a WHERE a.username LIKE username and a.active = true")
 	    public Optional<HumanUser> findByUsername(String username);
 	}
 	

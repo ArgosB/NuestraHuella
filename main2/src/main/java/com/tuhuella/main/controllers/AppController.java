@@ -22,7 +22,7 @@ public class AppController {
 	public String index(ModelMap model) {
 
 		List<PetUser> petList = userService.findAllPets();
-		if (!petList.isEmpty()) {
+		if (petList.size() >= 3) {
 			PetUser pet1 = petList.get(petList.size() - 1);
 			PetUser pet2 = petList.get(petList.size() - 2);
 			PetUser pet3 = petList.get(petList.size() - 3);

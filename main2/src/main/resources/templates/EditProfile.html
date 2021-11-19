@@ -13,37 +13,38 @@
       <div class="container pt-4 text-success d-flex justify-content-center col-lg-10 col-md-10 col-sm-12 col-xs-12">
         <h2 class="display-3 titulo2 text-center">MODIFICA TUS DATOS</h2>
       </div>
-      <form class="row g-3 d-flex justify-content-center px-4">
-        <!-- <div class="col-md-6 col-sm-6">
+      <form th:action="@{/user/edit/__${session.UserSession.id}__}" enctype="multipart/form-data" method="POST" class="row g-3 d-flex justify-content-center px-4">
+
+        <div class="col-md-6 col-sm-6">
+          <input type="text" name="username" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+            placeholder="Nombre de Usuario">
+        </div>
+        <div class="col-md-6 col-sm-6">
           <input type="text" name="name" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Nombre">
+                 placeholder="Nombre">
         </div>
         <div class="col-md-6 col-sm-6">
           <input type="text" name="surname" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Apellido">
-        </div>  -->
-        <div class="col-md-6 col-sm-6">
-          <input type="text" name="USER" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Nombre de Usuario">
+                 placeholder="Apellido">
         </div>
         <div class="col-md-6 col-sm-6">
           <input type="email" name="email" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="E-mail">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="password" pass="password"
+          <input type="password" pass="password" name="password"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Contraseña">
         </div>
         <div class="col-md-6 col-sm-6">
-          <input type="email" pass="password" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+          <input type="password" pass="password" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
             placeholder="Repetir Contraseña">
         </div>
         <div class="col-12">
-          <input type="number" name="age" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Edad">
+          <input type="date" name="birthDate" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
+                 placeholder="Edad">
         </div>
         <div class="col-md-3 col-sm-6">
-          <input type="text" name="neighbourhood"
+          <input type="text" name="neighborhood"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Barrio">
         </div>
         <div class="col-md-3 col-sm-6">
@@ -51,8 +52,14 @@
             placeholder="Ciudad">
         </div>
         <div class="col-md-3 col-sm-6">
-          <input type="text" name="province" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
-            placeholder="Provincia">
+          <select class="form-select border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Provincia"
+                  name="province">
+            <option th:selected>Provincia</option>
+            <option th:each="province : ${T(com.tuhuella.main.enums.Province).values()}"
+                    th:value="${province}"
+                    th:text="${province}">
+            </option>
+          </select>
         </div>
         <div class="col-md-3 col-sm-6">
           <input type="text" name="country" class="form-control border border-success shadow p-2 mb-1 bg-body rounded"
@@ -68,17 +75,26 @@
             placeholder="Número de teléfono alternativo">
         </div>
         <div class="col-12">
-          <input type="file" name="profilePhoto"
+          <input type="file" name="file"
             class="form-control border border-success shadow p-2 mb-1 bg-body rounded" placeholder="Foto de perfil">
         </div>
-
+        <div class="botonDelete">
+          <button type="submit" name="submit"
+                  class="btn text-light btn-outline-blue btn-secondary col-md-3 col-sm-6">Enviar</button>
+          <br>
+        </div>
       </form>
-      <div class="botonDelete">
-        <!--         <a class="Eliminar" href="../templates/1-Index.html" target="_blank"> Delete profile -->
-        <button type="submit" name="SignUp" class="btn text-light btn-outline-danger btn-secondary 
-          col-md-1 col-sm-6">Eliminar cuenta</button>
-        </a>
-      </div>
+
+        <form th:action="@{/user/delete/__${session.UserSession.id}__}" method="get">
+          <div class="botonDelete">
+          <button  type="submit" name="submit"
+                  class="btn text-light btn-outline-blue btn-secondary col-md-3 col-sm-6">Eliminar</button>
+          <br>
+          </div>
+        </form>
+
+
+
     </div>
     <aside>
 
