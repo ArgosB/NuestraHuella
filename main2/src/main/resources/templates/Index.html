@@ -6,8 +6,6 @@
 
 
 <body>
-  
-   <header th:replace="/fragments/header :: header"></header>
 
   <main>
     <section>
@@ -93,7 +91,7 @@
       </div>
 
       </div>-->
-    <!-- </section>
+		<!-- </section>
     <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
       <div class="card-img border border-5 border-info rounded-5 m-2" style="width: 50vh;">
         <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
@@ -116,14 +114,14 @@
             content.</p>
         </div>
       </div>-->
-    <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+		<!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
           <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
           </div>-->
 
-    <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+		<!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
           <img src="img/Logo-Huella.png" class="card-img-top" alt="...">
           <div class="card-body">
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -131,33 +129,40 @@
 
           </div>
         </div> -->
-    <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+		<!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
             <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.</p>
             </div>-->
 
-    <!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
+		<!--<div class="card border border-5 border-danger rounded-5" style="width: 18rem;">
             <img src="../static/img/Logo-Huella.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
                 content.</p>
             </div>
         </div>-->
-    <!--</div>-->
-    </div>
+		<!--</div>-->
+		</div>
 
-    <aside>
+		<aside>
 
-    </aside>
+		</aside>
+	
+		<script>
+			$(document).ready(function(){
+				$('.imgLiquid').imgLiquid({fill:true})
+				
+			});		
+		</script>
+	
+	</main>
 
-  </main>
+	<footer th:replace="/fragments/footer :: footer"></footer>
 
-   <footer th:replace="/fragments/footer :: footer"></footer>	
+	<script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
-  <script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  
 </body>
 
 </html>

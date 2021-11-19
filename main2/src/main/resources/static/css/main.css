@@ -14,7 +14,8 @@
 }
 
 body {
-	background-color: #452a5f;
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
 }
 
 main {
@@ -60,9 +61,10 @@ main {
 	/* 	padding-top: 35px;
 	padding-bottom: 10px;
 	float: unset; */
-	opacity: 120%;
+	opacity: 80%;
 	margin-bottom: 10px;
 	padding-bottom: 15px;
+	width:100vw;
 }
 
 
@@ -157,19 +159,12 @@ main {
 }
 
 .card1 {
-	
-	background-size: cover;
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-size: inherit;
 }
 
-.card2 {
-	background-image: url(../img/Logo-Huella.png);
-	background-size: cover;
-}
 
-.card3 {
-	background-image: url(../img/Logo-Huella.png);
-	background-size: cover;
-}
 
 @media screen and (max-width: 424px) {
 	* {
@@ -254,19 +249,11 @@ main {
 	}
 
 	.card1 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-size: inherit;
 	}
 
-	.card2 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
-
-	.card3 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
 }
 
 @media screen and (max-width: 599px) and (min-width:425px) {
@@ -352,19 +339,12 @@ main {
 	}
 
 	.card1 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-size: inherit;
 	}
 
-	.card2 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
 
-	.card3 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
 }
 
 @media screen and (max-width:767px) and (min-width:600px) {
@@ -450,19 +430,12 @@ main {
 	}
 
 	.card1 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-size: inherit;
+}
 
-	.card2 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
-
-	.card3 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
+	
 }
 
 @media screen and (max-width:1023px) and (min-width:768px) {
@@ -559,19 +532,13 @@ main {
 	}
 
 	.card1 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
+	background-color: #abd4a2d5;
+	background-image: url(../img/Backgrounds/bg_black3.png);
+	background-size: inherit;
+}
 
-	.card2 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
 
-	.card3 {
-		background-image: url(../img/Logo-Huella.png);
-		background-size: cover;
-	}
+
 }
 
 #seccion {
@@ -652,6 +619,12 @@ main {
 	width: 200px;
 }
 
+.imag{
+	 width: 100%;
+  	height: 100%;
+  	object-fit: contain;
+}
+
 .pie {
 	text-align: center;
 	font-weight: bold;
@@ -698,8 +671,9 @@ main {
 	border-radius: 50%;
 }
 
+
 #section {
-	background-color: #2fff00;
+	
 }
 
 #titular {

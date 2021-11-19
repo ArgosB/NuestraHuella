@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.tuhuella.main.entities.PetUser;
+import com.tuhuella.main.services.PhotoService;
 import com.tuhuella.main.services.UserService;
 
 @Controller
@@ -17,6 +18,8 @@ public class AppController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private PhotoService photoService;
 	
 	@GetMapping("")
 	public String index(ModelMap model) {
