@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 
+import com.tuhuella.main.repositories.HumanUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,8 +23,12 @@ public class PetService {
 	@Autowired
 	private PetUserRepository petRepository;
 
+	@Autowired
+	private HumanUserRepository userRepository;
+
+
 	@Transactional
-	public void createPet(String name, Integer age, Species species, String breed, Integer Weight, Sex sex, Size size,
+	public void createPet(String user_id, String name, Integer age, Species species, String breed, Integer Weight, Sex sex, Size size,
 			Boolean upToDateVaccine, Boolean castrated, Boolean deWormed, String disease, Zone zone, Photo photo)
 			throws Exception {
 
@@ -44,6 +49,8 @@ public class PetService {
 			pet.setDisease(breed);
 			pet.setZone(zone);
 			pet.setPhoto(photo);
+			HumanUser user = userRepository.getById(user_id);
+			pet.setUser(user);
 
 			petRepository.save(pet);
 		}
@@ -82,11 +89,20 @@ public class PetService {
 
 	}
 
+<<<<<<< Updated upstream
+=======
+	@Transactional
+	public Page<PetUser> searchSpecies(Pageable paginable, String query) {
+		return petRepository.searchAssetsByParam(paginable, query);
+	}
+
+>>>>>>> Stashed changes
 
 	@Transactional(readOnly=true)
 	public Optional<PetUser> findAPetById(String id){
 		return petRepository.findById(id);
 	}
+<<<<<<< Updated upstream
 	
 	
 	/*
@@ -98,4 +114,11 @@ public class PetService {
 		return petRepository.searchAssetsByParam(paginable, query);
 	} */
 	
+=======
+
+	@Transactional
+	public List<PetUser> findAllPets(){
+		return petRepository.findAll();
+	}
+>>>>>>> Stashed changes
 }

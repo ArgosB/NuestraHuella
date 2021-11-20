@@ -1,38 +1,29 @@
 package com.tuhuella.main.controllers;
 
-import java.util.Date;
-import java.util.Optional;
-
+import com.tuhuella.main.entities.HumanUser;
+import com.tuhuella.main.entities.PetUser;
+import com.tuhuella.main.entities.Photo;
+import com.tuhuella.main.entities.Zone;
+import com.tuhuella.main.enums.Sex;
+import com.tuhuella.main.enums.Size;
+import com.tuhuella.main.enums.Species;
+import com.tuhuella.main.repositories.HumanUserRepository;
+import com.tuhuella.main.repositories.PetUserRepository;
+import com.tuhuella.main.services.PetService;
 import com.tuhuella.main.services.PhotoService;
+import com.tuhuella.main.webException.WebException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.tuhuella.main.entities.HumanUser;
-import com.tuhuella.main.entities.PetUser;
-import com.tuhuella.main.entities.Photo;
-import com.tuhuella.main.entities.Zone;
-import com.tuhuella.main.enums.Province;
-import com.tuhuella.main.enums.Sex;
-import com.tuhuella.main.enums.Size;
-import com.tuhuella.main.enums.Species;
-import com.tuhuella.main.repositories.HumanUserRepository;
-import com.tuhuella.main.repositories.PhotoRepository;
-import com.tuhuella.main.repositories.ZoneRepository;
-import com.tuhuella.main.services.PetService;
-import com.tuhuella.main.services.UserService;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/pet")
@@ -44,7 +35,8 @@ public class PetController {
 	private HumanUserRepository userRepo;
 	@Autowired
 	private PhotoService photoService;
-
+	@Autowired
+	private PetUserRepository petRepo;
 	@GetMapping("/add-a-pet")
 	public String form() {
 
@@ -71,7 +63,7 @@ public class PetController {
 
 			Photo photo = photoService.savePhoto(file);
 
-			petService.createPet(name, age, species, breed, Weight, sex, size, upToDateVaccine, castrated, deWormed,
+			petService.createPet(id, name, age, species, breed, Weight, sex, size, upToDateVaccine, castrated, deWormed,
 					disease, zone, photo);
 
 			modelo.put("exito", name.toString());
@@ -128,6 +120,26 @@ public class PetController {
 		}
 
 	}
-	
-	
+	@GetMapping("/one/{id}")
+	public String onePet(@PathVariable String id, ModelMap model) throws WebException {
+
+	return "One-Pet";
+
+	}
+	@PostMapping("/one/{id}")
+	public String findById(@PathVariable String id, ModelMap model) throws WebException {
+
+		PetUser pet1 = petRepo.getById(id);
+		if(id != null){
+			HumanUser user = pet1.getUser();
+			model.addAttribute("pet1", pet1);
+			model.addAttribute("user", user);
+			final String s = "One-Pet";
+			return s;
+		}
+		else throw new WebException("Error en el ID");
+
+	}
+
+
 }
