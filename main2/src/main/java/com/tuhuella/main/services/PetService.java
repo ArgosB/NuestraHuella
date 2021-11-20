@@ -89,20 +89,13 @@ public class PetService {
 
 	}
 
-<<<<<<< Updated upstream
-=======
-	@Transactional
-	public Page<PetUser> searchSpecies(Pageable paginable, String query) {
-		return petRepository.searchAssetsByParam(paginable, query);
-	}
 
->>>>>>> Stashed changes
 
 	@Transactional(readOnly=true)
 	public Optional<PetUser> findAPetById(String id){
 		return petRepository.findById(id);
 	}
-<<<<<<< Updated upstream
+
 	
 	
 	/*
@@ -114,11 +107,6 @@ public class PetService {
 		return petRepository.searchAssetsByParam(paginable, query);
 	} */
 	
-=======
 
-	@Transactional
-	public List<PetUser> findAllPets(){
-		return petRepository.findAll();
-	}
->>>>>>> Stashed changes
+
 }
