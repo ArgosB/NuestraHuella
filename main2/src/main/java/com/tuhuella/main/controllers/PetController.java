@@ -84,7 +84,7 @@ public class PetController {
 
 	@GetMapping("/showPets")
 	public String showPets(ModelMap modelo) {
-		petService.showAllPet();
+		modelo.addAttribute("speciesList", petService.showAllPet());
 		return "PetsList";
 	}
 

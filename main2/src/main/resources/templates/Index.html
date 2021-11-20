@@ -2,7 +2,7 @@
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
 
 
-<head th:replace="/fragments/head :: head"></head>
+<head th:replace="/fragments/head :: heads"></head>
 
 
 <body>
@@ -21,8 +21,8 @@
             <div class="atras">
                 <div>
               <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
-              <span  th:text="${pet1.name}"></span> y tengo <span th:text="*{pet1.ageInMonths}">.</span>
-              Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="*{pet1.weight}"></span> kilos y soy de
+              <span  th:text="${pet1.name}"></span> y tengo <span th:text="${#strings.toString(pet1.ageInMonths)}">.</span>
+              Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="${pet1.weight}"></span> kilos y soy de
                tamaño <span th:text="${pet1.size}"></span>. </p >
                 </div>
             </div>
@@ -62,7 +62,8 @@
     </section>
   
     <section class="NextPrevious">
-      <a text-light target_self href="../templates/PetsList.html" class="next">Ver más &raquo;</a>
+      <a th:if="${session.UserSession != null}" text-light target_self th:href="@{/pet/showPets}" class="next">Ver más &raquo;</a >
+      <a th:if="${session.UserSession == null}" text-light target_self th:href="@{/user/login}" class="next">Ver más &raquo;</a >
     </section>
     <br>
     <br>

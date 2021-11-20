@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="/fragments/head :: head"></head>
+<head th:replace="/fragments/head :: headList"></head>
 
 <body>
 
@@ -14,185 +14,28 @@
 
 		<section>
 			<div class="wrap">
-				<div class="tarjeta-wrap">
+				<div class="tarjeta-wrap" th:each="pet : ${speciesList}">
 					<div class="tarjeta">
-						<div class="adelante card1"></div>
+						<div class="adelante card1">
+							<img class="imag" th:src="${'/pet/photo?id=' + pet.id}">
+						</div>
 						<div class="atras">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
-								suscipit,
-								aspernatur!</p>
+							<div>
+								<p>Mi nombre es
+									<!--/*@thymesVar id="pet" type=""*/-->
+									<span th:text="${pet.name}"></span> y tengo <span
+										th:text="*{pet.ageInMonths}">.</span>
+									Soy <span th:text="${pet.breed}"></span>, de sexo <span
+										th:text="${pet.sex}"></span>. Mi peso es de <span
+										th:text="*{pet.weight}"></span> kilos y soy de
+									tamaño <span th:text="${pet.size}"></span>.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="wrap">
-					<div class="tarjeta-wrap">
-						<div class="tarjeta">
-							<div class="adelante card1"></div>
-							<div class="atras">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-									Illum,
-									suscipit,
-									aspernatur!</p>
-							</div>
-						</div>
-					</div>
-					<div class="wrap">
-						<div class="tarjeta-wrap">
-							<div class="tarjeta">
-								<div class="adelante card1"></div>
-								<div class="atras">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-										Illum, suscipit,
-										aspernatur!</p>
-								</div>
-							</div>
-						</div>
 		</section>
-		<section>
-			<div class="wrap">
-				<div class="tarjeta-wrap">
-					<div class="tarjeta">
-						<div class="adelante card1"></div>
-						<div class="atras">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
-								suscipit,
-								aspernatur!</p>
-						</div>
-					</div>
-				</div>
-				<div class="wrap">
-					<div class="tarjeta-wrap">
-						<div class="tarjeta">
-							<div class="adelante card1"></div>
-							<div class="atras">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-									Illum,
-									suscipit,
-									aspernatur!</p>
-							</div>
-						</div>
-					</div>
-					<div class="wrap">
-						<div class="tarjeta-wrap">
-							<div class="tarjeta">
-								<div class="adelante card1"></div>
-								<div class="atras">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-										Illum, suscipit,
-										aspernatur!</p>
-								</div>
-							</div>
-						</div>
-		</section>
-		<section>
-			<div class="wrap">
-				<div class="tarjeta-wrap">
-					<div class="tarjeta">
-						<div class="adelante card1"></div>
-						<div class="atras">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
-								suscipit,
-								aspernatur!</p>
-						</div>
-					</div>
-				</div>
-				<div class="wrap">
-					<div class="tarjeta-wrap">
-						<div class="tarjeta">
-							<div class="adelante card1"></div>
-							<div class="atras">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-									Illum,
-									suscipit,
-									aspernatur!</p>
-							</div>
-						</div>
-					</div>
-					<div class="wrap">
-						<div class="tarjeta-wrap">
-							<div class="tarjeta">
-								<div class="adelante card1"></div>
-								<div class="atras">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-										Illum, suscipit,
-										aspernatur!</p>
-								</div>
-							</div>
-						</div>
-		</section>
-		<section>
-			<div class="wrap">
-				<div class="tarjeta-wrap">
-					<div class="tarjeta">
-						<div class="adelante card1"></div>
-						<div class="atras">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
-								suscipit,
-								aspernatur!</p>
-						</div>
-					</div>
-				</div>
-				<div class="wrap">
-					<div class="tarjeta-wrap">
-						<div class="tarjeta">
-							<div class="adelante card1"></div>
-							<div class="atras">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-									Illum,
-									suscipit,
-									aspernatur!</p>
-							</div>
-						</div>
-					</div>
-					<div class="wrap">
-						<div class="tarjeta-wrap">
-							<div class="tarjeta">
-								<div class="adelante card1"></div>
-								<div class="atras">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-										Illum, suscipit,
-										aspernatur!</p>
-								</div>
-							</div>
-						</div>
-		</section>
-		<section>
-			<div class="wrap">
-				<div class="tarjeta-wrap">
-					<div class="tarjeta">
-						<div class="adelante card1"></div>
-						<div class="atras">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
-								suscipit,
-								aspernatur!</p>
-						</div>
-					</div>
-				</div>
-				<div class="wrap">
-					<div class="tarjeta-wrap">
-						<div class="tarjeta">
-							<div class="adelante card1"></div>
-							<div class="atras">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-									Illum,
-									suscipit,
-									aspernatur!</p>
-							</div>
-						</div>
-					</div>
-					<div class="wrap">
-						<div class="tarjeta-wrap">
-							<div class="tarjeta">
-								<div class="adelante card1"></div>
-								<div class="atras">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae.
-										Illum, suscipit,
-										aspernatur!</p>
-								</div>
-							</div>
-						</div>
-		</section>
-		</header>
+
 		<section class="NextPrevious">
 			<a href="#" class="previous">&laquo; Previous</a>
 			<a href="#" class="next">Next &raquo;</a>

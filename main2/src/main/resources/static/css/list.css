@@ -105,6 +105,7 @@ main {
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	
 }
 
@@ -114,8 +115,8 @@ main {
 }
 
 .tarjeta {
-	width: 280px;
-	height: 300px;
+	width: 250px;
+	height: 275px;
 	background: #9c74c2;
 	position: relative;
 	-webkit-transform-style: preserve-3d;
@@ -197,7 +198,7 @@ main {
 		-webkit-justify-content: center;
 		-ms-flex-pack: center;
 		justify-content: center;
-		
+		flex-wrap: wrap;
 	}
 
 	.tarjeta-wrap {
@@ -471,7 +472,6 @@ main {
 		-ms-flex-pack: center;
 		justify-content: space-around;
 		flex-wrap: wrap;
-		
 	}
 
 	.tarjeta-wrap {
