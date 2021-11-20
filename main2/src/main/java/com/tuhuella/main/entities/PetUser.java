@@ -43,10 +43,11 @@ public class PetUser extends ModelUser {
 	private Boolean dewormed;
 	@Column(length = 50)
 	private String disease;
+	@OneToOne
+	private HumanUser User;
 	@ManyToOne
 	private Zone zone;
-	
-	
+
 	public PetUser() {
 	}
 	
@@ -69,18 +70,12 @@ public class PetUser extends ModelUser {
 	public void setName(String name) {
 		this.name = name;
 	}
-
 	public Integer getAgeInMonths() {
 		return ageInMonths;
 	}
-
-
 	public void setAgeInMonths(Integer ageInMonths) {
 		this.ageInMonths = ageInMonths;
 	}
-
-
-
 	public String getBreed() {
 		return breed;
 	}
@@ -108,11 +103,9 @@ public class PetUser extends ModelUser {
 	public Species getSpecies() {
 		return species;
 	}
-
 	public void setSpecies(Species species) {
 		this.species = species;
 		}
-	
 	public Boolean getUpToDateVaccine() {
 		return upToDateVaccine;
 	}
@@ -144,8 +137,11 @@ public class PetUser extends ModelUser {
 		this.zone = zone;
 	}
 
-	
-	
-	
+	public HumanUser getUser() {
+		return User;
+	}
 
+	public void setUser(HumanUser user) {
+		User = user;
+	}
 }

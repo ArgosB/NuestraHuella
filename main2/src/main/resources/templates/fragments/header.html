@@ -14,14 +14,14 @@
 				<ul class="navbar-nav me-auto mb-3 mb-lg-0">
 					<li class="nav-item">
 						<a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4" aria-current="page"
-							href="/templates/index.html">
+							href="/">
 							<i class="fas fa-home"></i>&nbsp Inicio</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
-							href="/templates/AddAPet-form.html">
-							<i class="fas fa-plus"></i>&nbsp Añade tus mascotas</a>
-					</li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4"
+                            href="/pet/add-a-pet">
+                            <i class="fas fa-plus"></i>&nbsp Add your pets</a>
+                    </li>
 					<a class="nav-link text-light btn-outline-success rounded-pill mx-2 px-4" data-bs-toggle="collapse"
 						data-bs-target="#collapseWidthExample" aria-expanded="false"
 						aria-controls="collapseWidthExample">
@@ -29,10 +29,13 @@
 					</li>
 
 				</ul>
-				<a class="btn text-light btn-outline-success mx-3 px-3 " href="/templates/login.html">Iniciar
-					sesión</a>
-				<a class="btn text-light btn-outline-success mx-3 px-3"
-					href="/templates/singup-form.html">Inscribirse</a>
+				<a class="btn text-light btn-outline-success mx-3 px-3 " th:if="${session.UserSession != null}"  href="/logout" >Logout</a>
+				<a class="btn text-light btn-outline-success mx-3 px-3" th:if="${session.UserSession != null}" th:text="${session.UserSession.name } + '  ' + ${ session.UserSession.surname}" th:href="@{user/edit/__${session.UserSession.id}__}"></a>
+
+
+				<a class="btn text-light btn-outline-success mx-3 px-3 " th:if="${session.UserSession == null}"  href="/user/login">Login</a>
+				<a class="btn text-light btn-outline-success mx-3 px-3" th:if="${session.UserSession == null}" href="/user/sign-up">SignUp</a>
+
 			</div>
 		</div>
 	</nav>
