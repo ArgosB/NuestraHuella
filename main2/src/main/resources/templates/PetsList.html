@@ -12,7 +12,7 @@
 		</div>
 
 		<section>
-				<div class="wrap">
+			<div class="wrap">
 				<div class="tarjeta-wrap" th:each="pet : ${speciesList}">
 					<div class="tarjeta">
 						<div class="adelante card1">
@@ -20,23 +20,17 @@
 						</div>
 						<div class="atras">
 							<div>
-								<p>Mi nombre es
-									<!--/*@thymesVar id="pet" type=""*/-->
-									<span th:text="${pet.name}"></span> y tengo <span
-										th:text="${pet.ageInMonths}">.</span>
-									Soy <span th:text="${pet.breed}"></span>, de sexo <span
-										th:text="${pet.sex}"></span>. Mi peso es de <span
-										th:text="*{pet.weight}"></span> kilos y soy de
-									tamaño <span th:text="${pet.size}"></span>.
+								<p th:text="|Mi nombre es ${pet.name} y tengo ${pet.ageInMonths} meses. Soy ${pet.sex} y ${pet.breed}. 
+								Mi peso es de ${pet.weight} kilos y soy de tamaño ${pet.size}.|">
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 		</section>
-		
+
 		<section class="NextPrevious">
-			<a href="#" class="previous">&laquo; Previous</a>
+			<!--<a href="#" class="previous">&laquo; Previous</a>-->
 			<a href="#" class="next">Next &raquo;</a>
 		</section>
 		<br>
@@ -47,7 +41,7 @@
 
 	<footer th:replace="/fragments/footer :: footer"></footer>
 
-	<script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 

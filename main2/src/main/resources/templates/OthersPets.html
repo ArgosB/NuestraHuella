@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es-AR" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace="/fragments/head :: head"></head>
+<head th:replace="/fragments/head :: headList"></head>
 
 <body>
 
-	<header th:replace="/fragments/header :: headerList"></header>
+	<header th:replace="/fragments/header :: header"></header>
 
 	<main>
 		<div class="titulo2 p-2 text-success">
@@ -21,15 +21,16 @@
 						</div>
 						<div class="atras">
 							<div>
-								<p>Mi nombre es
-									<!--/*@thymesVar id="pet" type=""*/-->
+								<p th:text="|Mi nombre es ${pet.name} y tengo ${pet.ageInMonths} meses. Soy ${pet.sex} y ${pet.breed}. 
+								Mi peso es de ${pet.weight} kilos y soy de tamaño ${pet.size}.|">
+								<!--i nombre es
+									/*@thymesVar id="pet" type=""*/
 									<span th:text="${pet.name}"></span> y tengo <span
-										th:text="*{pet.ageInMonths}">.</span>
-									Soy <span th:text="${pet.breed}"></span>, de sexo <span
-										th:text="${pet.sex}"></span>. Mi peso es de <span
-										th:text="*{pet.weight}"></span> kilos y soy de
-									tamaño <span th:text="${pet.size}"></span>.
-								</p>
+										th:utext="${#numbers.formatInteger(pet.ageInMonths,2)}">.</span>
+									Soy <span th:text="${pet.sex}"></span> y <span th:text="${pet.breed}"></span>. Mi peso es de <span
+										th:text="${pet.weight}"></span> kilos y soy de
+									tamaño <span th:text="${pet.size}"></span>.-->
+								</p >
 							</div>
 						</div>
 					</div>
@@ -37,7 +38,7 @@
 		</section>
 
 		<section class="NextPrevious">
-			<a href="#" class="previous">&laquo; Previous</a>
+			<!--<a href="#" class="previous">&laquo; Previous</a>-->
 			<a href="#" class="next">Next &raquo;</a>
 		</section>
 		<br>
@@ -47,7 +48,7 @@
 	</main>
 	<footer th:replace="/fragments/footer :: footer"></footer>
 
-	<script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

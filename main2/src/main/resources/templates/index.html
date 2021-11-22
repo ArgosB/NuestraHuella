@@ -7,74 +7,70 @@
 
 <body>
 	<header th:replace="/fragments/header :: header"></header>
-  <main>
-    <section>
-      <div class="container d-flex justify-content-center">
-        <p class="display-3 titulo2">Encuentra a tu mascota</p>
-      </div>
-        <a th:if="${pet1}" th:href="@{pet/one/__${pet1.id}__}">
-            boton
-        </a >
-      <div class="wrap">
-        <div th:if="${pet1}" class="tarjeta-wrap">
-          <div class="tarjeta">
-            <div class="adelante card1">
-				<img class="imag" th:src="${'/pet/photo?id=' + pet1.id}">
-			</div>	
-            <div class="atras">
-                <div>
-              <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
-              <span  th:text="${pet1.name}"></span> y tengo <span th:text="${#strings.toString(pet1.ageInMonths)}">.</span>
-              Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="${pet1.weight}"></span> kilos y soy de
-               tamaño <span th:text="${pet1.size}"></span>. </p >
-                </div>
-            </div>
-          </div>
-        </div >
-       <div th:if="${pet2}" class="tarjeta-wrap">
-          <div class="tarjeta">
-            <div class="adelante card1">
-				<img class="imag" th:src="${'/pet/photo?id=' + pet2.id}">
-			</div>	
-            <div class="atras">
-                <div>
-              <p>Mi nombre es <!--/*@thymesVar id="pet2" type=""*/-->
-              <span  th:text="${pet2.name}"></span> y tengo <span th:text="*{pet2.ageInMonths}">.</span>
-              Soy <span th:text="${pet2.breed}"></span>, de sexo <span th:text="${pet2.sex}"></span>. Mi peso es de <span th:text="*{pet2.weight}"></span> kilos y soy de
-               tamaño <span th:text="${pet2.size}"></span>. </p >
-                </div>
-            </div>
-          </div>
-        </div >
-        <div th:if="${pet3}" class="tarjeta-wrap">
-          <div class="tarjeta">
-            <div class="adelante card1">
-				<img class="imag" th:src="${'/pet/photo?id=' + pet3.id}">	
+	<main>
+		<section>
+			<div class="container d-flex justify-content-center">
+				<p class="display-3 titulo2">Encuentra a tu mascota</p>
 			</div>
-            <div class="atras">
-                <div>
-              <p>Mi nombre es <!--/*@thymesVar id="pet3" type=""*/-->
-              <span  th:text="${pet3.name}"></span> y tengo <span th:text="*{pet3.ageInMonths}">.</span>
-              Soy <span th:text="${pet3.breed}"></span>, de sexo <span th:text="${pet3.sex}"></span>. Mi peso es de <span th:text="*{pet3.weight}"></span> kilos y soy de
-               tamaño <span th:text="${pet3.size}"></span>. </p >
-                </div>
-            </div>
-          </div>
-        </div >   
-       </div>
-    </section>
-  
-    <section class="NextPrevious">
-      <a th:if="${session.UserSession != null}" text-light target_self th:href="@{/pet/showPets}" class="next">Ver más &raquo;</a >
-      <a th:if="${session.UserSession == null}" text-light target_self th:href="@{/user/login}" class="next">Ver más &raquo;</a >
-    </section>
-    <br>
-    <br>
-    <br>
-    <br>
-    </div>
+			<a th:if="${pet1}" th:href="@{pet/one/__${pet1.id}__}">
+				boton
+			</a>
+			<div class="wrap">
+				<div th:if="${pet1}" class="tarjeta-wrap">
+					<div class="tarjeta">
+						<div class="adelante card1">
+							<img class="imag" th:src="${'/pet/photo?id=' + pet1.id}">
+						</div>
+						<div class="atras">
+							<div>
+								<p th:text="|Mi nombre es ${pet1.name} y tengo ${pet1.ageInMonths} meses. Soy ${pet1.sex} y ${pet1.breed}. 
+								Mi peso es de ${pet1.weight} kilos y soy de tamaño ${pet1.size}.|"> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div th:if="${pet2}" class="tarjeta-wrap">
+					<div class="tarjeta">
+						<div class="adelante card1">
+							<img class="imag" th:src="${'/pet/photo?id=' + pet2.id}">
+						</div>
+						<div class="atras">
+							<div>
+								<p th:text="|Mi nombre es ${pet2.name} y tengo ${pet2.ageInMonths} meses. Soy ${pet2.sex} y ${pet2.breed}. 
+								Mi peso es de ${pet2.weight} kilos y soy de tamaño ${pet2.size}.|"> </p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div th:if="${pet3}" class="tarjeta-wrap">
+					<div class="tarjeta">
+						<div class="adelante card1">
+							<img class="imag" th:src="${'/pet/photo?id=' + pet3.id}">
+						</div>
+						<div class="atras">
+							<div>
+								<p th:text="|Mi nombre es ${pet3.name} y tengo ${pet3.ageInMonths} meses. Soy ${pet3.sex} y ${pet3.breed}. 
+								Mi peso es de ${pet3.weight} kilos y soy de tamaño ${pet3.size}.|"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
+		<section class="NextPrevious">
+			<a th:if="${session.UserSession != null}" text-light target_self th:href="@{/pet/showPets}" class="next">Ver
+				más &raquo;</a>
+			<a th:if="${session.UserSession == null}" text-light target_self th:href="@{/user/login}" class="next">Ver
+				más &raquo;</a>
+		</section>
+		<br>
+		<br>
+		<br>
+		<br>
+		</div>
+
+		<!-- <div class="container-fluid d-flex justify-content-around align-content-end flex-wrap">
         <div class="card-img" style="width: 50vh;">
           <img src="img/Logo-Huella.png" class="card-img-top " alt="...">
           <div class="card-body">
@@ -161,13 +157,13 @@
 		<aside>
 
 		</aside>
-	
-	
+
+
 	</main>
 
 	<footer th:replace="/fragments/footer :: footer"></footer>
 
-	<script src="bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+	<script src="/bootstrap/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
 </body>
 

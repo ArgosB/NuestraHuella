@@ -46,8 +46,8 @@ public class PetController {
 	@PostMapping("/add-a-pet/{id}")
 	public String createPet(ModelMap modelo, @PathVariable String id,
 			@RequestParam(required = false) MultipartFile file, @RequestParam String name,
-			@RequestParam(required = false) Integer age, @RequestParam Species species,
-			@RequestParam(required = false) String breed, @RequestParam(required = false) Integer Weight,
+			@RequestParam(required = false) Integer ageInMonths, @RequestParam Species species,
+			@RequestParam(required = false) String breed, @RequestParam(required = false) Integer weight,
 			@RequestParam(required = false) Sex sex, @RequestParam Size size,
 			@RequestParam(required = false) Boolean upToDateVaccine, @RequestParam(required = false) Boolean castrated,
 			@RequestParam(required = false) Boolean deWormed, @RequestParam(required = false) String disease)
@@ -63,7 +63,7 @@ public class PetController {
 
 			Photo photo = photoService.savePhoto(file);
 
-			petService.createPet(id, name, age, species, breed, Weight, sex, size, upToDateVaccine, castrated, deWormed,
+			petService.createPet(id, name, ageInMonths, species, breed, weight, sex, size, upToDateVaccine, castrated, deWormed,
 					disease, zone, photo);
 
 			modelo.put("exito", name.toString());
