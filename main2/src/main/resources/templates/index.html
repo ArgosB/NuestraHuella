@@ -12,11 +12,8 @@
 			<div class="container d-flex justify-content-center">
 				<p class="display-3 titulo2">Encuentra a tu mascota</p>
 			</div>
-			<a th:if="${pet1}" th:href="@{pet/one/__${pet1.id}__}">
-				boton
-			</a>
 			<div class="wrap">
-				<div th:if="${pet1}" class="tarjeta-wrap">
+				<div th:if="${pet1}" class="tarjeta-wrap" ><a th:if="${pet1}" th:href="@{pet/one/__${pet1.id}__}">			
 					<div class="tarjeta">
 						<div class="adelante card1">
 							<img class="imag" th:src="${'/pet/photo?id=' + pet1.id}">
@@ -28,8 +25,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div th:if="${pet2}" class="tarjeta-wrap">
+				</div></a>
+				<div th:if="${pet2}" class="tarjeta-wrap" ><a th:if="${pet2}" th:href="@{pet/one/__${pet2.id}__}">
 					<div class="tarjeta">
 						<div class="adelante card1">
 							<img class="imag" th:src="${'/pet/photo?id=' + pet2.id}">
@@ -41,8 +38,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div th:if="${pet3}" class="tarjeta-wrap">
+				</div></a>
+				<div th:if="${pet3}" class="tarjeta-wrap"> <a th:if="${pet3}" th:href="@{pet/one/__${pet3.id}__}">
 					<div class="tarjeta">
 						<div class="adelante card1">
 							<img class="imag" th:src="${'/pet/photo?id=' + pet3.id}">
@@ -54,7 +51,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div></a>
 			</div>
 		</section>
 

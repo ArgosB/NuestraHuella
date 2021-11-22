@@ -14,7 +14,7 @@
 
 		<section>
 			<div class="wrap">
-				<div class="tarjeta-wrap" th:each="pet : ${speciesList}">
+				<div class="tarjeta-wrap" th:each="pet : ${speciesList}"> <a th:if="${pet}" th:href="@{pet/one/__${pet.id}__}">
 					<div class="tarjeta">
 						<div class="adelante card1">
 							<img class="imag" th:src="${'/pet/photo?id=' + pet.id}">
@@ -33,7 +33,7 @@
 								</p >
 							</div>
 						</div>
-					</div>
+					</div></a>
 				</div>
 		</section>
 
