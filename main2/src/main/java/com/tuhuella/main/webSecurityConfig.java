@@ -30,7 +30,7 @@ public class webSecurityConfig extends WebSecurityConfigurerAdapter{
             .antMatchers("/admin*").access("hasRole('ROLE_USER_DEFAULT')")
             .antMatchers("/user/sign-up").permitAll()
             .antMatchers("/user/login").permitAll()
-            .antMatchers("/pet*").permitAll()
+            .antMatchers("/pet/*").access("hasRole('ROLE_USER_DEFAULT')")
 
             .anyRequest().authenticated()
             .and()

@@ -19,7 +19,7 @@ public interface PetUserRepository extends JpaRepository<PetUser, String> {
 	@Query("SELECT a FROM  PetUser a WHERE a.name LIKe :name")
 	public List<PetUser> searchPetName(@Param("name") String name);
 
-	
+
 	@Query("SELECT a FROM  PetUser a WHERE a.id LIKE :id")
 		public PetUser consultId(@Param("id") String id);
 	
