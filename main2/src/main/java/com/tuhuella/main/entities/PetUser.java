@@ -43,7 +43,7 @@ public class PetUser extends ModelUser {
 	private Boolean dewormed;
 	@Column(length = 50)
 	private String disease;
-	@OneToOne
+	@ManyToOne
 	private HumanUser User;
 	@ManyToOne
 	private Zone zone;

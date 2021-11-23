@@ -9,14 +9,22 @@
 <header th:replace="/fragments/header :: header"></header>
 <main>
 
-    <div>
-        <form th:action="@{/pet/one/__${pet.id}__}" method="post">
-        <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
-            <span  th:text="${pet.name}"></span> y tengo <span th:text="${pet.ageInMonths}">.</span>
-            Soy <span th:text="${pet.breed}"></span>, de sexo <span th:text="${pet.sex}"></span>. Mi peso es de <span th:text="*{pet.weight}"></span> kilos y soy de
-            tamaño <span th:text="${pet.size}"></span>. </p >
+
+        <form  th:action="@{/pet/one/__${pet.id}__}" method="post">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top imag" th:src="${'/pet/photo?id=' + pet.id}">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${pet.name}"></h5>
+                    <p class="card-text" th:text="|Tengo ${pet.ageInMonths} meses. Soy ${pet.sex} y ${pet.breed}.
+                       Mi peso es de ${pet.weight} kilos y soy de tamaño ${pet.size}.|"></p>
+                    <br>
+
+                    <p class="card-text" th:text="|Mi dueño actual es ${user.name} y su telefono es ${user.phoneNumber}. Somos de ${user.zone.city} , en la provincia de ${user.zone.province}, ${user.zone.country}
+								Si no contesta tambien podes llamar al numero ${user.alternativeNumber}| "></p>
+                    <a href="tel:341165416" class="btn btn-primary">Llamar</a>
+                </div>
+            </div>
         </form>
-    </div>
 </main>
 
  	<footer th:replace="/fragments/footer :: footer"></footer>

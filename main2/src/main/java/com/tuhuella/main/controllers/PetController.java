@@ -28,7 +28,8 @@ import java.util.Optional;
 @Controller
 @RequestMapping("/pet")
 
-public class PetController {
+public class
+PetController {
 	@Autowired
 	private PetService petService;
 	@Autowired
@@ -126,13 +127,15 @@ public class PetController {
 	return "One-Pet";
 
 	}
+
 	@GetMapping("/one/{id}")
 	public String findById(@PathVariable String id, ModelMap model) throws WebException {
 
-		PetUser pet1 = petRepo.getById(id);
-		if(pet1 != null){
-			HumanUser user = pet1.getUser();
-			model.addAttribute("pet", pet1);
+		PetUser pet = petRepo.getById(id);
+		HumanUser user = pet.getUser();
+		if(pet != null){
+
+			model.addAttribute("pet", pet);
 			model.addAttribute("user", user);
 			final String s = "One-Pet";
 			return s;
