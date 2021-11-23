@@ -10,11 +10,11 @@
 <main>
 
     <div>
-        <form th:action="@{/pet/one/__${pet1.id}__}" method="post">
+        <form th:action="@{/pet/one/__${pet.id}__}" method="post">
         <p>Mi nombre es <!--/*@thymesVar id="pet1" type=""*/-->
-            <span  th:text="${pet1.name}"></span> y tengo <span th:text="${pet1.ageInMonths}">.</span>
-            Soy <span th:text="${pet1.breed}"></span>, de sexo <span th:text="${pet1.sex}"></span>. Mi peso es de <span th:text="*{pet1.weight}"></span> kilos y soy de
-            tamaño <span th:text="${pet1.size}"></span>. </p >
+            <span  th:text="${pet.name}"></span> y tengo <span th:text="${pet.ageInMonths}">.</span>
+            Soy <span th:text="${pet.breed}"></span>, de sexo <span th:text="${pet.sex}"></span>. Mi peso es de <span th:text="*{pet.weight}"></span> kilos y soy de
+            tamaño <span th:text="${pet.size}"></span>. </p >
         </form>
     </div>
 </main>

@@ -120,19 +120,19 @@ public class PetController {
 		}
 
 	}
-	@GetMapping("/one/{id}")
+	@PostMapping("/one/{id}")
 	public String onePet(@PathVariable String id, ModelMap model) throws WebException {
 
 	return "One-Pet";
 
 	}
-	@PostMapping("/one/{id}")
+	@GetMapping("/one/{id}")
 	public String findById(@PathVariable String id, ModelMap model) throws WebException {
 
 		PetUser pet1 = petRepo.getById(id);
-		if(id != null){
+		if(pet1 != null){
 			HumanUser user = pet1.getUser();
-			model.addAttribute("pet1", pet1);
+			model.addAttribute("pet", pet1);
 			model.addAttribute("user", user);
 			final String s = "One-Pet";
 			return s;
