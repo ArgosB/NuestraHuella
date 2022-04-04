@@ -7,7 +7,6 @@ Obj. corto plazo 28/10:
 
 
 Ideas: Situacion Covid, boton para pedir turnos. 
-Robado: 
 <div class="content-blob desktop" data-card="" data-card-story="" data-card-has-blurb="" data-js-module="true">
 					   <div class="card__blob">
 					      <figure class="blob blob--b" data-blob-scene="" data-blob-scene-background-image="https://cdn.shopify.com/s/files/1/0249/4808/0685/files/footprint-hero-1200x1200.jpg?v=1604070877" data-blob-scene-background-video="https://cdn.shopify.com/s/files/1/0249/4808/0685/files/FP_Hub-Video_v03-1x1.mp4?v=1604070721" data-blob-scene-background-opacity="0" data-blob-scene-hover="">
